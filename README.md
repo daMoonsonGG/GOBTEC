@@ -23,8 +23,8 @@ forma parte do repositorio. A forma prevista de usar o prototipo é abrir o HTML
 | `fonte/config_proxecto.js` | Identificador único do proxecto (`NOME_PROXECTO`). |
 | `fonte/i18n_es.js`, `fonte/i18n_en.js` | Traducións desde o galego, idioma de orixe. |
 | `fonte/tipografia/` | Atkinson Hyperlegible autoaloxada e a súa licenza OFL-1.1. |
-| `herramientas/` | Scripts locais para capturas, comprobación da accesibilidade e xeración de tokens. |
-| `ARQUITECTURA.md` | Arquitectura, convencións e fluxo de desenvolvemento. |
+| `ferramentas/` | Scripts locais para capturas, comprobación da accesibilidade e xeración de tokens. |
+| `ARQUITETURA.md` | Arquitectura, convencións e fluxo de desenvolvemento. |
 | `LICENSE`, `LICENSES/` | EUPL-1.2 e licenzas de terceiros. |
 | `REUSE.toml` | Metadatos de licenza para ficheiros sen cabeceira SPDX. |
 
@@ -40,7 +40,7 @@ node fonte/construir_proba.js pantallas-fonte index.html fragmento.html
 ```
 
 O construtor xera `index.html` e `fragmento.html` e comproba a sintaxe do JavaScript xerado. Edita as fontes
-`pantallas-fonte/` e `fonte/`, e volve construír despois de cada cambio. Consulta [ARQUITECTURA.md](./ARQUITECTURA.md) para
+`pantallas-fonte/` e `fonte/`, e volve construír despois de cada cambio. Consulta [ARQUITETURA.md](./ARQUITETURA.md) para
 coñecer as limitacións do motor e as comprobacións recomendadas.
 
 ## Licenza e tarefas previas á publicación
