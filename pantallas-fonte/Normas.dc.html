@@ -1,0 +1,240 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: EUPL-1.2 -->
+<!-- SPDX-FileCopyrightText: 2026 [TITULAR] -->
+<html lang="gl">
+<head>
+<meta charset="utf-8">
+<title>Normas de uso · Xestión · Concello de Ribadouro</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+[data-tema="claro"]{color-scheme:light;--fondo:#FFFFFF;--superficie:#F3F5F8;--superficie2:#E6EAF0;--texto:#141A22;--texto2:#4A5462;--linea:#CBD2DB;--linea-forte:#6B7686;--forte:#141A22;--sobre-forte:#FFFFFF}
+[data-tema="escuro"]{color-scheme:dark;--fondo:#11161C;--superficie:#1A212A;--superficie2:#2A333F;--texto:#EEF1F5;--texto2:#B3BCC8;--linea:#3A4553;--linea-forte:#8894A3;--forte:#EEF1F5;--sobre-forte:#11161C}
+body{margin:0}
+body:has([data-tema="escuro"]){background:#11161C}
+a{color:var(--texto)}a:hover{color:var(--texto2)}
+:focus-visible{outline:3px solid var(--texto);outline-offset:2px}
+.saltar{position:absolute;left:-9999px}.saltar:focus{left:16px;top:8px;background:var(--fondo);color:var(--texto);padding:12px 16px;z-index:10}
+</style>
+</helmet>
+<div data-tema="{{tema}}" style="font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; color: var(--texto); background: var(--fondo); font-size: 17px; line-height: 1.5; position: relative">
+  <a class="saltar" href="#contido">Saltar ao contido</a>
+
+  <header style="border-bottom: 1px solid var(--linea)">
+    <div style="padding: 12px clamp(16px, 3vw, 32px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 32px">
+      <span style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; font-weight: 700; font-size: 19px">
+        <span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 8px; background: {{marca}}; color: {{sobreMarca}}; display: inline-flex; align-items: center; justify-content: center">R</span>
+        Concello de Ribadouro · Xestión
+      </span>
+      <span style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 24px"><button type="button" onClick="{{alternarTema}}" style="min-height: 44px; padding: 0 12px; border-radius: 8px; border: 1px solid currentColor; background: transparent; color: inherit; font: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 8px"><sc-if value="{{escuro}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></sc-if><sc-if value="{{claro}}" hint-placeholder-val="{{ true }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></sc-if>{{rotuloTema}}</button><a href="Main.dc.html" style="min-height: 44px; display: inline-flex; align-items: center">Ver o sitio público</a></span>
+    </div>
+  </header>
+
+  <div style="display: flex; flex-wrap: wrap; align-items: stretch">
+    <nav aria-label="Xestión" style="flex: 1 1 240px; box-sizing: border-box; padding: 20px clamp(16px, 2vw, 24px); background: var(--superficie); display: flex; flex-direction: column; gap: 2px">
+      <a href="Panel.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Indicadores</a>
+      <a href="Uso.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Resumo de uso</a>
+      <a href="Avisos.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Avisos</a>
+      <a href="Axenda.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Axenda de reservas</a>
+      <a href="Instalacions.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Instalacións</a>
+      <a href="Horarios.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Horarios e peches</a>
+      <a href="Normas.dc.html" aria-current="page" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; border-radius: 8px; background: var(--forte); color: var(--sobre-forte); font-weight: 700; text-decoration: none">Normas de uso</a>
+      <a href="ValidarQR.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Validar QR</a>
+      <a href="Marca.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Marca do concello</a>
+    </nav>
+
+    <main id="contido" style="flex: 999 1 640px; min-width: 0; box-sizing: border-box; padding: 32px clamp(16px, 3vw, 40px) 64px">
+      <h1 style="margin: 0 0 24px; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.12">Normas de uso</h1>
+
+      <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 32px">
+        <form aria-label="Normas de reserva" style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+          <sc-if value="{{temErro}}" hint-placeholder-val="{{ false }}">
+            <div role="alert" style="padding: 12px 16px; border: 2px solid var(--texto); border-radius: 8px">
+              <strong>Revisa este campo antes de gardar:</strong>
+              <a href="#minima" style="display: block; min-height: 32px">A antelación mínima non pode superar a máxima</a>
+            </div>
+          </sc-if>
+          <sc-if value="{{gardado}}" hint-placeholder-val="{{ false }}">
+            <p role="status" style="margin: 0; padding: 12px 16px; border-radius: 8px; background: var(--superficie); font-weight: 700">Normas gardadas. Aplícanse ás reservas novas.</p>
+          </sc-if>
+
+          <div>
+            <label for="ambito" style="display: block; font-weight: 700; margin-bottom: 4px">Aplicar a</label>
+            <select id="ambito" value="{{ambitoSel}}" onChange="{{cambiarAmbito}}" data-opcions="{{opcsAmbito}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+              <option>Todo o concello</option>
+              <option>Pistas de pádel do Campo da Feira</option>
+              <option>Pavillón Municipal</option>
+            </select>
+            <p style="margin: 4px 0 0; font-size: 15px; color: var(--texto2)">A norma dunha instalación prevalece sobre a do concello.</p>
+            <sc-if value="{{herdada}}" hint-placeholder-val="{{ false }}">
+              <p style="margin: 4px 0 0; font-size: 15px; color: var(--texto2)">Esta instalación usa as normas do concello. Ao gardar, terá as súas propias.</p>
+            </sc-if>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0 16px">
+            <div style="grid-row: span 3; display: grid; grid-template-rows: subgrid; gap: 4px 0; margin-bottom: 16px; align-content: start">
+              <label for="maxima" style="display: block; font-weight: 700; margin-bottom: 0; align-self: end">Antelación máxima (días)</label>
+              <input id="maxima" type="number" min="1" value="{{maxima}}" onChange="{{cambiarMaxima}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+            </div>
+            <div style="grid-row: span 3; display: grid; grid-template-rows: subgrid; gap: 4px 0; margin-bottom: 16px; align-content: start">
+              <label for="minima" style="display: block; font-weight: 700; margin-bottom: 0; align-self: end">Antelación mínima (horas)</label>
+              <input id="minima" type="number" min="0" value="{{minima}}" onChange="{{cambiarMinima}}" aria-invalid="{{temErro}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+              <sc-if value="{{temErro}}" hint-placeholder-val="{{ false }}">
+                <p style="margin: 4px 0 0; font-weight: 700">Pon un valor menor que a antelación máxima.</p>
+              </sc-if>
+            </div>
+            <div style="grid-row: span 3; display: grid; grid-template-rows: subgrid; gap: 4px 0; margin-bottom: 16px; align-content: start">
+              <label for="activas" style="display: block; font-weight: 700; margin-bottom: 0; align-self: end">Reservas activas por conta</label>
+              <input id="activas" type="number" min="1" value="{{activas}}" onChange="{{cambiarActivas}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+            </div>
+            <div style="grid-row: span 3; display: grid; grid-template-rows: subgrid; gap: 4px 0; margin-bottom: 16px; align-content: start">
+              <label for="cancelar" style="display: block; font-weight: 700; margin-bottom: 0; align-self: end">Prazo de cancelación (horas antes)</label>
+              <input id="cancelar" type="number" min="0" value="{{cancelar}}" onChange="{{cambiarCancelar}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+            </div>
+          </div>
+
+          <label style="display: flex; align-items: flex-start; gap: 10px; min-height: 44px; cursor: pointer">
+            <input type="checkbox" checked="{{empadronados}}" onChange="{{alternarEmpadronados}}" style="flex: 0 0 auto; width: 22px; height: 22px; margin: 2px 0 0; accent-color: {{marca}}">
+            <span><strong>Reservado a persoas empadroadas</strong><br><span style="color: var(--texto2)">Nesta versión indícao a propia persoa: non hai conexión co padrón.</span></span>
+          </label>
+
+          <div>
+            <button type="button" onClick="{{gardar}}" style="min-height: 48px; padding: 0 28px; border: 0; border-radius: 8px; background: {{marca}}; color: {{sobreMarca}}; font: inherit; font-weight: 700; cursor: pointer">Gardar as normas</button>
+          </div>
+        </form>
+
+        <section aria-labelledby="vista" style="flex: 1 1 320px; min-width: 0; border: 1px solid var(--texto); border-radius: 12px; padding: 24px">
+          <h2 id="vista" style="margin: 0 0 4px; font-size: 22px">Así o verá a veciñanza</h2>
+          <p style="margin: 0 0 16px; color: var(--texto2)">{{ambito}}</p>
+          <ul aria-live="polite" style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px">
+            <li>{{textoMaxima}}</li>
+            <li>{{textoMinima}}</li>
+            <li>{{textoActivas}}</li>
+            <li>{{textoCancelar}}</li>
+            <li>{{textoEmpadronados}}</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"modo":{"editor":"enum","options":["Sistema","Claro","Escuro"],"default":"Sistema"},"brand":{"editor":"color","default":"#0B5CAD","options":["#0B5CAD","#6D28D9","#A4372B"]},"$preview":{"width":1440,"height":1300}}'>
+class Component extends DCLogic {
+  temaActual() {
+    const e = this.state || {};
+    if (e.temaElixido) return e.temaElixido;
+    if (this.props.modo === 'Claro') return 'claro';
+    if (this.props.modo === 'Escuro') return 'escuro';
+    let gardado = null;
+    try { gardado = window.localStorage.getItem(NOME_PROXECTO + '-tema'); } catch (err) { gardado = null; }
+    if (gardado === 'claro' || gardado === 'escuro') return gardado;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'escuro' : 'claro';
+  }
+  luminanciaTema(hex) {
+    const canle = (i) => {
+      const v = parseInt(hex.substr(i, 2), 16) / 255;
+      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    };
+    return 0.2126 * canle(1) + 0.7152 * canle(3) + 0.0722 * canle(5);
+  }
+  marcaEscura(hex) {
+    const fondo = this.luminanciaTema('#11161C');
+    const mestura = (i, p) => Math.round(parseInt(hex.substr(i, 2), 16) * (1 - p) + 255 * p);
+    const pasar = (n) => (n < 16 ? '0' : '') + n.toString(16);
+    for (let p = 0; p <= 1; p += 0.05) {
+      const cor = '#' + pasar(mestura(1, p)) + pasar(mestura(3, p)) + pasar(mestura(5, p));
+      if ((this.luminanciaTema(cor) + 0.05) / (fondo + 0.05) >= 6) return cor;
+    }
+    return '#FFFFFF';
+  }
+  valsTema() {
+    const tema = this.temaActual();
+    const escuro = tema === 'escuro';
+    const base = this.props.brand ?? (this.state && this.state.cor) ?? '#0B5CAD';
+    return {
+      tema,
+      escuro,
+      claro: !escuro,
+      rotuloTema: escuro ? 'Modo claro' : 'Modo escuro',
+      marca: escuro ? this.marcaEscura(base) : base,
+      sobreMarca: escuro ? '#11161C' : '#FFFFFF',
+      alternarTema: () => {
+        const novo = escuro ? 'claro' : 'escuro';
+        try { window.localStorage.setItem(NOME_PROXECTO + '-tema', novo); } catch (err) { /* sen almacenamento */ }
+        this.setState({ temaElixido: novo });
+      }
+    };
+  }
+  componentDidMount() {
+    this.oirTema = (e) => {
+      if (e.key === NOME_PROXECTO + '-tema' && (e.newValue === 'claro' || e.newValue === 'escuro')) {
+        this.setState({ temaElixido: e.newValue });
+      }
+    };
+    window.addEventListener('storage', this.oirTema);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('storage', this.oirTema);
+  }
+  renderVals() {
+    return { ...this.valsPantalla(), ...this.valsTema() };
+  }
+  constructor(props) {
+    super(props);
+    const base = { maxima: 14, minima: 2, activas: 3, cancelar: 24, empadronados: false };
+    this.state = { ambito: 'Todo o concello', ...base, gardados: { 'Todo o concello': base }, erro: false, gardado: false };
+  }
+  valsPantalla() {
+    const brand = this.props.brand ?? '#0B5CAD';
+    const { maxima, minima, activas, cancelar, empadronados, erro, gardado, gardados } = this.state;
+    const CONCELLO = 'Todo o concello';
+    const nomes = window.__app && window.__app.nomesActivos ? window.__app.nomesActivos() : ['Pistas de pádel do Campo da Feira', 'Pavillón Municipal'];
+    const ambito = this.state.ambito === CONCELLO || nomes.indexOf(this.state.ambito) >= 0 ? this.state.ambito : CONCELLO;
+    const opcsAmbito = [{ valor: CONCELLO, texto: CONCELLO }].concat(nomes.map((n) => ({ valor: n, texto: n })));
+    const cambiarAmbitoValor = (e) => {
+      const novo = e.target.value;
+      const v = gardados[novo] || gardados[CONCELLO];
+      this.setState({ ambito: novo, maxima: v.maxima, minima: v.minima, activas: v.activas, cancelar: v.cancelar, empadronados: v.empadronados, erro: false, gardado: false });
+    };
+    const campo = (k) => (e) => this.setState({ [k]: e.target.value, erro: false, gardado: false });
+    const plural = (n, s, p) => n + ' ' + (Number(n) === 1 ? s : p);
+    return {
+      brand,
+      ambitoSel: ambito,
+      opcsAmbito,
+      herdada: ambito !== CONCELLO && !gardados[ambito],
+      maxima,
+      minima,
+      activas,
+      cancelar,
+      empadronados,
+      gardado,
+      temErro: erro,
+      cambiarAmbito: cambiarAmbitoValor,
+      cambiarMaxima: campo('maxima'),
+      cambiarMinima: campo('minima'),
+      cambiarActivas: campo('activas'),
+      cambiarCancelar: campo('cancelar'),
+      alternarEmpadronados: () => this.setState({ empadronados: !empadronados, gardado: false }),
+      textoMaxima: 'Podes reservar con ata ' + plural(maxima, 'día', 'días') + ' de antelación.',
+      textoMinima: 'Reserva polo menos ' + plural(minima, 'hora', 'horas') + ' antes do inicio.',
+      textoActivas: 'Podes ter ' + plural(activas, 'reserva activa', 'reservas activas') + ' como máximo.',
+      textoCancelar: 'Podes cambiar ou cancelar ata ' + plural(cancelar, 'hora', 'horas') + ' antes.',
+      textoEmpadronados: empadronados ? 'Só para persoas empadroadas no concello.' : 'Aberto a calquera persoa.',
+      gardar: () => {
+        if (Number(minima) >= Number(maxima) * 24) {
+          this.setState({ erro: true, gardado: false });
+          return;
+        }
+        this.setState({ erro: false, gardado: true, ambito, gardados: { ...gardados, [ambito]: { maxima, minima, activas, cancelar, empadronados } } });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

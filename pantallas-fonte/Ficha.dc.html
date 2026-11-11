@@ -1,0 +1,540 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: EUPL-1.2 -->
+<!-- SPDX-FileCopyrightText: 2026 [TITULAR] -->
+<html lang="gl">
+<head>
+<meta charset="utf-8">
+<title>Pistas de pádel do Campo da Feira · Reservar</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+[data-tema="claro"]{color-scheme:light;--fondo:#FFFFFF;--superficie:#F3F5F8;--superficie2:#E6EAF0;--texto:#141A22;--texto2:#4A5462;--linea:#CBD2DB;--linea-forte:#6B7686;--forte:#141A22;--sobre-forte:#FFFFFF}
+[data-tema="escuro"]{color-scheme:dark;--fondo:#11161C;--superficie:#1A212A;--superficie2:#2A333F;--texto:#EEF1F5;--texto2:#B3BCC8;--linea:#3A4553;--linea-forte:#8894A3;--forte:#EEF1F5;--sobre-forte:#11161C}
+body{margin:0}
+body:has([data-tema="escuro"]){background:#11161C}
+a{color:var(--texto)}a:hover{color:var(--texto2)}
+:focus-visible{outline:3px solid var(--texto);outline-offset:2px}
+.saltar{position:absolute;left:-9999px}.saltar:focus{left:16px;top:8px;background:var(--fondo);color:var(--texto);padding:12px 16px;z-index:10}
+</style>
+</helmet>
+<div data-tema="{{tema}}" style="font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; color: var(--texto); background: var(--fondo); font-size: 17px; line-height: 1.5; position: relative">
+  <a class="saltar" href="#contido">Saltar ao contido</a>
+
+  <header style="border-bottom: 1px solid var(--linea)">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 12px clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 32px">
+      <a href="Main.dc.html" style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; text-decoration: none; font-weight: 700; font-size: 19px">
+        <span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 8px; background: {{marca}}; color: {{sobreMarca}}; display: inline-flex; align-items: center; justify-content: center">R</span>
+        Concello de Ribadouro
+      </a>
+      <nav aria-label="Principal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 24px">
+        <a href="Main.dc.html" aria-current="page" style="min-height: 44px; display: inline-flex; align-items: center; font-weight: 700">Instalacións</a>
+        <a href="Reservas.dc.html" style="min-height: 44px; display: inline-flex; align-items: center; text-decoration: none">Reservas</a>
+        <a href="Acceso.dc.html" style="min-height: 44px; display: inline-flex; align-items: center; text-decoration: none">Entrar</a>
+        <button type="button" onClick="{{alternarTema}}" style="min-height: 44px; padding: 0 12px; border-radius: 8px; border: 1px solid currentColor; background: transparent; color: inherit; font: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 8px"><sc-if value="{{escuro}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></sc-if><sc-if value="{{claro}}" hint-placeholder-val="{{ true }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></sc-if>{{rotuloTema}}</button>
+        <span style="display: inline-flex; align-items: center; gap: 8px; color: var(--texto2)"><strong style="color: var(--texto)">GL</strong> | <a href="#idioma" lang="es" aria-label="Cambiar a castellano" style="min-height: 44px; display: inline-flex; align-items: center">ES</a></span>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contido" style="max-width: 1280px; margin: 0 auto; padding: 24px clamp(16px, 4vw, 40px) 64px">
+    <a href="Main.dc.html" style="min-height: 44px; display: inline-flex; align-items: center">Volver ás instalacións</a>
+    <h1 style="margin: 8px 0 8px; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.12">{{titulo}}</h1>
+    <sc-if value="{{modificando}}" hint-placeholder-val="{{ false }}">
+      <div role="status" style="margin: 0 0 16px; padding: 12px 16px; border-radius: 8px; background: var(--superficie); border: 2px solid var(--texto); display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px">
+        <span style="flex: 1 1 280px"><strong>Estás cambiando a hora dunha reserva</strong><br><span>{{textoModificando}}</span></span>
+        <button type="button" onClick="{{deixarModificar}}" style="min-height: 44px; padding: 0 16px; border-radius: 8px; border: 1px solid var(--texto); background: var(--fondo); color: var(--texto); font: inherit; cursor: pointer">Deixar a reserva como estaba</button>
+      </div>
+    </sc-if>
+    <p style="margin: 0; color: var(--texto2)">{{subtitulo}}</p>
+
+    <section aria-labelledby="prezos-titulo" style="margin-top: 24px; padding: 16px 0; border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea)">
+      <h2 id="prezos-titulo" style="margin: 0 0 8px; font-size: 22px">Prezos e descontos</h2>
+      <p style="margin: 0 0 8px; font-weight: 700">{{prezoBaseTexto}} · {{unidadeTexto}}</p>
+      <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 24px">
+        <sc-for list="{{descontos}}" as="d" hint-placeholder-count="3">
+          <li><strong>{{d.nome}}: −{{d.porcentaxe}} %</strong> · {{d.tipo}} · {{d.vixencia}}</li>
+        </sc-for>
+      </ul>
+    </section>
+
+    <section aria-labelledby="afluencia-titulo" style="margin-top: 24px">
+      <h2 id="afluencia-titulo" style="margin: 0 0 4px; font-size: 22px">Afluencia por día e hora</h2>
+      <p style="margin: 0 0 12px; color: var(--texto2)">Ocupación das pistas na semana {{rotuloSemana}}.</p>
+      <ul aria-label="Lenda da afluencia" style="list-style: none; margin: 0 0 12px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 14px">
+        <sc-for list="{{lendaAfluencia}}" as="l" hint-placeholder-count="5">
+          <li style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 18px; height: 18px; border: 1px solid var(--linea-forte); background: {{l.fondo}}"></span>{{l.rango}}</li>
+        </sc-for>
+      </ul>
+      <div tabindex="0" style="overflow-x: auto; border: 1px solid var(--linea); padding: 8px">
+        <div role="table" aria-label="Afluencia por día e hora" style="min-width: 720px; display: flex; flex-direction: column; gap: 3px">
+          <div role="row" style="display: grid; grid-template-columns: 58px repeat(7, minmax(0, 1fr)); gap: 3px">
+            <div role="columnheader">Hora</div>
+            <sc-for list="{{mapa.dias}}" as="d" hint-placeholder-count="7"><div role="columnheader" style="text-align: center; font-size: 14px">{{d.curto}}<br>{{d.numero}}</div></sc-for>
+          </div>
+          <sc-for list="{{mapa.filas}}" as="f" hint-placeholder-count="13">
+            <div role="row" style="display: grid; grid-template-columns: 58px repeat(7, minmax(0, 1fr)); gap: 3px">
+              <div role="rowheader" style="display: flex; align-items: center; font-size: 14px">{{f.hora}}</div>
+              <sc-for list="{{f.celas}}" as="c" hint-placeholder-count="7">
+                <div role="cell" aria-label="{{c.aria}}" style="min-height: 36px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--linea-forte); background: {{c.fondo}}; color: {{c.tinta}}; font-size: 13px; font-weight: 700; text-align: center">{{c.rotulo}}</div>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <p style="margin: 8px 0 16px; font-size: 15px; color: var(--texto2)">Calcúlase coas reservas feitas; a predición chegará cando haxa histórico</p>
+      <h3 style="margin: 0 0 8px; font-size: 18px">Franxas recomendadas</h3>
+      <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 8px">
+        <sc-for list="{{recomendadas}}" as="r" hint-placeholder-count="3">
+          <li style="display: flex; align-items: center; justify-content: space-between; gap: 8px; border-bottom: 1px solid var(--linea); padding: 8px 0"><span><strong>{{r.nome}}</strong><br><span style="color: var(--texto2)">{{r.texto}}</span></span><button type="button" onClick="{{r.reservar}}" style="min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; background: var(--fondo); color: var(--texto); font: inherit; font-weight: 700; cursor: pointer">Reservar</button></li>
+        </sc-for>
+      </ul>
+    </section>
+
+    <div style="margin-top: 32px; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 32px">
+      <section aria-labelledby="dispo" style="flex: 999 1 640px; min-width: 0">
+        <h2 id="dispo" style="margin: 0 0 16px; font-size: 24px">Dispoñibilidade</h2>
+
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px; margin-bottom: 16px">
+          <div role="group" aria-label="Pista" style="display: flex; flex-wrap: wrap; gap: 8px">
+            <sc-for list="{{pistas}}" as="p" hint-placeholder-count="3">
+              <button type="button" aria-pressed="{{p.activa}}" onClick="{{p.elixir}}" style="min-height: 44px; padding: 0 16px; border-radius: 8px; border: 1px solid var(--texto); background: {{p.fondo}}; color: {{p.texto}}; font: inherit; cursor: pointer">{{p.nome}}</button>
+            </sc-for>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+            <button type="button" onClick="{{semanaAnterior}}" disabled="{{primeiraSemana}}" style="min-height: 44px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--texto); background: var(--fondo); color: var(--texto); font: inherit; cursor: pointer">Anterior</button>
+            <strong aria-live="polite" style="padding: 0 8px">{{rotuloSemana}}</strong>
+            <button type="button" onClick="{{semanaSeguinte}}" disabled="{{ultimaSemana}}" style="min-height: 44px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--texto); background: var(--fondo); color: var(--texto); font: inherit; cursor: pointer">Seguinte</button>
+          </div>
+        </div>
+
+        <ul aria-label="Lenda" style="list-style: none; margin: 0 0 16px; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 15px; color: var(--texto)">
+          <sc-for list="{{lenda}}" as="l" hint-placeholder-count="4">
+            <li style="display: flex; align-items: center; gap: 8px">
+              <span aria-hidden="true" style="width: 24px; height: 24px; box-sizing: border-box; border-radius: 4px; border: 1px solid {{l.borde}}; background: {{l.fondo}}; color: {{l.texto}}; display: inline-flex; align-items: center; justify-content: center">
+                <sc-if value="{{l.mais}}" hint-placeholder-val="{{ true }}"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></sc-if>
+                <sc-if value="{{l.x}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></sc-if>
+                <sc-if value="{{l.lock}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></sc-if>
+                <sc-if value="{{l.check}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></sc-if>
+              </span>
+              {{l.rotulo}}
+            </li>
+          </sc-for>
+        </ul>
+
+        <div tabindex="0" style="overflow-x: auto; border: 1px solid var(--linea); border-radius: 12px; padding: 12px" onKeyDown="{{teclas}}">
+          <div role="table" aria-label="{{rotuloTaboa}}" style="min-width: 760px; display: flex; flex-direction: column; gap: 4px">
+            <div role="row" style="display: grid; grid-template-columns: 64px repeat(7, minmax(0, 1fr)); gap: 4px">
+              <div role="columnheader" style="font-size: 15px; color: var(--texto2); display: flex; align-items: center">Hora</div>
+              <sc-for list="{{dias}}" as="d" hint-placeholder-count="7">
+                <div role="columnheader" style="font-weight: 700; text-align: center; padding: 4px 0; line-height: 1.2">{{d.curto}}<br>{{d.numero}}</div>
+              </sc-for>
+            </div>
+            <sc-for list="{{filas}}" as="f" hint-placeholder-count="13">
+              <div role="row" style="display: grid; grid-template-columns: 64px repeat(7, minmax(0, 1fr)); gap: 4px">
+                <div role="rowheader" style="font-size: 15px; display: flex; align-items: center">{{f.hora}}</div>
+                <sc-for list="{{f.celas}}" as="c" hint-placeholder-count="7">
+                  <div role="cell">
+                    <button type="button" data-f="{{c.f}}" data-c="{{c.c}}" aria-label="{{c.aria}}" aria-disabled="{{c.bloqueada}}" aria-pressed="{{c.seleccionada}}" onClick="{{c.elixir}}" style="width: 100%; min-height: 44px; padding: 4px; border-radius: 6px; border: {{c.borde}}; background: {{c.fondo}}; color: {{c.texto}}; font: inherit; font-size: 14px; font-weight: {{c.peso}}; cursor: {{c.cursor}}; display: flex; align-items: center; justify-content: center; gap: 4px">
+                      <sc-if value="{{c.iconoMais}}" hint-placeholder-val="{{ true }}"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></sc-if>
+                      <sc-if value="{{c.iconoX}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></sc-if>
+                      <sc-if value="{{c.iconoCheck}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></sc-if>
+                      <sc-if value="{{c.iconoLock}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></sc-if>
+                      {{c.rotulo}}
+                    </button>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <p style="margin: 12px 0 0; font-size: 15px; color: var(--texto2)">Podes moverte polo calendario coas frechas do teclado.</p>
+      </section>
+
+      <aside aria-labelledby="seleccion" style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+        <div style="border: 1px solid var(--texto); border-radius: 12px; padding: 24px">
+          <h2 id="seleccion" style="margin: 0 0 12px; font-size: 22px">{{tituloPanel}}</h2>
+
+          <sc-if value="{{semSeleccion}}" hint-placeholder-val="{{ false }}">
+            <p style="margin: 0; color: var(--texto2)">Escolle unha franxa libre no calendario.</p>
+          </sc-if>
+
+          <sc-if value="{{hai.mensaxe}}" hint-placeholder-val="{{ false }}">
+            <p role="status" style="margin: 0 0 12px; padding: 12px; border-radius: 8px; background: var(--superficie)">{{mensaxe}}</p>
+          </sc-if>
+
+          <sc-if value="{{pasoConfirmar}}" hint-placeholder-val="{{ true }}">
+            <div style="display: flex; flex-direction: column; gap: 16px">
+              <p style="margin: 0; font-size: 20px; font-weight: 700; line-height: 1.3">{{resumo}}</p>
+              <ul style="margin: 0; padding-left: 20px; color: var(--texto2)">
+                <sc-for list="{{normasLista}}" as="n" hint-placeholder-count="2">
+                  <li>{{n}}</li>
+                </sc-for>
+              </ul>
+              <sc-if value="{{soLectura}}" hint-placeholder-val="{{ false }}">
+                <p role="status" style="margin: 0; padding: 12px 16px; border-radius: 8px; background: var(--superficie); border: 1px solid var(--linea-forte)"><strong>Estás en modo só lectura.</strong> <a href="Acceso.dc.html">Entrar para facer cambios</a></p>
+              </sc-if>
+              <div>
+                <label for="persoas" style="display: block; font-weight: 700; margin-bottom: 4px">Persoas</label>
+                <input id="persoas" disabled="{{soLectura}}" type="number" min="1" max="{{aforo}}" value="{{persoas}}" onChange="{{cambiarPersoas}}" aria-invalid="{{erroPersoas}}" aria-describedby="persoas-axuda" style="box-sizing: border-box; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo); width: 120px">
+                <p id="persoas-axuda" style="margin: 4px 0 0; font-size: 15px; color: var(--texto2)">{{axudaPersoas}}</p>
+                <sc-if value="{{erroPersoas}}" hint-placeholder-val="{{ false }}"><p role="alert" style="margin: 4px 0 0; font-weight: 700">{{textoErroPersoas}}</p></sc-if>
+              </div>
+              <div>
+                <label for="desconto-reserva" style="display: block; font-weight: 700; margin-bottom: 4px">Desconto aplicable</label>
+                <select id="desconto-reserva" disabled="{{soLectura}}" value="{{descontoSel}}" onChange="{{cambiarDesconto}}" data-opcions="{{opcsDesconto}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)"><option value="ningun">Sen desconto</option></select>
+                <p style="margin: 4px 0 0; font-size: 15px; color: var(--texto2)">O desconto verifícase na instalación.</p>
+                <p style="margin: 4px 0 0; font-weight: 700">Pagamento na instalación · {{importeTexto}} estimados</p>
+              </div>
+              <button type="button" disabled="{{soLectura}}" onClick="{{confirmar}}" style="min-height: 52px; border: 0; border-radius: 8px; background: {{marca}}; color: {{sobreMarca}}; font: inherit; font-weight: 700; cursor: pointer">{{rotuloConfirmar}}</button>
+              <p style="margin: 0; font-size: 15px; color: var(--texto2)">Pedirémosche que te identifiques con Chave365 ou Cl@ve se aínda non iniciaches sesión. <a href="Acceso.dc.html">Entrar agora</a></p>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{pasoFeito}}" hint-placeholder-val="{{ false }}">
+            <div role="status" style="display: flex; flex-direction: column; gap: 12px">
+              <p style="margin: 0; font-size: 20px; font-weight: 700; line-height: 1.3">{{resumoFeito}}</p>
+              <p style="margin: 0; font-weight: 700">Pagamento na instalación · {{importeTexto}} estimados</p>
+              <p style="margin: 0; color: var(--texto2)">Enviámosche a confirmación ao teu correo.</p>
+              <a href="Reservas.dc.html" style="min-height: 48px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; background: {{marca}}; color: {{sobreMarca}}; text-decoration: none; font-weight: 700">Ver o código QR</a>
+              <button type="button" onClick="{{engadirCalendario}}" style="min-height: 48px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; border: 1px solid var(--texto); background: var(--fondo); color: var(--texto); font: inherit; font-weight: 700; cursor: pointer; padding: 0 16px">Engadir ao meu calendario (.ics)</button>
+              <button type="button" onClick="{{outraFranxa}}" style="min-height: 44px; border: 0; background: none; color: var(--texto); font: inherit; text-decoration: underline; cursor: pointer">Reservar outra franxa</button>
+            </div>
+          </sc-if>
+        </div>
+
+        <div style="border: 1px solid var(--linea); border-radius: 12px; overflow: hidden">
+          <a href="https://www.openstreetmap.org/search?query={{enderezoUrl}}" style="min-height: 44px; display: flex; align-items: center; justify-content: center; padding: 0 16px; border-bottom: 1px solid var(--linea); background: var(--superficie2); color: var(--texto); font-weight: 700">Ver no mapa de OpenStreetMap (ábrese noutra xanela)</a>
+          <div style="padding: 16px 20px">
+            <h2 style="margin: 0 0 4px; font-size: 18px">Como chegar</h2>
+            <p style="margin: 0; color: var(--texto2)">{{enderezoMapa}}</p>
+            <sc-if value="{{accesibleMapa}}" hint-placeholder-val="{{ true }}"><p style="margin: 0; color: var(--texto2)">Acceso sen chanzos e aseo adaptado.</p></sc-if>
+            <sc-if value="{{semAcceso}}" hint-placeholder-val="{{ false }}"><p style="margin: 0; color: var(--texto2)">Acceso sen adaptar</p></sc-if>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer style="border-top: 1px solid var(--linea)">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 20px clamp(16px, 4vw, 40px); font-size: 15px; color: var(--texto2)">Concello de exemplo con datos ficticios</div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"modo":{"editor":"enum","options":["Sistema","Claro","Escuro"],"default":"Sistema"},"brand":{"editor":"color","default":"#0B5CAD","options":["#0B5CAD","#6D28D9","#A4372B"]},"$preview":{"width":1440,"height":1500}}'>
+class Component extends DCLogic {
+  temaActual() {
+    const e = this.state || {};
+    if (e.temaElixido) return e.temaElixido;
+    if (this.props.modo === 'Claro') return 'claro';
+    if (this.props.modo === 'Escuro') return 'escuro';
+    let gardado = null;
+    try { gardado = window.localStorage.getItem(NOME_PROXECTO + '-tema'); } catch (err) { gardado = null; }
+    if (gardado === 'claro' || gardado === 'escuro') return gardado;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'escuro' : 'claro';
+  }
+  luminanciaTema(hex) {
+    const canle = (i) => {
+      const v = parseInt(hex.substr(i, 2), 16) / 255;
+      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    };
+    return 0.2126 * canle(1) + 0.7152 * canle(3) + 0.0722 * canle(5);
+  }
+  marcaEscura(hex) {
+    const fondo = this.luminanciaTema('#11161C');
+    const mestura = (i, p) => Math.round(parseInt(hex.substr(i, 2), 16) * (1 - p) + 255 * p);
+    const pasar = (n) => (n < 16 ? '0' : '') + n.toString(16);
+    for (let p = 0; p <= 1; p += 0.05) {
+      const cor = '#' + pasar(mestura(1, p)) + pasar(mestura(3, p)) + pasar(mestura(5, p));
+      if ((this.luminanciaTema(cor) + 0.05) / (fondo + 0.05) >= 6) return cor;
+    }
+    return '#FFFFFF';
+  }
+  valsTema() {
+    const tema = this.temaActual();
+    const escuro = tema === 'escuro';
+    const base = this.props.brand ?? (this.state && this.state.cor) ?? '#0B5CAD';
+    return {
+      tema,
+      escuro,
+      claro: !escuro,
+      rotuloTema: escuro ? 'Modo claro' : 'Modo escuro',
+      marca: escuro ? this.marcaEscura(base) : base,
+      sobreMarca: escuro ? '#11161C' : '#FFFFFF',
+      alternarTema: () => {
+        const novo = escuro ? 'claro' : 'escuro';
+        try { window.localStorage.setItem(NOME_PROXECTO + '-tema', novo); } catch (err) { /* sen almacenamento */ }
+        this.setState({ temaElixido: novo });
+      }
+    };
+  }
+  componentDidMount() {
+    this.oirTema = (e) => {
+      if (e.key === NOME_PROXECTO + '-tema' && (e.newValue === 'claro' || e.newValue === 'escuro')) {
+        this.setState({ temaElixido: e.newValue });
+      }
+    };
+    window.addEventListener('storage', this.oirTema);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('storage', this.oirTema);
+  }
+  renderVals() {
+    return { ...this.valsPantalla(), ...this.valsTema() };
+  }
+  constructor(props) {
+    super(props);
+    let semana = 0;
+    let d = 1;
+    const A = window.__app;
+    if (A && A.dataElixida) {
+      const diff = Math.round((new Date(A.dataElixida + 'T00:00') - new Date(2026, 10, 9)) / 864e5);
+      if (diff >= 0 && diff <= 13) { semana = Math.floor(diff / 7); d = diff % 7; }
+    }
+    this.state = { pista: 1, semana, sel: { pista: 1, semana, d, h: 18 }, feitas: [], paso: 'confirmar', mensaxe: '', persoas: 1, erroPersoas: false, descontoSel: 'ningun' };
+  }
+  dia(semana, d) {
+    return new Date(2026, 10, 9 + d + semana * 7);
+  }
+  clave(pista, semana, d, h) {
+    return pista + '-' + semana + '-' + d + '-' + h;
+  }
+  paleta() {
+    const esc = this.temaActual() === 'escuro';
+    return esc
+      ? { libre: ['#123B22', '#BDF2CD', '#3FB66B'], ocupada: ['#4A1717', '#FFD1D1', '#E5534B'], gris: ['repeating-linear-gradient(45deg, #5A626C 0 6px, #474E57 6px 12px)', '#FFFFFF', '#98A2B0'], azul: ['#5AA2F0', '#0B1016', '#5AA2F0'] }
+      : { libre: ['#DDF3E4', '#0B4A22', '#1E8E4A'], ocupada: ['#FBE0E0', '#7A1212', '#C62828'], gris: ['repeating-linear-gradient(45deg, #4A5159 0 6px, #373D43 6px 12px)', '#FFFFFF', '#2B3036'], azul: ['#0B5CAD', '#FFFFFF', '#0B5CAD'] };
+  }
+  duracion() {
+    const A = window.__app;
+    const inst = A && A.fichaInst ? A.fichaInst() : null;
+    return A && A.duracion && inst ? A.duracion(inst.nome) : 60;
+  }
+  importeEstimado(instInfo) {
+    const base = Math.max(0, Number(instInfo.prezoBase) || 0) * (instInfo.unidadeCobro === 'por hora' ? this.duracion() / 60 : 1);
+    const desconto = (instInfo.descontos || []).find((d) => d.id === this.state.descontoSel);
+    return Math.round(base * (1 - (desconto ? Number(desconto.porcentaxe) : 0) / 100) * 100) / 100;
+  }
+  descontoActual(instInfo) {
+    const desconto = (instInfo.descontos || []).find((d) => d.id === this.state.descontoSel);
+    return desconto ? desconto.nome + ' (−' + desconto.porcentaxe + ' %)' : '';
+  }
+  horasDia(dur) {
+    const r = [];
+    for (let m = 9 * 60; m + dur <= 22 * 60; m += dur) r.push(m / 60);
+    return r;
+  }
+  pechadoPeche(pista, data, h) {
+    const A = window.__app;
+    const inst = A && A.fichaInst ? A.fichaInst() : null;
+    return !!(A && A.pechado && inst && A.pechado(inst.nome, pista, data, h, this.duracion()));
+  }
+  normasLista() {
+    const A = window.__app;
+    const inst = A && A.fichaInst ? A.fichaInst() : null;
+    return A && A.normasTextos && inst ? A.normasTextos(inst.nome) : ['Podes cambiar ou cancelar ata 24 horas antes.', 'Podes ter 3 reservas activas como máximo.'];
+  }
+  erroNorma(data, h) {
+    const A = window.__app;
+    const inst = A && A.fichaInst ? A.fichaInst() : null;
+    return A && A.validarReserva && inst ? A.validarReserva(inst.nome, data, h, this.duracion()) : '';
+  }
+  aberto(d, h) {
+    const inst = window.__app && window.__app.fichaInst ? window.__app.fichaInst() : null;
+    const dias = window.__app && window.__app.horario ? window.__app.horario(inst && inst.nome) : null;
+    if (!dias || !dias[d]) return true;
+    const x = dias[d];
+    if (!x.aberto) return false;
+    const hora = (v) => (v ? Number(String(v).slice(0, 2)) + Number(String(v).slice(3, 5)) / 60 : null);
+    const dentro = (a, b) => a !== null && b !== null && h >= a && h + this.duracion() / 60 <= b;
+    if (x.todoDia) return dentro(hora(x.a), hora(x.d));
+    return dentro(hora(x.a), hora(x.b)) || dentro(hora(x.c), hora(x.d));
+  }
+  estado(pista, semana, d, h) {
+    if (!this.aberto(d, h)) return 'pechada';
+    if (this.pechadoPeche(pista, this.dia(semana, d), h)) return 'pechada';
+    if (this.state.feitas.includes(this.clave(pista, semana, d, h))) return 'mia';
+    const A = window.__app;
+    const ocupadas = A && A.reservasEn ? A.reservasEn((A.fichaInst() || {}).nome, this.dia(semana, d), h, this.duracion()) : [];
+    return ocupadas.includes(pista) ? 'ocupada' : 'libre';
+  }
+  valsPantalla() {
+    const brand = this.props.brand ?? '#0B5CAD';
+    const instInfo = (window.__app && window.__app.fichaInst
+      ? window.__app.fichaInst()
+      : { nome: 'Pistas de pádel do Campo da Feira', enderezo: 'Rúa da Feira, 12', pistas: 3, accesible: true })
+      || { nome: 'Aínda non hai instalacións', enderezo: '', pistas: 1, accesible: true };
+    const npistas = Math.max(1, Number(instInfo.pistas) || 1);
+    const pista = Math.min(this.state.pista, npistas);
+    const detalhe = npistas === 1 ? '1 pista' : npistas + ' pistas';
+    const acceso = instInfo.accesible ? 'Accesible' : 'Acceso sen adaptar';
+    const aforo = Math.max(1, Number(instInfo.aforo) || 4);
+    const npersoas = Number(this.state.persoas);
+    const persoasTxt = npersoas === 1 ? '1 persoa' : npersoas + ' persoas';
+    const { semana, sel, paso, mensaxe } = this.state;
+    const nomes = ['luns', 'martes', 'mércores', 'xoves', 'venres', 'sábado', 'domingo'];
+    const curtos = ['Lun', 'Mar', 'Mér', 'Xov', 'Ven', 'Sáb', 'Dom'];
+    const hh = (h) => { const m = Math.round(h * 60); const p = (n) => (n < 10 ? '0' : '') + n; return p(Math.floor(m / 60)) + ':' + p(m % 60); };
+    const dur = this.duracion() / 60;
+    const etiquetaDur = { 30: '30 minutos', 60: '1 hora', 90: '90 minutos' }[this.duracion()] || (this.duracion() + ' minutos');
+    const texto = (s) => 'Pista ' + s.pista + ', ' + nomes[s.d] + ' ' + this.dia(s.semana, s.d).getDate() + ' de novembro, ' + hh(s.h) + ' a ' + hh(s.h + dur);
+    const horas = this.horasDia(this.duracion());
+    const pal = this.paleta();
+    const est = (r, c, cur, peso) => ({ rotulo: r, fondo: c[0], texto: c[1], borde: '1px solid ' + c[2], cursor: cur, peso });
+    const estilos = {
+      libre: est('Libre', pal.libre, 'pointer', 400),
+      ocupada: est('Ocupada', pal.ocupada, 'not-allowed', 400),
+      mia: est('A túa', pal.azul, 'default', 700),
+      pechada: est('Pechada', pal.gris, 'not-allowed', 400)
+    };
+    const escollida = { rotulo: 'Escollida', fondo: pal.azul[0], texto: pal.azul[1], borde: '3px solid var(--texto)', cursor: 'pointer', peso: 700 };
+    const lenda = [
+      { rotulo: 'Libre', c: pal.libre, mais: true },
+      { rotulo: 'Ocupada ou non dispoñible', c: pal.ocupada, x: true },
+      { rotulo: 'Pechada ou festivo', c: pal.gris, lock: true },
+      { rotulo: 'A túa reserva ou escollida', c: pal.azul, check: true }
+    ].map((l) => ({ rotulo: l.rotulo, fondo: l.c[0], texto: l.c[1], borde: l.c[2], mais: !!l.mais, x: !!l.x, lock: !!l.lock, check: !!l.check }));
+    const filas = horas.map((h, f) => ({
+      hora: hh(h),
+      celas: nomes.map((nome, d) => {
+        const e = this.estado(pista, semana, d, h);
+        const marcada = paso === 'confirmar' && e === 'libre' && sel && sel.pista === pista && sel.semana === semana && sel.d === d && sel.h === h;
+        const st = marcada
+          ? escollida
+          : estilos[e];
+        const descricion = marcada ? 'escollida' : (e === 'mia' ? 'a túa reserva' : e);
+        return {
+          ...st,
+          f,
+          c: d,
+          seleccionada: !!marcada,
+          bloqueada: e !== 'libre',
+          aria: 'Pista ' + pista + ', ' + nome + ' ' + this.dia(semana, d).getDate() + ', ' + hh(h) + ' a ' + hh(h + dur) + ', ' + descricion,
+          iconoMais: !marcada && e === 'libre',
+          iconoX: e === 'ocupada',
+          iconoCheck: marcada || e === 'mia',
+          iconoLock: e === 'pechada',
+          elixir: () => {
+            if (e === 'libre') this.setState({ sel: { pista, semana, d, h }, paso: 'confirmar', mensaxe: '' });
+            else if (e === 'ocupada') this.setState({ mensaxe: 'Esa franxa xa está reservada por outra persoa. Escolle outra.' });
+            else if (e === 'pechada') this.setState({ mensaxe: 'A instalación está pechada nesa franxa.' });
+          }
+        };
+      })
+    }));
+    const selOk = !!sel && this.estado(sel.pista, sel.semana, sel.d, sel.h) === 'libre';
+    const primeiro = this.dia(semana, 0).getDate();
+    const ultimo = this.dia(semana, 6).getDate();
+    const mapaBase = window.__app && window.__app.mapaAfluencia ? window.__app.mapaAfluencia(instInfo.nome, semana, this.duracion(), npistas) : { dias: [], filas: [], recomendadas: [] };
+    const mapa = {
+      ...mapaBase,
+      recomendadas: mapaBase.recomendadas.map((r) => ({
+        ...r,
+        reservar: () => {
+          const data = this.dia(r.semana, r.d);
+          const pistaLibre = Array.from({ length: npistas }, (_, k) => k + 1).find((n) => !r.reservadas.includes(n)) || pista;
+          if (window.__app) window.__app.dataElixida = data.getFullYear() + '-' + String(data.getMonth() + 1).padStart(2, '0') + '-' + String(data.getDate()).padStart(2, '0');
+          this.setState({ pista: pistaLibre, semana: r.semana, sel: { pista: pistaLibre, semana: r.semana, d: r.d, h: r.h }, paso: 'confirmar', mensaxe: '' });
+        }
+      }))
+    };
+    const prezoBase = Math.max(0, Number(instInfo.prezoBase) || 0);
+    const importe = this.importeEstimado(instInfo);
+    const moeda = (v) => Number(v).toLocaleString('gl-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
+    const descontos = (instInfo.descontos || []).map((d) => ({ ...d, tipo: d.aplicacion === 'temporal' ? 'Temporal' : 'Fixo' }));
+    const opcsDesconto = [{ valor: 'ningun', texto: 'Sen desconto' }].concat(descontos.map((d) => ({ valor: d.id, texto: d.nome + ' (−' + d.porcentaxe + ' %)' })));
+    return {
+      brand,
+      filas,
+      mapa,
+      recomendadas: mapa.recomendadas,
+      lendaAfluencia: [
+        { rango: '0–19 %', fondo: '#DCEDE5' }, { rango: '20–44 %', fondo: '#D7E8D0' }, { rango: '45–69 %', fondo: '#F3E6AD' }, { rango: '70–89 %', fondo: '#F3C99C' }, { rango: '90–100 %', fondo: '#E4B0AA' }
+      ],
+      prezoBaseTexto: moeda(prezoBase),
+      unidadeTexto: instInfo.unidadeCobro === 'por hora' ? 'Por hora' : 'Por entrada',
+      descontos,
+      opcsDesconto,
+      descontoSel: this.state.descontoSel,
+      cambiarDesconto: (e) => this.setState({ descontoSel: e.target.value }),
+      importeTexto: moeda(importe),
+      dias: curtos.map((curto, d) => ({ curto, numero: this.dia(semana, d).getDate() })),
+      titulo: instInfo.nome,
+      aforo,
+      persoas: this.state.persoas,
+      erroPersoas: !!this.state.erroPersoas,
+      cambiarPersoas: (e) => this.setState({ persoas: e.target.value, erroPersoas: false }),
+      axudaPersoas: aforo === 1 ? 'Máximo 1 persoa por pista.' : 'Máximo ' + aforo + ' persoas por pista.',
+      textoErroPersoas: 'Escribe entre 1 e ' + aforo + ' persoas.',
+      subtitulo: [instInfo.enderezo, detalhe, 'Aforo: ' + (aforo === 1 ? '1 persoa' : aforo + ' persoas') + ' por pista', acceso, 'Franxas de ' + etiquetaDur].filter(Boolean).join(' · '),
+      enderezoMapa: instInfo.enderezo,
+      enderezoUrl: encodeURIComponent(instInfo.enderezo || instInfo.nome),
+      accesibleMapa: !!instInfo.accesible,
+      semAcceso: !instInfo.accesible,
+      pistas: Array.from({ length: npistas }, (_, k) => k + 1).map((n) => ({
+        nome: 'Pista ' + n,
+        activa: n === pista,
+        fondo: n === pista ? 'var(--forte)' : 'var(--fondo)',
+        texto: n === pista ? 'var(--sobre-forte)' : 'var(--texto)',
+        elixir: () => this.setState({ pista: n, mensaxe: '' })
+      })),
+      rotuloSemana: primeiro + ' a ' + ultimo + ' de novembro',
+      rotuloTaboa: 'Pista ' + pista + ', semana do ' + primeiro + ' ao ' + ultimo + ' de novembro',
+      primeiraSemana: semana === 0,
+      ultimaSemana: semana === 1,
+      semanaAnterior: () => this.setState({ semana: Math.max(0, semana - 1), mensaxe: '' }),
+      semanaSeguinte: () => this.setState({ semana: Math.min(1, semana + 1), mensaxe: '' }),
+      tituloPanel: paso === 'feito' ? (this.state.modificada ? 'Reserva modificada' : 'Reserva confirmada') : 'A túa selección',
+      modificando: !!(window.__app && window.__app.modificando),
+      textoModificando: window.__app && window.__app.modificando ? window.__app.modificando.instalacion + ', ' + window.__app.modificando.recurso + ' · ' + window.__app.modificando.cando : '',
+      deixarModificar: () => { if (window.__app && window.__app.cancelarModificacion) window.__app.cancelarModificacion(); },
+      rotuloConfirmar: window.__app && window.__app.modificando ? 'Confirmar o cambio' : 'Confirmar a reserva',
+      semSeleccion: !selOk && paso !== 'feito',
+      lenda,
+      hai: { mensaxe: !!mensaxe },
+      mensaxe,
+      pasoConfirmar: paso === 'confirmar' && selOk,
+      pasoFeito: paso === 'feito',
+      engadirCalendario: () => {
+        if (!sel || !window.__app || !window.__app.engadirCalendario) return;
+        const ini = this.dia(sel.semana, sel.d);
+        ini.setHours(Math.floor(sel.h), Math.round((sel.h % 1) * 60), 0, 0);
+        window.__app.engadirCalendario([{ id: this.clave(sel.pista, sel.semana, sel.d, sel.h), titulo: instInfo.nome + ' · Pista ' + sel.pista, inicio: ini, fin: new Date(ini.getTime() + this.duracion() * 60000), lugar: instInfo.enderezo, descricion: persoasTxt }], 'reserva-' + sel.d + '.ics');
+      },
+      normasLista: this.normasLista(),
+      resumo: sel ? texto(sel) : '',
+      resumoFeito: sel ? texto(sel) + ' · ' + persoasTxt : '',
+      confirmar: () => {
+        if (!sel) return;
+        if (!(Number.isInteger(Number(this.state.persoas)) && Number(this.state.persoas) >= 1 && Number(this.state.persoas) <= aforo)) {
+          this.setState({ erroPersoas: true });
+          return;
+        }
+        const erroNorma = this.erroNorma(this.dia(sel.semana, sel.d), sel.h);
+        if (erroNorma) {
+          this.setState({ mensaxe: erroNorma, erroPersoas: false });
+          return;
+        }
+        this.setState({ modificada: !!(window.__app && window.__app.modificando && window.__app.rematarModificacion()) });
+        this.setState({ paso: 'feito', erroPersoas: false, mensaxe: '', feitas: this.state.feitas.concat(this.clave(sel.pista, sel.semana, sel.d, sel.h)) });
+      },
+      outraFranxa: () => this.setState({ paso: 'confirmar', sel: null, mensaxe: '' }),
+      teclas: (e) => {
+        const movementos = { ArrowUp: [-1, 0], ArrowDown: [1, 0], ArrowLeft: [0, -1], ArrowRight: [0, 1] };
+        const m = movementos[e.key];
+        const b = e.target.closest ? e.target.closest('button[data-f]') : null;
+        if (!m || !b) return;
+        const destino = e.currentTarget.querySelector('button[data-f="' + (Number(b.dataset.f) + m[0]) + '"][data-c="' + (Number(b.dataset.c) + m[1]) + '"]');
+        if (destino) {
+          e.preventDefault();
+          destino.focus();
+        }
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

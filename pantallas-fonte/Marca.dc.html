@@ -1,0 +1,229 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: EUPL-1.2 -->
+<!-- SPDX-FileCopyrightText: 2026 [TITULAR] -->
+<html lang="gl">
+<head>
+<meta charset="utf-8">
+<title>Marca do concello · Xestión · Concello de Ribadouro</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+[data-tema="claro"]{color-scheme:light;--fondo:#FFFFFF;--superficie:#F3F5F8;--superficie2:#E6EAF0;--texto:#141A22;--texto2:#4A5462;--linea:#CBD2DB;--linea-forte:#6B7686;--forte:#141A22;--sobre-forte:#FFFFFF}
+[data-tema="escuro"]{color-scheme:dark;--fondo:#11161C;--superficie:#1A212A;--superficie2:#2A333F;--texto:#EEF1F5;--texto2:#B3BCC8;--linea:#3A4553;--linea-forte:#8894A3;--forte:#EEF1F5;--sobre-forte:#11161C}
+body{margin:0}
+body:has([data-tema="escuro"]){background:#11161C}
+a{color:var(--texto)}a:hover{color:var(--texto2)}
+:focus-visible{outline:3px solid var(--texto);outline-offset:2px}
+.saltar{position:absolute;left:-9999px}.saltar:focus{left:16px;top:8px;background:var(--fondo);color:var(--texto);padding:12px 16px;z-index:10}
+</style>
+</helmet>
+<div data-tema="{{tema}}" style="font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; color: var(--texto); background: var(--fondo); font-size: 17px; line-height: 1.5; position: relative">
+  <a class="saltar" href="#contido">Saltar ao contido</a>
+
+  <header style="border-bottom: 1px solid var(--linea)">
+    <div style="padding: 12px clamp(16px, 3vw, 32px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 32px">
+      <span style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; font-weight: 700; font-size: 19px">
+        <span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 8px; background: {{marca}}; color: {{sobreMarca}}; display: inline-flex; align-items: center; justify-content: center">R</span>
+        {{nome}} · Xestión
+      </span>
+      <span style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 24px"><button type="button" onClick="{{alternarTema}}" style="min-height: 44px; padding: 0 12px; border-radius: 8px; border: 1px solid currentColor; background: transparent; color: inherit; font: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 8px"><sc-if value="{{escuro}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></sc-if><sc-if value="{{claro}}" hint-placeholder-val="{{ true }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></sc-if>{{rotuloTema}}</button><a href="Main.dc.html" style="min-height: 44px; display: inline-flex; align-items: center">Ver o sitio público</a></span>
+    </div>
+  </header>
+
+  <div style="display: flex; flex-wrap: wrap; align-items: stretch">
+    <nav aria-label="Xestión" style="flex: 1 1 240px; box-sizing: border-box; padding: 20px clamp(16px, 2vw, 24px); background: var(--superficie); display: flex; flex-direction: column; gap: 2px">
+      <a href="Panel.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Indicadores</a>
+      <a href="Uso.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Resumo de uso</a>
+      <a href="Avisos.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Avisos</a>
+      <a href="Axenda.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Axenda de reservas</a>
+      <a href="Instalacions.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Instalacións</a>
+      <a href="Horarios.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Horarios e peches</a>
+      <a href="Normas.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Normas de uso</a>
+      <a href="ValidarQR.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Validar QR</a>
+      <a href="Marca.dc.html" aria-current="page" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; border-radius: 8px; background: var(--forte); color: var(--sobre-forte); font-weight: 700; text-decoration: none">Marca do concello</a>
+    </nav>
+
+    <main id="contido" style="flex: 999 1 640px; min-width: 0; box-sizing: border-box; padding: 32px clamp(16px, 3vw, 40px) 64px">
+      <h1 style="margin: 0 0 24px; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.12">Marca do concello</h1>
+
+      <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 32px">
+        <form aria-label="Datos da marca" style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+          <div>
+            <label for="nome" style="display: block; font-weight: 700; margin-bottom: 4px">Nome público</label>
+            <input id="nome" type="text" value="{{nome}}" onChange="{{cambiarNome}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+          </div>
+
+          <div>
+            <p style="margin: 0 0 4px; font-weight: 700">Logotipo</p>
+            <div style="height: 96px; border: 1px dashed var(--linea-forte); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--texto2)">[Subir o logotipo en SVG ou PNG]</div>
+          </div>
+
+          <div>
+            <label for="cor" style="display: block; font-weight: 700; margin-bottom: 4px">Cor principal</label>
+            <div style="display: flex; align-items: center; gap: 12px">
+              <input id="cor" type="color" value="{{cor}}" onChange="{{cambiarCor}}" style="width: 64px; height: 44px; padding: 2px; border: 1px solid var(--texto); border-radius: 8px; background: var(--fondo); cursor: pointer">
+              <span>{{corMaiusculas}}</span>
+            </div>
+            <p role="status" style="margin: 8px 0 0; padding: 12px; border: {{bordeContraste}}; border-radius: 8px; font-weight: 700">{{textoContraste}}</p>
+          </div>
+
+          <fieldset style="border: 0; margin: 0; padding: 0">
+            <legend style="padding: 0; margin-bottom: 4px; font-weight: 700">Idiomas</legend>
+            <label style="display: flex; align-items: center; gap: 10px; min-height: 44px"><input type="checkbox" checked="{{ true }}" disabled="{{ true }}" style="width: 22px; height: 22px; margin: 0; accent-color: var(--texto2)">Galego (por defecto)</label>
+            <label style="display: flex; align-items: center; gap: 10px; min-height: 44px; cursor: pointer"><input type="checkbox" checked="{{castelan}}" onChange="{{alternarCastelan}}" style="width: 22px; height: 22px; margin: 0; accent-color: var(--texto)">Castelán</label>
+            <label style="display: flex; align-items: center; gap: 10px; min-height: 44px; cursor: pointer"><input type="checkbox" checked="{{ingles}}" onChange="{{alternarIngles}}" style="width: 22px; height: 22px; margin: 0; accent-color: var(--texto)">Inglés</label>
+          </fieldset>
+
+          <div>
+            <label for="correo" style="display: block; font-weight: 700; margin-bottom: 4px">Correo de contacto</label>
+            <input id="correo" type="email" value="{{correo}}" onChange="{{cambiarCorreo}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+          </div>
+
+          <div>
+            <p style="margin: 0 0 4px; font-weight: 700">Enderezo web</p>
+            <p style="margin: 0; color: var(--texto2)">/c/{{slug}}</p>
+          </div>
+
+          <div>
+            <button type="button" onClick="{{gardar}}" aria-disabled="{{contrasteMal}}" style="min-height: 48px; padding: 0 28px; border: 0; border-radius: 8px; background: {{fondoBotonGardar}}; color: var(--sobre-forte); font: inherit; font-weight: 700; cursor: pointer">Gardar a marca</button>
+            <sc-if value="{{temMensaxe}}" hint-placeholder-val="{{ false }}">
+              <p role="status" style="margin: 12px 0 0; font-weight: 700">{{mensaxe}}</p>
+            </sc-if>
+          </div>
+        </form>
+
+        <section aria-labelledby="vista" style="flex: 999 1 420px; min-width: 0">
+          <h2 id="vista" style="margin: 0 0 12px; font-size: 22px">Vista previa</h2>
+          <div style="border: 1px solid var(--linea); border-radius: 12px; overflow: hidden">
+            <div style="padding: 12px 20px; border-bottom: 1px solid var(--linea); display: flex; align-items: center; gap: 12px; font-weight: 700">
+              <span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 8px; background: {{marca}}; color: {{sobreMarca}}; display: inline-flex; align-items: center; justify-content: center">R</span>
+              {{nome}}
+            </div>
+            <div style="padding: 24px 20px; background: var(--superficie)">
+              <p style="margin: 0; font-size: 28px; font-weight: 700; line-height: 1.15">Reserva as instalacións deportivas</p>
+            </div>
+            <div style="padding: 20px; display: flex; flex-direction: column; gap: 12px">
+              <p style="margin: 0; font-weight: 700">Pistas de pádel do Campo da Feira</p>
+              <span style="min-height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: {{marca}}; color: {{sobreMarca}}; font-weight: 700">Ver dispoñibilidade</span>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                <span style="padding: 8px 12px; border-radius: 6px; border: 1px solid var(--texto)">Libre</span>
+                <span style="padding: 8px 12px; border-radius: 6px; background: {{marca}}; color: {{sobreMarca}}; font-weight: 700">A túa reserva</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"modo":{"editor":"enum","options":["Sistema","Claro","Escuro"],"default":"Sistema"},"$preview":{"width":1440,"height":1300}}'>
+class Component extends DCLogic {
+  temaActual() {
+    const e = this.state || {};
+    if (e.temaElixido) return e.temaElixido;
+    if (this.props.modo === 'Claro') return 'claro';
+    if (this.props.modo === 'Escuro') return 'escuro';
+    let gardado = null;
+    try { gardado = window.localStorage.getItem(NOME_PROXECTO + '-tema'); } catch (err) { gardado = null; }
+    if (gardado === 'claro' || gardado === 'escuro') return gardado;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'escuro' : 'claro';
+  }
+  luminanciaTema(hex) {
+    const canle = (i) => {
+      const v = parseInt(hex.substr(i, 2), 16) / 255;
+      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    };
+    return 0.2126 * canle(1) + 0.7152 * canle(3) + 0.0722 * canle(5);
+  }
+  marcaEscura(hex) {
+    const fondo = this.luminanciaTema('#11161C');
+    const mestura = (i, p) => Math.round(parseInt(hex.substr(i, 2), 16) * (1 - p) + 255 * p);
+    const pasar = (n) => (n < 16 ? '0' : '') + n.toString(16);
+    for (let p = 0; p <= 1; p += 0.05) {
+      const cor = '#' + pasar(mestura(1, p)) + pasar(mestura(3, p)) + pasar(mestura(5, p));
+      if ((this.luminanciaTema(cor) + 0.05) / (fondo + 0.05) >= 6) return cor;
+    }
+    return '#FFFFFF';
+  }
+  valsTema() {
+    const tema = this.temaActual();
+    const escuro = tema === 'escuro';
+    const base = this.props.brand ?? (this.state && this.state.cor) ?? '#0B5CAD';
+    return {
+      tema,
+      escuro,
+      claro: !escuro,
+      rotuloTema: escuro ? 'Modo claro' : 'Modo escuro',
+      marca: escuro ? this.marcaEscura(base) : base,
+      sobreMarca: escuro ? '#11161C' : '#FFFFFF',
+      alternarTema: () => {
+        const novo = escuro ? 'claro' : 'escuro';
+        try { window.localStorage.setItem(NOME_PROXECTO + '-tema', novo); } catch (err) { /* sen almacenamento */ }
+        this.setState({ temaElixido: novo });
+      }
+    };
+  }
+  componentDidMount() {
+    this.oirTema = (e) => {
+      if (e.key === NOME_PROXECTO + '-tema' && (e.newValue === 'claro' || e.newValue === 'escuro')) {
+        this.setState({ temaElixido: e.newValue });
+      }
+    };
+    window.addEventListener('storage', this.oirTema);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('storage', this.oirTema);
+  }
+  renderVals() {
+    return { ...this.valsPantalla(), ...this.valsTema() };
+  }
+  constructor(props) {
+    super(props);
+    const c = window.__app && window.__app.concelloActivo ? window.__app.concelloActivo() : null;
+    this.state = { nome: c ? c.nome : 'Concello de Ribadouro', cor: c ? c.cor : '#0b5cad', castelan: c ? c.es : true, ingles: c ? c.en : true, correo: c && c.correo ? c.correo : 'deportes@ribadouro.example', slug: c ? c.slug : 'ribadouro', mensaxe: '' };
+  }
+  contraste(hex) {
+    const canle = (i) => {
+      const v = parseInt(hex.substr(i, 2), 16) / 255;
+      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    };
+    const l = 0.2126 * canle(1) + 0.7152 * canle(3) + 0.0722 * canle(5);
+    return 1.05 / (l + 0.05);
+  }
+  valsPantalla() {
+    const { nome, cor, castelan, ingles, correo, mensaxe, slug } = this.state;
+    const ratio = this.contraste(cor);
+    const ok = ratio >= 4.5;
+    const texto = ratio.toFixed(1).replace('.', ',');
+    return {
+      nome,
+      cor,
+      castelan,
+      ingles,
+      slug,
+      correo,
+      mensaxe,
+      temMensaxe: !!mensaxe,
+      corMaiusculas: cor.toUpperCase(),
+      contrasteMal: !ok,
+      fondoBotonGardar: ok ? 'var(--forte)' : 'var(--texto2)',
+      bordeContraste: ok ? '1px solid var(--linea)' : '2px solid var(--texto)',
+      textoContraste: ok
+        ? 'Contraste co texto branco: ' + texto + ':1. Cumpre o nivel AA.'
+        : 'Contraste co texto branco: ' + texto + ':1. Non cumpre o nivel AA (mínimo 4,5:1). Escolle unha cor máis escura.',
+      cambiarNome: (e) => this.setState({ nome: e.target.value, mensaxe: '' }),
+      cambiarCor: (e) => this.setState({ cor: e.target.value, mensaxe: '' }),
+      cambiarCorreo: (e) => this.setState({ correo: e.target.value, mensaxe: '' }),
+      alternarCastelan: () => this.setState({ castelan: !castelan, mensaxe: '' }),
+      alternarIngles: () => this.setState({ ingles: !ingles, mensaxe: '' }),
+      gardar: () => this.setState({ mensaxe: ok ? 'Marca gardada.' : 'Non se pode gardar: a cor non cumpre o contraste mínimo.' })
+    };
+  }
+}
+</script>
+</body>
+</html>

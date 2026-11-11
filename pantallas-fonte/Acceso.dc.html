@@ -1,0 +1,216 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: EUPL-1.2 -->
+<!-- SPDX-FileCopyrightText: 2026 [TITULAR] -->
+<html lang="gl">
+<head>
+<meta charset="utf-8">
+<title>Acceso · Concello de Ribadouro</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+[data-tema="claro"]{color-scheme:light;--fondo:#FFFFFF;--superficie:#F3F5F8;--superficie2:#E6EAF0;--texto:#141A22;--texto2:#4A5462;--linea:#CBD2DB;--linea-forte:#6B7686;--forte:#141A22;--sobre-forte:#FFFFFF}
+[data-tema="escuro"]{color-scheme:dark;--fondo:#11161C;--superficie:#1A212A;--superficie2:#2A333F;--texto:#EEF1F5;--texto2:#B3BCC8;--linea:#3A4553;--linea-forte:#8894A3;--forte:#EEF1F5;--sobre-forte:#11161C}
+body{margin:0}
+body:has([data-tema="escuro"]){background:#11161C}
+a{color:var(--texto)}a:hover{color:var(--texto2)}
+:focus-visible{outline:3px solid var(--texto);outline-offset:2px}
+.saltar{position:absolute;left:-9999px}.saltar:focus{left:16px;top:8px;background:var(--fondo);color:var(--texto);padding:12px 16px;z-index:10}
+</style>
+</helmet>
+<div data-tema="{{tema}}" style="font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; color: var(--texto); background: var(--superficie); font-size: 17px; line-height: 1.5; position: relative; min-height: 900px; display: flex; flex-direction: column">
+  <a class="saltar" href="#contido">Saltar ao contido</a>
+
+  <header style="border-bottom: 1px solid var(--linea); background: var(--fondo)">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 12px clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 32px">
+      <a href="Main.dc.html" style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; text-decoration: none; font-weight: 700; font-size: 19px">
+        <span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 8px; background: {{marca}}; color: {{sobreMarca}}; display: inline-flex; align-items: center; justify-content: center">R</span>
+        Concello de Ribadouro
+      </a>
+      <nav aria-label="Principal" style="margin-left: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 24px">
+        <a href="Main.dc.html" style="min-height: 44px; display: inline-flex; align-items: center; text-decoration: none">Instalacións</a>
+        <a href="Reservas.dc.html" style="min-height: 44px; display: inline-flex; align-items: center; text-decoration: none">Reservas</a>
+        <a href="Acceso.dc.html" style="min-height: 44px; display: inline-flex; align-items: center; text-decoration: none; font-weight: 700">Entrar</a>
+        <button type="button" onClick="{{alternarTema}}" style="min-height: 44px; padding: 0 12px; border-radius: 8px; border: 1px solid currentColor; background: transparent; color: inherit; font: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 8px"><sc-if value="{{escuro}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></sc-if><sc-if value="{{claro}}" hint-placeholder-val="{{ true }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></sc-if>{{rotuloTema}}</button>
+        <span style="display: inline-flex; align-items: center; gap: 8px; color: var(--texto2)"><strong style="color: var(--texto)">GL</strong> | <a href="#idioma" lang="es" aria-label="Cambiar a castellano" style="min-height: 44px; display: inline-flex; align-items: center">ES</a></span>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="contido" style="flex: 1 1 auto; box-sizing: border-box; width: 100%; max-width: 560px; margin: 0 auto; padding: clamp(32px, 6vw, 72px) 16px">
+    <div style="background: var(--fondo); border: 1px solid var(--linea); border-radius: 12px; padding: clamp(24px, 4vw, 40px); display: flex; flex-direction: column; gap: 20px">
+      <div>
+        <h1 style="margin: 0; font-size: clamp(28px, 3.2vw, 36px); line-height: 1.15">Identifícate para reservar</h1>
+        <p style="margin: 12px 0 0; color: var(--texto2)">Consultar a dispoñibilidade non require conta. Para reservar, crea unha conta con correo e móbil ou usa un sistema público.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <a href="Reservas.dc.html" data-login="chave365" style="min-height: 52px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: {{marca}}; color: {{sobreMarca}}; text-decoration: none; font-weight: 700">Chave365 · simulado · nivel 3 (evolución futura)</a>
+        <a href="Reservas.dc.html" data-login="clave" style="min-height: 52px; display: flex; align-items: center; justify-content: center; border-radius: 8px; border: 1px solid var(--texto); text-decoration: none; font-weight: 700">Cl@ve · simulado · nivel 3 (evolución futura)</a>
+        <a href="Main.dc.html" data-login="convidado" style="min-height: 52px; display: flex; align-items: center; justify-content: center; border-radius: 8px; border: 1px dashed var(--linea-forte); text-decoration: none; font-weight: 700">Entrar como convidado</a>
+        <a href="Panel.dc.html" data-login="xestor" style="min-height: 52px; display: flex; align-items: center; justify-content: center; border-radius: 8px; border: 1px dashed var(--linea-forte); text-decoration: none; font-weight: 700; text-align: center; padding: 0 12px">Entrar como persoa xestora do concello (proba)</a>
+        <a href="Superadmin.dc.html" data-login="superadmin" style="min-height: 52px; display: flex; align-items: center; justify-content: center; border-radius: 8px; border: 1px dashed var(--linea-forte); text-decoration: none; font-weight: 700; text-align: center; padding: 0 12px">Entrar como superadministración (proba)</a>
+      </div>
+
+      <section aria-labelledby="rexistro-titulo" style="border-top: 1px solid var(--linea); padding-top: 16px">
+        <h2 id="rexistro-titulo" style="margin: 0 0 8px; font-size: 20px">Crear conta con correo e móbil</h2>
+        <p style="margin: 0 0 12px; color: var(--texto2)">Nivel 1 de seguridade · verificación simulada para esta demostración.</p>
+        <sc-if value="{{nonRexistro}}" hint-placeholder-val="{{ true }}">
+          <button type="button" onClick="{{abrirRexistro}}" style="min-height: 48px; padding: 0 20px; border: 1px solid var(--texto); border-radius: 8px; background: var(--fondo); color: var(--texto); font: inherit; font-weight: 700; cursor: pointer">Crear conta con correo e móbil</button>
+        </sc-if>
+        <sc-if value="{{rexistroAberto}}">
+          <div style="display: flex; flex-direction: column; gap: 12px">
+            <div>
+              <label for="rexistro-correo" style="display: block; font-weight: 700; margin-bottom: 4px">Correo</label>
+              <input id="rexistro-correo" type="email" autocomplete="email" value="{{correoRexistro}}" onChange="{{cambiarCorreoRexistro}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+            </div>
+            <div>
+              <label for="rexistro-mobil" style="display: block; font-weight: 700; margin-bottom: 4px">Móbil</label>
+              <input id="rexistro-mobil" type="tel" autocomplete="tel" value="{{mobilRexistro}}" onChange="{{cambiarMobilRexistro}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+            </div>
+            <label style="display: flex; align-items: flex-start; gap: 10px; min-height: 44px; cursor: pointer">
+              <input type="checkbox" checked="{{aceptaPrivacidade}}" onChange="{{alternarPrivacidade}}" style="flex: 0 0 auto; width: 22px; height: 22px; margin: 2px 0 0; accent-color: {{marca}}">
+              <span>Acepto a <a href="Privacidade.dc.html">política de privacidade</a>.</span>
+            </label>
+            <sc-if value="{{codigoEnviado}}">
+              <p role="status" style="margin: 0; padding: 12px; border-radius: 8px; background: var(--superficie)">Código de demostración: <strong>246810</strong></p>
+              <div>
+                <label for="codigo-rexistro" style="display: block; font-weight: 700; margin-bottom: 4px">Código de verificación</label>
+                <input id="codigo-rexistro" inputmode="numeric" autocomplete="one-time-code" value="{{codigoRexistro}}" onChange="{{cambiarCodigoRexistro}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+              </div>
+              <button type="button" onClick="{{verificarRexistro}}" style="min-height: 48px; padding: 0 20px; border: 0; border-radius: 8px; background: {{marca}}; color: {{sobreMarca}}; font: inherit; font-weight: 700; cursor: pointer">Verificar e crear sesión</button>
+            </sc-if>
+            <sc-if value="{{nonCodigoEnviado}}">
+              <button type="button" onClick="{{enviarCodigo}}" style="min-height: 48px; padding: 0 20px; border: 0; border-radius: 8px; background: {{marca}}; color: {{sobreMarca}}; font: inherit; font-weight: 700; cursor: pointer">Enviar código de demostración</button>
+            </sc-if>
+            <sc-if value="{{erroRexistro}}"><p role="alert" style="margin: 0; font-weight: 700">{{erroRexistro}}</p></sc-if>
+          </div>
+        </sc-if>
+        <p style="margin: 12px 0 0; color: var(--texto2)">O concello asume o risco de posibles contas duplicadas ao usar correo e móbil, sen identificación oficial.</p>
+      </section>
+
+      <p style="margin: 0; color: var(--texto2)">Como convidado podes consultar instalacións, dispoñibilidade e reservas, pero non facer cambios.</p>
+
+      <p style="margin: 0; padding: 12px; border-radius: 8px; background: var(--superficie)">Modo de demostración: estes botóns usan unha identidade simulada, sen datos reais.</p>
+
+      <div style="border-top: 1px solid var(--linea); padding-top: 16px">
+        <h2 style="margin: 0 0 8px; font-size: 18px">Que datos gardamos</h2>
+        <p style="margin: 0; color: var(--texto2)">O teu nome, correo e, se queres, o teléfono. Non gardamos o teu NIF. Podes descargar os teus datos ou borrar a conta cando queiras.</p>
+        <a href="Privacidade.dc.html" style="min-height: 44px; display: inline-flex; align-items: center">Política de privacidade do concello</a>
+      </div>
+    </div>
+  </main>
+
+  <footer style="border-top: 1px solid var(--linea); background: var(--fondo)">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 20px clamp(16px, 4vw, 40px); font-size: 15px; color: var(--texto2)">Concello de exemplo con datos ficticios</div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"modo":{"editor":"enum","options":["Sistema","Claro","Escuro"],"default":"Sistema"},"brand":{"editor":"color","default":"#0B5CAD","options":["#0B5CAD","#6D28D9","#A4372B"]},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { rexistroAberto: false, codigoEnviado: false, correoRexistro: '', mobilRexistro: '', codigoRexistro: '', aceptaPrivacidade: false, erroRexistro: '' };
+  }
+  temaActual() {
+    const e = this.state || {};
+    if (e.temaElixido) return e.temaElixido;
+    if (this.props.modo === 'Claro') return 'claro';
+    if (this.props.modo === 'Escuro') return 'escuro';
+    let gardado = null;
+    try { gardado = window.localStorage.getItem(NOME_PROXECTO + '-tema'); } catch (err) { gardado = null; }
+    if (gardado === 'claro' || gardado === 'escuro') return gardado;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'escuro' : 'claro';
+  }
+  luminanciaTema(hex) {
+    const canle = (i) => {
+      const v = parseInt(hex.substr(i, 2), 16) / 255;
+      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    };
+    return 0.2126 * canle(1) + 0.7152 * canle(3) + 0.0722 * canle(5);
+  }
+  marcaEscura(hex) {
+    const fondo = this.luminanciaTema('#11161C');
+    const mestura = (i, p) => Math.round(parseInt(hex.substr(i, 2), 16) * (1 - p) + 255 * p);
+    const pasar = (n) => (n < 16 ? '0' : '') + n.toString(16);
+    for (let p = 0; p <= 1; p += 0.05) {
+      const cor = '#' + pasar(mestura(1, p)) + pasar(mestura(3, p)) + pasar(mestura(5, p));
+      if ((this.luminanciaTema(cor) + 0.05) / (fondo + 0.05) >= 6) return cor;
+    }
+    return '#FFFFFF';
+  }
+  valsTema() {
+    const tema = this.temaActual();
+    const escuro = tema === 'escuro';
+    const base = this.props.brand ?? (this.state && this.state.cor) ?? '#0B5CAD';
+    return {
+      tema,
+      escuro,
+      claro: !escuro,
+      rotuloTema: escuro ? 'Modo claro' : 'Modo escuro',
+      marca: escuro ? this.marcaEscura(base) : base,
+      sobreMarca: escuro ? '#11161C' : '#FFFFFF',
+      alternarTema: () => {
+        const novo = escuro ? 'claro' : 'escuro';
+        try { window.localStorage.setItem(NOME_PROXECTO + '-tema', novo); } catch (err) { /* sen almacenamento */ }
+        this.setState({ temaElixido: novo });
+      }
+    };
+  }
+  componentDidMount() {
+    this.oirTema = (e) => {
+      if (e.key === NOME_PROXECTO + '-tema' && (e.newValue === 'claro' || e.newValue === 'escuro')) {
+        this.setState({ temaElixido: e.newValue });
+      }
+    };
+    window.addEventListener('storage', this.oirTema);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('storage', this.oirTema);
+  }
+  renderVals() {
+    return { ...this.valsPantalla(), ...this.valsTema() };
+  }
+  valsPantalla() {
+    const { rexistroAberto, codigoEnviado, correoRexistro, mobilRexistro, codigoRexistro, aceptaPrivacidade, erroRexistro } = this.state;
+    return {
+      brand: this.props.brand ?? '#0B5CAD',
+      rexistroAberto,
+      nonRexistro: !rexistroAberto,
+      codigoEnviado,
+      nonCodigoEnviado: !codigoEnviado,
+      correoRexistro,
+      mobilRexistro,
+      codigoRexistro,
+      aceptaPrivacidade,
+      erroRexistro,
+      abrirRexistro: () => this.setState({ rexistroAberto: true, erroRexistro: '' }),
+      cambiarCorreoRexistro: (e) => this.setState({ correoRexistro: e.target.value, erroRexistro: '' }),
+      cambiarMobilRexistro: (e) => this.setState({ mobilRexistro: e.target.value, erroRexistro: '' }),
+      cambiarCodigoRexistro: (e) => this.setState({ codigoRexistro: e.target.value, erroRexistro: '' }),
+      alternarPrivacidade: () => this.setState({ aceptaPrivacidade: !aceptaPrivacidade, erroRexistro: '' }),
+      enviarCodigo: () => {
+        const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correoRexistro.trim());
+        const mobilValido = mobilRexistro.replace(/\D/g, '').length >= 9;
+        if (!correoValido || !mobilValido || !aceptaPrivacidade) {
+          this.setState({ erroRexistro: !correoValido ? 'Escribe un correo válido.' : !mobilValido ? 'Escribe un móbil válido.' : 'Acepta a política de privacidade para continuar.' });
+          return;
+        }
+        this.setState({ codigoEnviado: true, erroRexistro: '' });
+      },
+      verificarRexistro: () => {
+        if (codigoRexistro.trim() !== '246810') {
+          this.setState({ erroRexistro: 'O código non coincide. Usa o código de demostración visible.' });
+          return;
+        }
+        if (window.__app) window.__app.entrar('rexistro', { correo: correoRexistro.trim(), telefono: mobilRexistro.trim() });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

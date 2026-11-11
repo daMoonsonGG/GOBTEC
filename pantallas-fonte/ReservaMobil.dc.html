@@ -1,0 +1,208 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: EUPL-1.2 -->
+<!-- SPDX-FileCopyrightText: 2026 [TITULAR] -->
+<html lang="gl">
+<head>
+<meta charset="utf-8">
+<title>Reserva con QR (móbil)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+[data-tema="claro"]{color-scheme:light;--fondo:#FFFFFF;--superficie:#F3F5F8;--superficie2:#E6EAF0;--texto:#141A22;--texto2:#4A5462;--linea:#CBD2DB;--linea-forte:#6B7686;--forte:#141A22;--sobre-forte:#FFFFFF}
+[data-tema="escuro"]{color-scheme:dark;--fondo:#11161C;--superficie:#1A212A;--superficie2:#2A333F;--texto:#EEF1F5;--texto2:#B3BCC8;--linea:#3A4553;--linea-forte:#8894A3;--forte:#EEF1F5;--sobre-forte:#11161C}
+body{margin:0}
+body:has([data-tema="escuro"]){background:#11161C}
+a{color:var(--texto)}a:hover{color:var(--texto2)}
+:focus-visible{outline:3px solid var(--texto);outline-offset:2px}
+.saltar{position:absolute;left:-9999px}.saltar:focus{left:16px;top:8px;background:var(--fondo);color:var(--texto);padding:12px 16px;z-index:10}
+</style>
+</helmet>
+<div data-tema="{{tema}}" style="width: 375px; height: 860px; box-sizing: border-box; font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; color: var(--texto); background: var(--fondo); font-size: 17px; line-height: 1.5; display: flex; flex-direction: column">
+  <header style="border-bottom: 1px solid var(--linea); padding: 8px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px">
+    <a href="Main.dc.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 44px; text-decoration: none; font-weight: 700">
+      <span aria-hidden="true" style="width: 36px; height: 36px; border-radius: 8px; background: {{marca}}; color: {{sobreMarca}}; display: inline-flex; align-items: center; justify-content: center">R</span>
+      Ribadouro
+    </a>
+    <span style="display: inline-flex; align-items: center; gap: 8px"><a href="Reservas.dc.html" style="min-height: 44px; display: inline-flex; align-items: center">As miñas reservas</a><button type="button" aria-label="{{rotuloTema}}" onClick="{{alternarTema}}" style="width: 44px; height: 44px; flex: 0 0 auto; padding: 0; border-radius: 8px; border: 1px solid currentColor; background: transparent; color: inherit; cursor: pointer; display: inline-flex; align-items: center; justify-content: center"><sc-if value="{{escuro}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></sc-if><sc-if value="{{claro}}" hint-placeholder-val="{{ true }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></sc-if></button></span>
+  </header>
+
+  <main style="flex: 1 1 auto; padding: 24px 16px; display: flex; flex-direction: column; gap: 20px">
+    <sc-if value="{{semReserva}}" hint-placeholder-val="{{ false }}">
+      <div role="status" style="padding: 20px; border-radius: 12px; background: var(--superficie); border: 1px solid var(--linea-forte); display: flex; flex-direction: column; gap: 12px">
+        <p style="margin: 0; font-size: 20px; font-weight: 700">{{textoSemReserva}}</p>
+        <a href="{{ligazonSemReserva}}" style="align-self: flex-start; min-height: 48px; padding: 0 24px; display: inline-flex; align-items: center; border-radius: 8px; background: var(--forte); color: var(--sobre-forte); font-weight: 700; text-decoration: none">{{rotuloSemReserva}}</a>
+      </div>
+    </sc-if>
+    <sc-if value="{{temReserva}}" hint-placeholder-val="{{ true }}">
+    <div>
+      <h1 style="margin: 0; font-size: 28px; line-height: 1.15">A túa reserva</h1>
+      <p style="margin: 8px 0 0; display: inline-flex; align-items: center; gap: 6px; font-weight: 700">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+        Confirmada
+      </p>
+    </div>
+
+    <div style="border: 1px solid var(--texto); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center">
+      <div role="img" aria-label="{{ariaQr}}" style="width: 250px; height: 250px; padding: 12px; background: #FFFFFF; display: grid; grid-template-columns: repeat(25, minmax(0, 1fr))">
+        <sc-for list="{{qr}}" as="q" hint-placeholder-count="625">
+          <div style="background: {{q.cor}}"></div>
+        </sc-for>
+      </div>
+      <p style="margin: 0; color: var(--texto2)">Amosa este código no mostrador.</p>
+    </div>
+
+    <div>
+      <p style="margin: 0; font-weight: 700; font-size: 20px; line-height: 1.3">{{instalacionRecurso}}</p>
+      <p style="margin: 4px 0 0">{{cando}}</p>
+      <p style="margin: 0; color: var(--texto2)">{{enderezo}}</p>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <button type="button" onClick="{{engadirCalendario}}" style="min-height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 8px; border: 0; background: {{marca}}; color: {{sobreMarca}}; font: inherit; font-weight: 700; cursor: pointer; width: 100%">Engadir ao meu calendario</button>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+        <button type="button" disabled="{{bloqueada}}" onClick="{{modificar}}" style="min-height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 8px; border: 1px solid var(--texto);  background: var(--fondo); color: var(--texto); font: inherit; cursor: pointer">Cambiar a hora</button>
+        <button type="button" disabled="{{bloqueada}}" onClick="{{cancelar}}" style="min-height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 8px; border: 1px solid var(--texto);  background: var(--fondo); color: var(--texto); font: inherit; cursor: pointer">Cancelar</button>
+      </div>
+      <p style="margin: 4px 0 0; font-size: 15px; color: var(--texto2); text-align: center">{{textoPrazo}}</p>
+    </div>
+    </sc-if>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"modo":{"editor":"enum","options":["Sistema","Claro","Escuro"],"default":"Sistema"},"brand":{"editor":"color","default":"#0B5CAD","options":["#0B5CAD","#6D28D9","#A4372B"]},"$preview":{"width":375,"height":860}}'>
+class Component extends DCLogic {
+  temaActual() {
+    const e = this.state || {};
+    if (e.temaElixido) return e.temaElixido;
+    if (this.props.modo === 'Claro') return 'claro';
+    if (this.props.modo === 'Escuro') return 'escuro';
+    let gardado = null;
+    try { gardado = window.localStorage.getItem(NOME_PROXECTO + '-tema'); } catch (err) { gardado = null; }
+    if (gardado === 'claro' || gardado === 'escuro') return gardado;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'escuro' : 'claro';
+  }
+  luminanciaTema(hex) {
+    const canle = (i) => {
+      const v = parseInt(hex.substr(i, 2), 16) / 255;
+      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    };
+    return 0.2126 * canle(1) + 0.7152 * canle(3) + 0.0722 * canle(5);
+  }
+  marcaEscura(hex) {
+    const fondo = this.luminanciaTema('#11161C');
+    const mestura = (i, p) => Math.round(parseInt(hex.substr(i, 2), 16) * (1 - p) + 255 * p);
+    const pasar = (n) => (n < 16 ? '0' : '') + n.toString(16);
+    for (let p = 0; p <= 1; p += 0.05) {
+      const cor = '#' + pasar(mestura(1, p)) + pasar(mestura(3, p)) + pasar(mestura(5, p));
+      if ((this.luminanciaTema(cor) + 0.05) / (fondo + 0.05) >= 6) return cor;
+    }
+    return '#FFFFFF';
+  }
+  valsTema() {
+    const tema = this.temaActual();
+    const escuro = tema === 'escuro';
+    const base = this.props.brand ?? (this.state && this.state.cor) ?? '#0B5CAD';
+    return {
+      tema,
+      escuro,
+      claro: !escuro,
+      rotuloTema: escuro ? 'Modo claro' : 'Modo escuro',
+      marca: escuro ? this.marcaEscura(base) : base,
+      sobreMarca: escuro ? '#11161C' : '#FFFFFF',
+      alternarTema: () => {
+        const novo = escuro ? 'claro' : 'escuro';
+        try { window.localStorage.setItem(NOME_PROXECTO + '-tema', novo); } catch (err) { /* sen almacenamento */ }
+        this.setState({ temaElixido: novo });
+      }
+    };
+  }
+  componentDidMount() {
+    this.oirTema = (e) => {
+      if (e.key === NOME_PROXECTO + '-tema' && (e.newValue === 'claro' || e.newValue === 'escuro')) {
+        this.setState({ temaElixido: e.newValue });
+      }
+    };
+    window.addEventListener('storage', this.oirTema);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('storage', this.oirTema);
+  }
+  renderVals() {
+    return { ...this.valsPantalla(), ...this.valsTema() };
+  }
+  valsPantalla() {
+    const A = window.__app;
+    let res = null;
+    if (A && A.instancia) {
+      try {
+        const R = A.instancia('Reservas');
+        const lista = R.valsPantalla().proximas;
+        res = lista.filter((x) => x.id >= 100).pop() || lista.find((x) => x.id === R.state.qr) || lista[0] || null;
+      } catch (err) { res = null; }
+    }
+    const semSesion = !!(A && (!A.usuario || A.usuario.rol !== 'cidadan'));
+    const hoxe = A && A.hoxe ? A.hoxe : new Date(2026, 10, 5, 10, 0);
+    const horasPrazo = res && A && A.normasDe ? A.normasDe(res.instalacion).cancelar : 24;
+    const bloqueada = !!(res && res.inicio && (res.inicio - hoxe) / 36e5 < horasPrazo);
+    const inst = res && A && A.publicas ? A.publicas().find((i) => i.nome === res.instalacion) : null;
+    const dadoReserva = res || { id: 1, instalacion: 'Pistas de pádel do Campo da Feira', recurso: 'Pista 1', cando: 'Mércores 11 de novembro, 19:00 a 20:00' };
+    const n = 25;
+    const semente = res ? res.id * 3 + 2 : 5;
+    const buscador = (x, y) => {
+      for (const [ox, oy] of [[0, 0], [n - 7, 0], [0, n - 7]]) {
+        const a = x - ox;
+        const b = y - oy;
+        if (a >= -1 && a <= 7 && b >= -1 && b <= 7) {
+          if (a < 0 || a > 6 || b < 0 || b > 6) return 'branco';
+          const anel = a === 0 || a === 6 || b === 0 || b === 6;
+          const centro = a >= 2 && a <= 4 && b >= 2 && b <= 4;
+          return anel || centro ? 'negro' : 'branco';
+        }
+      }
+      return null;
+    };
+    const qr = [];
+    for (let y = 0; y < n; y++) {
+      for (let x = 0; x < n; x++) {
+        const f = buscador(x, y);
+        const escuro = f ? f === 'negro' : (x * 31 + y * 17 + semente * x * y + semente) % 7 < 3;
+        qr.push({ cor: escuro ? '#000000' : '#FFFFFF' });
+      }
+    }
+    const engadirCalendario = () => {
+      if (!window.__app || !window.__app.engadirCalendario) return;
+      const ini = new Date(dadoReserva.inicio || new Date(2026, 10, 11, 19, 0).getTime());
+      window.__app.engadirCalendario([{ id: 'qr-' + dadoReserva.id, titulo: dadoReserva.instalacion + ' · ' + String(dadoReserva.recurso).split(' · ')[0], inicio: ini, fin: new Date(dadoReserva.fin || ini.getTime() + 3600000), lugar: inst ? inst.enderezo : '' }], 'reserva.ics');
+    };
+    const semReserva = semSesion || (!!A && !res);
+    return {
+      brand: this.props.brand ?? '#0B5CAD',
+      qr,
+      engadirCalendario,
+      semReserva,
+      temReserva: !semReserva,
+      textoSemReserva: semSesion ? 'Inicia sesión para ver o código da túa reserva.' : 'Non tes reservas activas.',
+      ligazonSemReserva: semSesion ? 'Acceso.dc.html' : 'Main.dc.html',
+      rotuloSemReserva: semSesion ? 'Entrar' : 'Ver instalacións',
+      ariaQr: 'Código QR da reserva: ' + dadoReserva.instalacion + ', ' + String(dadoReserva.recurso).split(' · ')[0] + ', ' + dadoReserva.cando,
+      instalacionRecurso: dadoReserva.instalacion + ', ' + String(dadoReserva.recurso).split(' · ')[0],
+      cando: dadoReserva.cando,
+      enderezo: inst ? inst.enderezo : 'Rúa da Feira, 12',
+      textoPrazo: 'Podes cambiar ou cancelar ata ' + horasPrazo + (Number(horasPrazo) === 1 ? ' hora' : ' horas') + ' antes.',
+      bloqueada,
+      modificar: () => { if (A && A.comezarModificacion && res) A.comezarModificacion(res); },
+      cancelar: () => {
+        if (!A || !res) return;
+        A.cancelarReservaId(res.id);
+        A.avisar('Reserva cancelada. Enviámosche a confirmación ao teu correo.');
+        A.ir('reservas');
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

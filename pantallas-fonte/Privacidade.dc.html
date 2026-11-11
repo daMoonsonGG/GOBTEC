@@ -1,0 +1,147 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: EUPL-1.2 -->
+<!-- SPDX-FileCopyrightText: 2026 [TITULAR] -->
+<html lang="gl">
+<head>
+<meta charset="utf-8">
+<title>Política de privacidade · Concello de Ribadouro</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+[data-tema="claro"]{color-scheme:light;--fondo:#FFFFFF;--superficie:#F3F5F8;--superficie2:#E6EAF0;--texto:#141A22;--texto2:#4A5462;--linea:#CBD2DB;--linea-forte:#6B7686;--forte:#141A22;--sobre-forte:#FFFFFF}
+[data-tema="escuro"]{color-scheme:dark;--fondo:#11161C;--superficie:#1A212A;--superficie2:#2A333F;--texto:#EEF1F5;--texto2:#B3BCC8;--linea:#3A4553;--linea-forte:#8894A3;--forte:#EEF1F5;--sobre-forte:#11161C}
+body{margin:0}
+body:has([data-tema="escuro"]){background:#11161C}
+a{color:var(--texto)}a:hover{color:var(--texto2)}
+:focus-visible{outline:3px solid var(--texto);outline-offset:2px}
+.saltar{position:absolute;left:-9999px}.saltar:focus{left:16px;top:8px;background:var(--fondo);color:var(--texto);padding:12px 16px;z-index:10}
+</style>
+</helmet>
+<div data-tema="{{tema}}" style="font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; color: var(--texto); background: var(--fondo); font-size: 17px; line-height: 1.5; position: relative">
+  <a class="saltar" href="#contido">Saltar ao contido</a>
+
+  <header style="border-bottom: 1px solid var(--linea)">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 12px clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 32px">
+      <a href="Main.dc.html" style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; text-decoration: none; font-weight: 700; font-size: 19px">
+        <span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 8px; background: {{marca}}; color: {{sobreMarca}}; display: inline-flex; align-items: center; justify-content: center">R</span>
+        Concello de Ribadouro
+      </a>
+      <nav aria-label="Principal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 24px">
+        <a href="Main.dc.html" style="min-height: 44px; display: inline-flex; align-items: center; text-decoration: none">Instalacións</a>
+        <a href="Reservas.dc.html" style="min-height: 44px; display: inline-flex; align-items: center; text-decoration: none">Reservas</a>
+        <a href="Acceso.dc.html" style="min-height: 44px; display: inline-flex; align-items: center; text-decoration: none">Entrar</a>
+        <button type="button" onClick="{{alternarTema}}" style="min-height: 44px; padding: 0 12px; border-radius: 8px; border: 1px solid currentColor; background: transparent; color: inherit; font: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 8px"><sc-if value="{{escuro}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></sc-if><sc-if value="{{claro}}" hint-placeholder-val="{{ true }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></sc-if>{{rotuloTema}}</button>
+        <span style="display: inline-flex; align-items: center; gap: 8px; color: var(--texto2)"><strong style="color: var(--texto)">GL</strong> | <a href="#idioma" lang="es" aria-label="Cambiar a castellano" style="min-height: 44px; display: inline-flex; align-items: center">ES</a></span>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contido" style="max-width: 860px; overflow-wrap: anywhere; margin: 0 auto; padding: 32px clamp(16px, 4vw, 40px) 64px">
+    <h1 style="margin: 0 0 24px; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.12">Política de privacidade</h1>
+      <p role="note" style="margin: 0 0 24px; padding: 12px 16px; border-radius: 8px; background: var(--superficie); border: 1px solid var(--linea-forte)"><strong>Modelo de proba. O concello e o seu delegado de protección de datos deben revisar e completar este texto antes de publicalo.</strong></p>
+      <p style="margin: 0 0 12px;">Esta política explica como trata os teus datos persoais a plataforma de reservas de instalacións deportivas municipais, conforme ao Regulamento (UE) 2016/679 (RGPD) e á Lei Orgánica 3/2018.</p>
+      <h2 style="margin: 32px 0 12px; font-size: 24px">Responsable do tratamento</h2>
+      <p style="margin: 0 0 12px;">O concello que xestiona a instalación na que reservas.</p>
+      <p style="margin: 0 0 12px;"><strong style="margin-right: 6px">Contacto do concello:</strong> {{correoContacto}}</p>
+      <p style="margin: 0 0 12px;">Delegado ou delegada de protección de datos: o contacto indicará o concello (campo por completar).</p>
+      <h2 style="margin: 32px 0 12px; font-size: 24px">Que datos tratamos</h2>
+      <ul style="margin: 0 0 12px; padding-left: 24px">
+        <li style="margin-bottom: 8px">Identificación: nome e correo electrónico, que recibimos do servizo de identificación (Chave365 ou Cl@ve). Non recibimos nin gardamos o teu contrasinal.</li>
+        <li style="margin-bottom: 8px">Contacto opcional: teléfono móbil, só se o indicas para recibir avisos por SMS ou WhatsApp.</li>
+        <li style="margin-bottom: 8px">Reservas: instalación, pista, data e hora, número de persoas, estado (confirmada, cancelada, asistida ou non presentada) e canle de reserva.</li>
+      </ul>
+      <h2 style="margin: 32px 0 12px; font-size: 24px">Para que os usamos e con que base</h2>
+      <ul style="margin: 0 0 12px; padding-left: 24px">
+        <li style="margin-bottom: 8px">Xestionar as reservas e o uso das instalacións municipais. Base xurídica: o exercicio de poderes públicos e a execución dunha misión de interese público (art. 6.1.e RGPD).</li>
+        <li style="margin-bottom: 8px">Avisarche por correo de cambios ou peches que afecten ás túas reservas. Mesma base.</li>
+        <li style="margin-bottom: 8px">Enviarche avisos por SMS ou WhatsApp. Base xurídica: o teu consentimento expreso (art. 6.1.a RGPD), que podes retirar en calquera momento desde «A miña conta».</li>
+      </ul>
+      <h2 style="margin: 32px 0 12px; font-size: 24px">Destinatarios e transferencias</h2>
+      <p style="margin: 0 0 12px;">Os datos non se ceden a terceiros salvo obriga legal. Se activas WhatsApp, o teu número de teléfono compártese con Meta Platforms para enviar as mensaxes, o que pode implicar transferencias internacionais. Se só activas o correo ou o SMS, non se comparte con Meta.</p>
+      <h2 style="margin: 32px 0 12px; font-size: 24px">Canto tempo os conservamos</h2>
+      <p style="margin: 0 0 12px;">Proposta de proba (o concello debe fixar os prazos definitivos): mentres teñas a conta activa e, despois de borrala, só o tempo necesario para atender posibles responsabilidades; o historial de reservas conservarase anonimizado para estatísticas.</p>
+      <h2 style="margin: 32px 0 12px; font-size: 24px">Os teus dereitos</h2>
+      <p style="margin: 0 0 12px;">Podes exercer os dereitos de acceso, rectificación, supresión, limitación, oposición e portabilidade. Desde «A miña conta» podes descargar os teus datos en JSON e borrar a conta. Tamén podes escribir ao correo de contacto do concello.</p>
+      <p style="margin: 0 0 12px;">Se consideras que o tratamento non se axusta á normativa, podes presentar unha reclamación ante a Axencia Española de Protección de Datos (www.aepd.es).</p>
+      <h2 style="margin: 32px 0 12px; font-size: 24px">Cookies e servizos externos</h2>
+      <p style="margin: 0 0 12px;">Esta versión non usa cookies de seguimento nin analítica. Só garda no teu navegador o tema e o idioma que escolles. A tipografía sérvese desde a propia plataforma, sen peticións a servizos externos.</p>
+  </main>
+
+  <footer style="border-top: 1px solid var(--linea)">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 20px clamp(16px, 4vw, 40px); font-size: 15px; color: var(--texto2)">Concello de exemplo con datos ficticios</div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"modo":{"editor":"enum","options":["Sistema","Claro","Escuro"],"default":"Sistema"},"brand":{"editor":"color","default":"#0B5CAD","options":["#0B5CAD","#6D28D9","#A4372B"]},"$preview":{"width":1440,"height":1700}}'>
+class Component extends DCLogic {
+  temaActual() {
+    const e = this.state || {};
+    if (e.temaElixido) return e.temaElixido;
+    if (this.props.modo === 'Claro') return 'claro';
+    if (this.props.modo === 'Escuro') return 'escuro';
+    let gardado = null;
+    try { gardado = window.localStorage.getItem(NOME_PROXECTO + '-tema'); } catch (err) { gardado = null; }
+    if (gardado === 'claro' || gardado === 'escuro') return gardado;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'escuro' : 'claro';
+  }
+  luminanciaTema(hex) {
+    const canle = (i) => {
+      const v = parseInt(hex.substr(i, 2), 16) / 255;
+      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    };
+    return 0.2126 * canle(1) + 0.7152 * canle(3) + 0.0722 * canle(5);
+  }
+  marcaEscura(hex) {
+    const fondo = this.luminanciaTema('#11161C');
+    const mestura = (i, p) => Math.round(parseInt(hex.substr(i, 2), 16) * (1 - p) + 255 * p);
+    const pasar = (n) => (n < 16 ? '0' : '') + n.toString(16);
+    for (let p = 0; p <= 1; p += 0.05) {
+      const cor = '#' + pasar(mestura(1, p)) + pasar(mestura(3, p)) + pasar(mestura(5, p));
+      if ((this.luminanciaTema(cor) + 0.05) / (fondo + 0.05) >= 6) return cor;
+    }
+    return '#FFFFFF';
+  }
+  valsTema() {
+    const tema = this.temaActual();
+    const escuro = tema === 'escuro';
+    const base = this.props.brand ?? (this.state && this.state.cor) ?? '#0B5CAD';
+    return {
+      tema,
+      escuro,
+      claro: !escuro,
+      rotuloTema: escuro ? 'Modo claro' : 'Modo escuro',
+      marca: escuro ? this.marcaEscura(base) : base,
+      sobreMarca: escuro ? '#11161C' : '#FFFFFF',
+      alternarTema: () => {
+        const novo = escuro ? 'claro' : 'escuro';
+        try { window.localStorage.setItem(NOME_PROXECTO + '-tema', novo); } catch (err) { /* sen almacenamento */ }
+        this.setState({ temaElixido: novo });
+      }
+    };
+  }
+  componentDidMount() {
+    this.oirTema = (e) => {
+      if (e.key === NOME_PROXECTO + '-tema' && (e.newValue === 'claro' || e.newValue === 'escuro')) {
+        this.setState({ temaElixido: e.newValue });
+      }
+    };
+    window.addEventListener('storage', this.oirTema);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('storage', this.oirTema);
+  }
+  renderVals() {
+    return { ...this.valsPantalla(), ...this.valsTema() };
+  }
+  valsPantalla() {
+    const brand = this.props.brand ?? '#0B5CAD';
+    const c = window.__app && window.__app.concelloActivo ? window.__app.concelloActivo() : null;
+    return { brand, correoContacto: (c && c.correo) || 'deportes@ribadouro.example' };
+  }
+}
+</script>
+</body>
+</html>

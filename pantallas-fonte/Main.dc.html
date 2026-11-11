@@ -1,0 +1,268 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: EUPL-1.2 -->
+<!-- SPDX-FileCopyrightText: 2026 [TITULAR] -->
+<html lang="gl">
+<head>
+<meta charset="utf-8">
+<title>Instalacións deportivas · Concello de Ribadouro</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+[data-tema="claro"]{color-scheme:light;--fondo:#FFFFFF;--superficie:#F3F5F8;--superficie2:#E6EAF0;--texto:#141A22;--texto2:#4A5462;--linea:#CBD2DB;--linea-forte:#6B7686;--forte:#141A22;--sobre-forte:#FFFFFF}
+[data-tema="escuro"]{color-scheme:dark;--fondo:#11161C;--superficie:#1A212A;--superficie2:#2A333F;--texto:#EEF1F5;--texto2:#B3BCC8;--linea:#3A4553;--linea-forte:#8894A3;--forte:#EEF1F5;--sobre-forte:#11161C}
+body{margin:0}
+body:has([data-tema="escuro"]){background:#11161C}
+a{color:var(--texto)}a:hover{color:var(--texto2)}
+:focus-visible{outline:3px solid var(--texto);outline-offset:2px}
+.saltar{position:absolute;left:-9999px}.saltar:focus{left:16px;top:8px;background:var(--fondo);color:var(--texto);padding:12px 16px;z-index:10}
+</style>
+</helmet>
+<div data-tema="{{tema}}" style="font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; color: var(--texto); background: var(--fondo); font-size: 17px; line-height: 1.5; position: relative">
+  <a class="saltar" href="#contido">Saltar ao contido</a>
+
+  <header style="border-bottom: 1px solid var(--linea)">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 12px clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 32px">
+      <a href="Main.dc.html" style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; text-decoration: none; font-weight: 700; font-size: 19px">
+        <span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 8px; background: {{marca}}; color: {{sobreMarca}}; display: inline-flex; align-items: center; justify-content: center">R</span>
+        Concello de Ribadouro
+      </a>
+      <nav aria-label="Principal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 24px">
+        <a href="Main.dc.html" aria-current="page" style="min-height: 44px; display: inline-flex; align-items: center; font-weight: 700">Instalacións</a>
+        <a href="Reservas.dc.html" style="min-height: 44px; display: inline-flex; align-items: center; text-decoration: none">Reservas</a>
+        <a href="Acceso.dc.html" style="min-height: 44px; display: inline-flex; align-items: center; text-decoration: none">Entrar</a>
+        <button type="button" onClick="{{alternarTema}}" style="min-height: 44px; padding: 0 12px; border-radius: 8px; border: 1px solid currentColor; background: transparent; color: inherit; font: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 8px"><sc-if value="{{escuro}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></sc-if><sc-if value="{{claro}}" hint-placeholder-val="{{ true }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></sc-if>{{rotuloTema}}</button>
+        <span style="display: inline-flex; align-items: center; gap: 8px; color: var(--texto2)"><strong style="color: var(--texto)">GL</strong> | <a href="#idioma" lang="es" aria-label="Cambiar a castellano" style="min-height: 44px; display: inline-flex; align-items: center">ES</a></span>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contido">
+    <section style="background: var(--superficie); border-bottom: 1px solid var(--linea)">
+      <div style="max-width: 1280px; margin: 0 auto; padding: clamp(32px, 5vw, 56px) clamp(16px, 4vw, 40px)">
+        <h1 style="margin: 0; font-size: clamp(32px, 4.2vw, 52px); line-height: 1.1; max-width: 18em">Reserva as instalacións deportivas de Ribadouro</h1>
+        <p style="margin: 16px 0 0; font-size: 20px; color: var(--texto2); max-width: 36em">Consulta a dispoñibilidade real sen iniciar sesión. Só tes que identificarte para reservar.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="avisos" style="max-width: 1280px; margin: 0 auto; padding: 28px clamp(16px, 4vw, 40px) 0">
+      <h2 id="avisos" style="margin: 0 0 12px; font-size: 22px">Avisos do concello</h2>
+      <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 12px">
+        <sc-for list="{{avisos}}" as="a" hint-placeholder-count="3">
+          <li style="border: 1px solid var(--texto); border-radius: 12px; padding: 16px; background: var(--superficie); display: flex; gap: 12px">
+            <sc-if value="{{a.peche}}" hint-placeholder-val="{{ true }}"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 auto; margin-top: 2px"><rect width="18" height="11" x="3" y="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></sc-if>
+            <sc-if value="{{a.info}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 auto; margin-top: 2px"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></sc-if>
+            <sc-if value="{{a.horario}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 auto; margin-top: 2px"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg></sc-if>
+            <div style="min-width: 0">
+              <p style="margin: 0; font-weight: 700">{{a.titulo}}</p>
+              <p style="margin: 0">{{a.detalle}}</p>
+            </div>
+          </li>
+        </sc-for>
+      </ul>
+      <p style="margin: 12px 0 0; color: var(--texto2)">Se tes reserva eses días, avisámosche por correo.</p>
+    </section>
+
+    <section aria-labelledby="filtros" style="max-width: 1280px; margin: 0 auto; padding: 32px clamp(16px, 4vw, 40px) 0">
+      <h2 id="filtros" style="margin: 0 0 16px; font-size: 22px">Filtrar instalacións</h2>
+      <div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 20px 32px">
+        <fieldset style="flex: 1 1 520px; min-width: 0; border: 0; margin: 0; padding: 0">
+          <legend style="padding: 0; margin-bottom: 8px; font-weight: 700">Deporte</legend>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px">
+            <sc-for list="{{deportes}}" as="d" hint-placeholder-count="8">
+              <button type="button" aria-pressed="{{d.activo}}" onClick="{{d.elixir}}" style="min-height: 44px; padding: 0 16px; border-radius: 8px; border: 1px solid var(--texto); background: {{d.fondo}}; color: {{d.texto}}; font: inherit; cursor: pointer">{{d.nome}}</button>
+            </sc-for>
+          </div>
+        </fieldset>
+        <div>
+          <label for="data" style="display: block; margin-bottom: 8px; font-weight: 700">Data</label>
+          <input id="data" type="date" value="{{data}}" onChange="{{cambiarData}}" style="min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; background: var(--fondo); color: var(--texto)">
+        </div>
+        <label style="display: inline-flex; align-items: center; gap: 10px; min-height: 44px; cursor: pointer">
+          <input type="checkbox" checked="{{soAccesibles}}" onChange="{{alternarAccesibles}}" style="width: 22px; height: 22px; margin: 0; accent-color: {{marca}}">
+          Só instalacións accesibles
+        </label>
+      </div>
+    </section>
+
+    <section aria-labelledby="resultados" style="max-width: 1280px; margin: 0 auto; padding: 32px clamp(16px, 4vw, 40px) 64px">
+      <h2 id="resultados" aria-live="polite" style="margin: 0 0 20px; font-size: 22px">{{contador}}</h2>
+      <sc-if value="{{semResultados}}" hint-placeholder-val="{{ false }}">
+        <div style="border: 1px solid var(--linea); border-radius: 12px; padding: 32px">
+          <p style="margin: 0 0 16px">Ningunha instalación coincide con estes filtros.</p>
+          <button type="button" onClick="{{limparFiltros}}" style="min-height: 44px; padding: 0 20px; border-radius: 8px; border: 1px solid var(--texto); background: var(--fondo); color: var(--texto); font: inherit; font-weight: 700; cursor: pointer">Quitar filtros</button>
+        </div>
+      </sc-if>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px">
+        <sc-for list="{{instalacions}}" as="i" hint-placeholder-count="6">
+          <article style="border: 1px solid var(--linea); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column">
+            <div style="height: 132px; background: var(--superficie2); display: flex; align-items: center; justify-content: center; color: var(--texto2); font-size: 15px">[Foto da instalación]</div>
+            <div style="padding: 20px; display: flex; flex-direction: column; gap: 8px; flex: 1 1 auto">
+              <h3 style="margin: 0; font-size: 20px; line-height: 1.25">{{i.nome}}</h3>
+              <p style="margin: 0; color: var(--texto2)">{{i.deportes}} · {{i.detalle}}</p>
+              <p style="margin: 0; color: var(--texto2); display: flex; align-items: center; gap: 8px">
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                {{i.enderezo}}
+              </p>
+              <p style="margin: 0; font-weight: 700">{{i.dispo}}</p>
+              <p style="margin: 0; font-size: 19px; font-weight: 700">{{i.prezoDesde}}</p>
+              <sc-if value="{{i.aforoTexto}}" hint-placeholder-val="{{ true }}">
+                <p style="margin: 0; color: var(--texto2)">{{i.aforoTexto}}</p>
+              </sc-if>
+              <sc-if value="{{i.aviso}}" hint-placeholder-val="{{ false }}">
+                <p style="margin: 0; display: flex; align-items: center; gap: 8px; font-weight: 700">
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 auto"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>
+                  {{i.aviso}}
+                </p>
+              </sc-if>
+              <sc-if value="{{i.accesible}}" hint-placeholder-val="{{ true }}">
+                <p style="margin: 0; display: flex; align-items: center; gap: 8px; font-weight: 700">
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+                  Accesible
+                </p>
+              </sc-if>
+              <sc-if value="{{i.senAdaptar}}" hint-placeholder-val="{{ false }}">
+                <p style="margin: 0; color: var(--texto2)">Acceso sen adaptar</p>
+              </sc-if>
+              <a href="Ficha.dc.html" data-inst="{{i.nome}}" style="margin-top: auto; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; background: {{marca}}; color: {{sobreMarca}}; text-decoration: none; font-weight: 700">Ver dispoñibilidade</a>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+    </section>
+  </main>
+
+  <footer style="border-top: 1px solid var(--linea)">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 20px clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 32px; font-size: 15px; color: var(--texto2)">
+      <span>Concello de exemplo con datos ficticios</span>
+      <span style="display: flex; flex-wrap: wrap; gap: 4px 20px">
+        <a href="Accesibilidade.dc.html" style="min-height: 44px; display: inline-flex; align-items: center">Declaración de accesibilidade</a>
+        <a href="Privacidade.dc.html" style="min-height: 44px; display: inline-flex; align-items: center">Privacidade</a>
+        <a href="#contacto" style="min-height: 44px; display: inline-flex; align-items: center">Contacto</a>
+      </span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"modo":{"editor":"enum","options":["Sistema","Claro","Escuro"],"default":"Sistema"},"brand":{"editor":"color","default":"#0B5CAD","options":["#0B5CAD","#6D28D9","#A4372B"]},"$preview":{"width":1440,"height":1500}}'>
+class Component extends DCLogic {
+  temaActual() {
+    const e = this.state || {};
+    if (e.temaElixido) return e.temaElixido;
+    if (this.props.modo === 'Claro') return 'claro';
+    if (this.props.modo === 'Escuro') return 'escuro';
+    let gardado = null;
+    try { gardado = window.localStorage.getItem(NOME_PROXECTO + '-tema'); } catch (err) { gardado = null; }
+    if (gardado === 'claro' || gardado === 'escuro') return gardado;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'escuro' : 'claro';
+  }
+  luminanciaTema(hex) {
+    const canle = (i) => {
+      const v = parseInt(hex.substr(i, 2), 16) / 255;
+      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    };
+    return 0.2126 * canle(1) + 0.7152 * canle(3) + 0.0722 * canle(5);
+  }
+  marcaEscura(hex) {
+    const fondo = this.luminanciaTema('#11161C');
+    const mestura = (i, p) => Math.round(parseInt(hex.substr(i, 2), 16) * (1 - p) + 255 * p);
+    const pasar = (n) => (n < 16 ? '0' : '') + n.toString(16);
+    for (let p = 0; p <= 1; p += 0.05) {
+      const cor = '#' + pasar(mestura(1, p)) + pasar(mestura(3, p)) + pasar(mestura(5, p));
+      if ((this.luminanciaTema(cor) + 0.05) / (fondo + 0.05) >= 6) return cor;
+    }
+    return '#FFFFFF';
+  }
+  valsTema() {
+    const tema = this.temaActual();
+    const escuro = tema === 'escuro';
+    const base = this.props.brand ?? (this.state && this.state.cor) ?? '#0B5CAD';
+    return {
+      tema,
+      escuro,
+      claro: !escuro,
+      rotuloTema: escuro ? 'Modo claro' : 'Modo escuro',
+      marca: escuro ? this.marcaEscura(base) : base,
+      sobreMarca: escuro ? '#11161C' : '#FFFFFF',
+      alternarTema: () => {
+        const novo = escuro ? 'claro' : 'escuro';
+        try { window.localStorage.setItem(NOME_PROXECTO + '-tema', novo); } catch (err) { /* sen almacenamento */ }
+        this.setState({ temaElixido: novo });
+      }
+    };
+  }
+  componentDidMount() {
+    this.oirTema = (e) => {
+      if (e.key === NOME_PROXECTO + '-tema' && (e.newValue === 'claro' || e.newValue === 'escuro')) {
+        this.setState({ temaElixido: e.newValue });
+      }
+    };
+    window.addEventListener('storage', this.oirTema);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('storage', this.oirTema);
+  }
+  renderVals() {
+    return { ...this.valsPantalla(), ...this.valsTema() };
+  }
+  constructor(props) {
+    super(props);
+    this.state = { deporte: 'Todos', soAccesibles: false, data: (window.__app && window.__app.dataElixida) || '2026-11-10' };
+  }
+  dispo(nome, iso) {
+    const A = window.__app;
+    if (!A || !A.disponibilidade) return '';
+    const d = A.disponibilidade(nome, iso);
+    if (d.pasada) return 'Data pasada';
+    if (!d.aberto) return 'Pechada o día escollido';
+    if (d.libres === 0) return 'Sen franxas libres o día escollido';
+    return d.libres + (d.libres === 1 ? ' franxa libre' : ' franxas libres') + ' o día escollido';
+  }
+  valsPantalla() {
+    const brand = this.props.brand ?? '#0B5CAD';
+    const todas = [
+      { nome: 'Pistas de pádel do Campo da Feira', lista: ['Pádel'], detalle: '3 pistas cubertas', enderezo: 'Rúa da Feira, 12', aforo: 4, accesible: true, aviso: 'Pechada o xoves 12 desde as 16:00' },
+      { nome: 'Pavillón Municipal', lista: ['Fútbol sala', 'Baloncesto'], detalle: '1 pista central', enderezo: 'Avenida do Río, 4', aforo: 200, accesible: true, aviso: 'Pecha ás 20:00 o venres 13' },
+      { nome: 'Piscina Municipal A Ribeira', lista: ['Natación'], detalle: '6 rúas', enderezo: 'Paseo da Ribeira, s/n', aforo: 60, accesible: true, aviso: 'Pechada do 16 ao 18 de novembro' },
+      { nome: 'Campo de fútbol de Santa Mariña', lista: ['Fútbol'], detalle: '1 campo de herba artificial', enderezo: 'Lugar de Santa Mariña', aforo: 30, accesible: false },
+      { nome: 'Pistas de tenis de Outeiro', lista: ['Tenis'], detalle: '2 pistas', enderezo: 'Camiño de Outeiro, 7', aforo: 4, accesible: false },
+      { nome: 'Sala Polivalente da Casa da Cultura', lista: ['Ioga'], detalle: 'Aforo: 20 persoas', enderezo: 'Praza Maior, 1', aforo: 20, accesible: true }
+    ];
+    const extra = [];
+    const avisos = extra.concat([
+      { peche: true, horario: false, titulo: 'Pechada: Pistas de pádel do Campo da Feira', detalle: 'Xoves 12 de novembro, desde as 16:00. Obras no pavimento.' },
+      { peche: true, horario: false, titulo: 'Pechada: Piscina Municipal A Ribeira', detalle: 'Do 16 ao 18 de novembro. Mantemento do vaso.' },
+      { peche: false, horario: true, titulo: 'Horario especial: Pavillón Municipal', detalle: 'Venres 13 de novembro, pecha ás 20:00 por un evento.' }
+    ]);
+    const { deporte, soAccesibles, data } = this.state;
+    const instalacions = todas
+      .filter((i) => deporte === 'Todos' || i.lista.includes(deporte))
+      .filter((i) => !soAccesibles || i.accesible)
+      .map((i) => ({ ...i, deportes: i.lista.join(', '), senAdaptar: !i.accesible, dispo: this.dispo(i.nome, data), aforoTexto: i.aforo ? 'Aforo: ' + (Number(i.aforo) === 1 ? '1 persoa' : i.aforo + ' persoas') + ' por pista' : '' }));
+    const nomes = ['Todos', 'Pádel', 'Fútbol', 'Fútbol sala', 'Baloncesto', 'Natación', 'Tenis', 'Ioga'];
+    return {
+      brand,
+      avisos,
+      data,
+      soAccesibles,
+      instalacions,
+      semResultados: instalacions.length === 0,
+      contador: instalacions.length === 1 ? '1 instalación' : instalacions.length + ' instalacións',
+      deportes: nomes.map((nome) => ({
+        nome,
+        activo: nome === deporte,
+        fondo: nome === deporte ? 'var(--forte)' : 'var(--fondo)',
+        texto: nome === deporte ? 'var(--sobre-forte)' : 'var(--texto)',
+        elixir: () => this.setState({ deporte: nome })
+      })),
+      cambiarData: (e) => { if (window.__app) window.__app.dataElixida = e.target.value; this.setState({ data: e.target.value }); },
+      alternarAccesibles: () => this.setState({ soAccesibles: !soAccesibles }),
+      limparFiltros: () => this.setState({ deporte: 'Todos', soAccesibles: false })
+    };
+  }
+}
+</script>
+</body>
+</html>

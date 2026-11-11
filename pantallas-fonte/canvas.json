@@ -1,0 +1,225 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "Acceso.dc.html": {
+      "expand": "fill",
+      "h": 900,
+      "is_interactive": true,
+      "title": "5 · Acceso",
+      "w": 1440,
+      "x": 3040,
+      "y": 2200
+    },
+    "Axenda.dc.html": {
+      "expand": "fill",
+      "h": 1300,
+      "is_interactive": true,
+      "title": "9 · Concello: axenda de reservas",
+      "w": 1440,
+      "x": 0,
+      "y": 6100
+    },
+    "Ficha.dc.html": {
+      "expand": "fill",
+      "h": 1500,
+      "is_interactive": true,
+      "title": "2 · Ficha e reserva de franxa",
+      "w": 1440,
+      "x": 1520,
+      "y": 0
+    },
+    "FichaMobil.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "2 · Reserva de franxa (móbil)",
+      "w": 375,
+      "x": 0,
+      "y": 2200
+    },
+    "Horarios.dc.html": {
+      "expand": "fill",
+      "h": 1300,
+      "is_interactive": true,
+      "title": "7 · Concello: horarios e peches",
+      "w": 1440,
+      "x": 1520,
+      "y": 4300
+    },
+    "Instalacions.dc.html": {
+      "expand": "fill",
+      "h": 1300,
+      "is_interactive": true,
+      "title": "6 · Concello: instalacións",
+      "w": 1440,
+      "x": 0,
+      "y": 4300
+    },
+    "Main.dc.html": {
+      "expand": "fill",
+      "h": 1500,
+      "is_interactive": true,
+      "title": "1 · Inicio e instalacións",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "Marca.dc.html": {
+      "expand": "fill",
+      "h": 1300,
+      "is_interactive": true,
+      "title": "10 · Concello: marca",
+      "w": 1440,
+      "x": 1520,
+      "y": 6100
+    },
+    "Normas.dc.html": {
+      "expand": "fill",
+      "h": 1300,
+      "is_interactive": true,
+      "title": "8 · Concello: normas de uso",
+      "w": 1440,
+      "x": 3040,
+      "y": 4300
+    },
+    "Panel.dc.html": {
+      "expand": "fill",
+      "h": 1500,
+      "is_interactive": true,
+      "title": "4 · Concello: panel de indicadores",
+      "w": 1440,
+      "x": 1520,
+      "y": 2200
+    },
+    "ReservaMobil.dc.html": {
+      "h": 860,
+      "is_interactive": true,
+      "title": "3 · Reserva con QR (móbil)",
+      "w": 375,
+      "x": 455,
+      "y": 2200
+    },
+    "Reservas.dc.html": {
+      "expand": "fill",
+      "h": 1700,
+      "is_interactive": true,
+      "title": "3 · Reservas",
+      "w": 1440,
+      "x": 3040,
+      "y": 0
+    },
+    "Superadmin.dc.html": {
+      "expand": "fill",
+      "h": 1300,
+      "is_interactive": true,
+      "title": "12 · Superadministración",
+      "w": 1440,
+      "x": 3495,
+      "y": 6100
+    },
+    "ValidarQR.dc.html": {
+      "h": 860,
+      "is_interactive": true,
+      "title": "11 · Validar QR (móbil)",
+      "w": 375,
+      "x": 3040,
+      "y": 6100
+    },
+    "Uso.dc.html": {
+      "expand": "fill",
+      "h": 1300,
+      "is_interactive": true,
+      "title": "13 · Concello: resumo de uso (interno)",
+      "w": 1440,
+      "x": 0,
+      "y": 7620
+    },
+    "Avisos.dc.html": {
+      "expand": "fill",
+      "h": 1300,
+      "is_interactive": true,
+      "title": "14 · Concello: avisos",
+      "w": 1440,
+      "x": 1520,
+      "y": 7620
+    },
+    "Usuario.dc.html": {
+      "expand": "fill",
+      "h": 1100,
+      "is_interactive": true,
+      "title": "15 · A miña conta",
+      "w": 1440,
+      "x": 3040,
+      "y": 7620
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-11-05T12:00:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "noteOrder": [
+    "cidadania",
+    "mobil",
+    "concello",
+    "concello2"
+  ],
+  "notes": {
+    "cidadania": {
+      "kind": "title1",
+      "maxW": 4480,
+      "text": "Cidadanía · escritorio",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "concello": {
+      "kind": "title1",
+      "maxW": 4480,
+      "text": "Concello · xestión",
+      "w": 240,
+      "x": 0,
+      "y": 4000
+    },
+    "concello2": {
+      "kind": "title1",
+      "maxW": 4935,
+      "text": "Concello e superadministración",
+      "w": 240,
+      "x": 0,
+      "y": 5800
+    },
+    "mobil": {
+      "kind": "title1",
+      "maxW": 830,
+      "text": "Cidadanía · móbil",
+      "w": 240,
+      "x": 0,
+      "y": 1900
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Ficha.dc.html",
+    "Reservas.dc.html",
+    "FichaMobil.dc.html",
+    "ReservaMobil.dc.html",
+    "Panel.dc.html",
+    "Acceso.dc.html",
+    "Instalacions.dc.html",
+    "Horarios.dc.html",
+    "Normas.dc.html",
+    "Axenda.dc.html",
+    "Marca.dc.html",
+    "ValidarQR.dc.html",
+    "Uso.dc.html",
+    "Avisos.dc.html",
+    "Usuario.dc.html",
+    "Superadmin.dc.html"
+  ],
+  "pages": [],
+  "title": "reservas-deportivas"
+}

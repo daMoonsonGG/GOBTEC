@@ -1,0 +1,388 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: EUPL-1.2 -->
+<!-- SPDX-FileCopyrightText: 2026 [TITULAR] -->
+<html lang="gl">
+<head>
+<meta charset="utf-8">
+<title>Instalacións · Xestión · Concello de Ribadouro</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+[data-tema="claro"]{color-scheme:light;--fondo:#FFFFFF;--superficie:#F3F5F8;--superficie2:#E6EAF0;--texto:#141A22;--texto2:#4A5462;--linea:#CBD2DB;--linea-forte:#6B7686;--forte:#141A22;--sobre-forte:#FFFFFF}
+[data-tema="escuro"]{color-scheme:dark;--fondo:#11161C;--superficie:#1A212A;--superficie2:#2A333F;--texto:#EEF1F5;--texto2:#B3BCC8;--linea:#3A4553;--linea-forte:#8894A3;--forte:#EEF1F5;--sobre-forte:#11161C}
+body{margin:0}
+body:has([data-tema="escuro"]){background:#11161C}
+a{color:var(--texto)}a:hover{color:var(--texto2)}
+:focus-visible{outline:3px solid var(--texto);outline-offset:2px}
+.saltar{position:absolute;left:-9999px}.saltar:focus{left:16px;top:8px;background:var(--fondo);color:var(--texto);padding:12px 16px;z-index:10}
+</style>
+</helmet>
+<div data-tema="{{tema}}" style="font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; color: var(--texto); background: var(--fondo); font-size: 17px; line-height: 1.5; position: relative">
+  <a class="saltar" href="#contido">Saltar ao contido</a>
+
+  <header style="border-bottom: 1px solid var(--linea)">
+    <div style="padding: 12px clamp(16px, 3vw, 32px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 32px">
+      <span style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; font-weight: 700; font-size: 19px">
+        <span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 8px; background: {{marca}}; color: {{sobreMarca}}; display: inline-flex; align-items: center; justify-content: center">R</span>
+        Concello de Ribadouro · Xestión
+      </span>
+      <span style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 24px"><button type="button" onClick="{{alternarTema}}" style="min-height: 44px; padding: 0 12px; border-radius: 8px; border: 1px solid currentColor; background: transparent; color: inherit; font: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 8px"><sc-if value="{{escuro}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></sc-if><sc-if value="{{claro}}" hint-placeholder-val="{{ true }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></sc-if>{{rotuloTema}}</button><a href="Main.dc.html" style="min-height: 44px; display: inline-flex; align-items: center">Ver o sitio público</a></span>
+    </div>
+  </header>
+
+  <div style="display: flex; flex-wrap: wrap; align-items: stretch">
+    <nav aria-label="Xestión" style="flex: 1 1 240px; box-sizing: border-box; padding: 20px clamp(16px, 2vw, 24px); background: var(--superficie); display: flex; flex-direction: column; gap: 2px">
+      <a href="Panel.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Indicadores</a>
+      <a href="Uso.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Resumo de uso</a>
+      <a href="Avisos.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Avisos</a>
+      <a href="Axenda.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Axenda de reservas</a>
+      <a href="Instalacions.dc.html" aria-current="page" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; border-radius: 8px; background: var(--forte); color: var(--sobre-forte); font-weight: 700; text-decoration: none">Instalacións</a>
+      <a href="Horarios.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Horarios e peches</a>
+      <a href="Normas.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Normas de uso</a>
+      <a href="ValidarQR.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Validar QR</a>
+      <a href="Marca.dc.html" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; text-decoration: none">Marca do concello</a>
+    </nav>
+
+    <main id="contido" style="flex: 999 1 640px; min-width: 0; box-sizing: border-box; padding: 32px clamp(16px, 3vw, 40px) 64px">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px; margin-bottom: 24px">
+        <h1 style="margin: 0; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.12">Instalacións</h1>
+        <button type="button" onClick="{{nova}}" style="min-height: 44px; padding: 0 20px; border: 0; border-radius: 8px; background: {{marca}}; color: {{sobreMarca}}; font: inherit; font-weight: 700; cursor: pointer">Dar de alta unha instalación</button>
+      </div>
+
+      <sc-if value="{{temMensaxe}}" hint-placeholder-val="{{ false }}">
+        <p role="status" style="margin: 0 0 20px; padding: 12px 16px; border-radius: 8px; background: var(--superficie); font-weight: 700">{{mensaxe}}</p>
+      </sc-if>
+
+      <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 32px">
+        <section aria-label="Lista de instalacións" style="flex: 1 1 380px; min-width: 0">
+          <sc-if value="{{semInstalacions}}" hint-placeholder-val="{{ false }}">
+            <p style="margin: 0 0 16px; padding: 16px; border: 1px dashed var(--linea-forte); border-radius: 8px">Aínda non hai instalacións. Dá de alta a primeira.</p>
+          </sc-if>
+          <ul style="list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--linea)">
+            <sc-for list="{{lista}}" as="i" hint-placeholder-count="6">
+              <li style="border-bottom: 1px solid var(--linea); padding: 12px; background: {{i.fondo}}; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px">
+                <span style="flex: 1 1 200px; min-width: 0">
+                  <strong>{{i.nome}}</strong><br>
+                  <span style="color: var(--texto2)">{{i.tipo}} · {{i.estado}} · {{i.pistasTexto}} · {{i.prezoTexto}}</span>
+                </span>
+                <button type="button" onClick="{{i.editar}}" style="min-height: 44px; padding: 0 16px; border-radius: 8px; border: 1px solid var(--texto); background: var(--fondo); color: var(--texto); font: inherit; cursor: pointer">Editar</button>
+              </li>
+            </sc-for>
+          </ul>
+        </section>
+
+        <section aria-labelledby="titulo-form" style="flex: 999 1 420px; min-width: 0; border: 1px solid var(--texto); border-radius: 12px; padding: 24px">
+          <h2 id="titulo-form" style="margin: 0 0 16px; font-size: 24px">{{tituloForm}}</h2>
+
+          <sc-if value="{{temErro}}" hint-placeholder-val="{{ false }}">
+            <div role="alert" style="margin-bottom: 16px; padding: 12px 16px; border: 2px solid var(--texto); border-radius: 8px">
+              <strong>Revisa este campo antes de gardar:</strong>
+              <a href="#nome" style="display: block; min-height: 32px">O nome é obrigatorio</a>
+            </div>
+          </sc-if>
+
+          <form style="display: flex; flex-direction: column; gap: 16px">
+            <div>
+              <label for="nome" style="display: block; font-weight: 700; margin-bottom: 4px">Nome</label>
+              <input id="nome" type="text" value="{{borrador.nome}}" onChange="{{cambiarNome}}" aria-invalid="{{temErro}}" aria-describedby="nome-axuda" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+              <sc-if value="{{temErro}}" hint-placeholder-val="{{ false }}">
+                <p id="nome-axuda" style="margin: 4px 0 0; font-weight: 700">Escribe o nome da instalación.</p>
+              </sc-if>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0 16px">
+              <div style="grid-row: span 2; display: grid; grid-template-rows: subgrid; gap: 4px 0; margin-bottom: 16px">
+                <label for="tipo" style="display: block; font-weight: 700; align-self: end">Tipo</label>
+                <select id="tipo" value="{{borrador.tipo}}" onChange="{{cambiarTipo}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+                  <option>Pistas</option>
+                  <option>Pavillón</option>
+                  <option>Piscina</option>
+                  <option>Campo</option>
+                  <option>Sala</option>
+                </select>
+              </div>
+              <div style="grid-row: span 2; display: grid; grid-template-rows: subgrid; gap: 4px 0; margin-bottom: 16px">
+                <label for="pistas" style="display: block; font-weight: 700; align-self: end">Número de pistas</label>
+                <input id="pistas" type="number" min="1" value="{{borrador.pistas}}" onChange="{{cambiarPistas}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+              </div>
+              <div style="grid-row: span 2; display: grid; grid-template-rows: subgrid; gap: 4px 0; margin-bottom: 16px">
+                <label for="aforo" style="display: block; font-weight: 700; align-self: end">Aforo (persoas por pista)</label>
+                <input id="aforo" type="number" min="1" value="{{borrador.aforo}}" onChange="{{cambiarAforo}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px 16px">
+              <div>
+                <label for="prezo-base" style="display: block; font-weight: 700; margin-bottom: 4px">Prezo base (€)</label>
+                <input id="prezo-base" type="number" min="0" step="0.5" value="{{borrador.prezoBase}}" onChange="{{cambiarPrezo}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+              </div>
+              <div>
+                <label for="unidade-cobro" style="display: block; font-weight: 700; margin-bottom: 4px">Unidade de cobro</label>
+                <select id="unidade-cobro" value="{{borrador.unidadeCobro}}" onChange="{{cambiarUnidade}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+                  <option value="por entrada">Por entrada</option>
+                  <option value="por hora">Por hora</option>
+                </select>
+              </div>
+            </div>
+
+            <section aria-labelledby="descontos-titulo" style="border-top: 1px solid var(--linea); padding-top: 16px">
+              <h3 id="descontos-titulo" style="margin: 0 0 12px; font-size: 19px">Descontos</h3>
+              <div style="display: flex; flex-direction: column; gap: 12px">
+                <sc-for list="{{descontos}}" as="d" hint-placeholder-count="3">
+                  <div style="border-bottom: 1px solid var(--linea); padding-bottom: 12px; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px 12px">
+                    <div>
+                      <label for="desconto-nome-{{d.indice}}" style="display: block; font-weight: 700; margin-bottom: 4px">Nome</label>
+                      <input id="desconto-nome-{{d.indice}}" type="text" value="{{d.nome}}" onChange="{{d.cambiarNome}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 10px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+                    </div>
+                    <div>
+                      <label for="desconto-porcentaxe-{{d.indice}}" style="display: block; font-weight: 700; margin-bottom: 4px">Porcentaxe (%)</label>
+                      <input id="desconto-porcentaxe-{{d.indice}}" type="number" min="0" max="100" value="{{d.porcentaxe}}" onChange="{{d.cambiarPorcentaxe}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 10px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+                    </div>
+                    <div>
+                      <label for="desconto-aplicacion-{{d.indice}}" style="display: block; font-weight: 700; margin-bottom: 4px">Aplicación</label>
+                      <select id="desconto-aplicacion-{{d.indice}}" value="{{d.aplicacion}}" onChange="{{d.cambiarAplicacion}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 10px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+                        <option value="fixo">Fixo</option>
+                        <option value="temporal">Temporal</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="desconto-vixencia-{{d.indice}}" style="display: block; font-weight: 700; margin-bottom: 4px">Vixencia</label>
+                      <input id="desconto-vixencia-{{d.indice}}" type="text" value="{{d.vixencia}}" onChange="{{d.cambiarVixencia}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 10px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+                    </div>
+                    <button type="button" onClick="{{d.borrar}}" style="align-self: end; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; background: var(--fondo); color: var(--texto); font: inherit; cursor: pointer">Quitar desconto</button>
+                  </div>
+                </sc-for>
+                <button type="button" onClick="{{engadirDesconto}}" style="align-self: flex-start; min-height: 44px; padding: 0 16px; border: 1px solid var(--texto); border-radius: 8px; background: var(--fondo); color: var(--texto); font: inherit; cursor: pointer">Engadir desconto</button>
+              </div>
+            </section>
+
+            <div>
+              <label for="deportes" style="display: block; font-weight: 700; margin-bottom: 4px">Deportes</label>
+              <input id="deportes" type="text" value="{{borrador.deportes}}" onChange="{{cambiarDeportes}}" aria-describedby="deportes-axuda" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+              <p id="deportes-axuda" style="margin: 4px 0 0; font-size: 15px; color: var(--texto2)">Separa cada deporte cunha coma.</p>
+            </div>
+
+            <div>
+              <label for="enderezo" style="display: block; font-weight: 700; margin-bottom: 4px">Enderezo</label>
+              <input id="enderezo" type="text" value="{{borrador.enderezo}}" onChange="{{cambiarEnderezo}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+            </div>
+
+            <label style="display: flex; align-items: center; gap: 10px; min-height: 44px; cursor: pointer">
+              <input type="checkbox" checked="{{borrador.accesible}}" onChange="{{alternarAccesible}}" style="width: 22px; height: 22px; margin: 0; accent-color: {{marca}}">
+              Instalación accesible
+            </label>
+
+            <div>
+              <p style="margin: 0 0 4px; font-weight: 700">Que se pode reservar</p>
+              <p style="margin: 0; color: var(--texto2)">{{recursosTexto}}</p>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: center; height: 96px; border: 1px dashed var(--linea-forte); border-radius: 8px; color: var(--texto2)">[Subir fotos e situar no mapa]</div>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 8px">
+              <button type="button" onClick="{{gardar}}" style="min-height: 48px; padding: 0 24px; border: 0; border-radius: 8px; background: {{marca}}; color: {{sobreMarca}}; font: inherit; font-weight: 700; cursor: pointer">Gardar</button>
+              <sc-if value="{{podeDarDeBaixa}}" hint-placeholder-val="{{ true }}">
+                <button type="button" onClick="{{darDeBaixa}}" style="min-height: 48px; padding: 0 24px; border-radius: 8px; border: 1px solid var(--texto); background: var(--fondo); color: var(--texto); font: inherit; cursor: pointer">{{rotuloBaixa}}</button>
+                <button type="button" onClick="{{pedirBorrar}}" style="min-height: 48px; padding: 0 24px; border-radius: 8px; border: 1px solid var(--texto); background: var(--fondo); color: var(--texto); font: inherit; cursor: pointer">Borrar</button>
+              </sc-if>
+            </div>
+
+            <sc-if value="{{confirmarBorrar}}" hint-placeholder-val="{{ false }}">
+              <div role="alert" style="padding: 16px; border: 2px solid var(--texto); border-radius: 8px; display: flex; flex-direction: column; gap: 12px">
+                <p style="margin: 0; font-weight: 700">{{textoBorrar}}</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                  <button type="button" onClick="{{borrar}}" style="min-height: 44px; padding: 0 20px; border: 0; border-radius: 8px; background: var(--forte); color: var(--sobre-forte); font: inherit; font-weight: 700; cursor: pointer">Si, borrar</button>
+                  <button type="button" onClick="{{manterInstalacion}}" style="min-height: 44px; padding: 0 20px; border-radius: 8px; border: 1px solid var(--texto); background: var(--fondo); color: var(--texto); font: inherit; cursor: pointer">Non, manter</button>
+                </div>
+              </div>
+            </sc-if>
+          </form>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"modo":{"editor":"enum","options":["Sistema","Claro","Escuro"],"default":"Sistema"},"brand":{"editor":"color","default":"#0B5CAD","options":["#0B5CAD","#6D28D9","#A4372B"]},"$preview":{"width":1440,"height":1300}}'>
+class Component extends DCLogic {
+  temaActual() {
+    const e = this.state || {};
+    if (e.temaElixido) return e.temaElixido;
+    if (this.props.modo === 'Claro') return 'claro';
+    if (this.props.modo === 'Escuro') return 'escuro';
+    let gardado = null;
+    try { gardado = window.localStorage.getItem(NOME_PROXECTO + '-tema'); } catch (err) { gardado = null; }
+    if (gardado === 'claro' || gardado === 'escuro') return gardado;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'escuro' : 'claro';
+  }
+  luminanciaTema(hex) {
+    const canle = (i) => {
+      const v = parseInt(hex.substr(i, 2), 16) / 255;
+      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    };
+    return 0.2126 * canle(1) + 0.7152 * canle(3) + 0.0722 * canle(5);
+  }
+  marcaEscura(hex) {
+    const fondo = this.luminanciaTema('#11161C');
+    const mestura = (i, p) => Math.round(parseInt(hex.substr(i, 2), 16) * (1 - p) + 255 * p);
+    const pasar = (n) => (n < 16 ? '0' : '') + n.toString(16);
+    for (let p = 0; p <= 1; p += 0.05) {
+      const cor = '#' + pasar(mestura(1, p)) + pasar(mestura(3, p)) + pasar(mestura(5, p));
+      if ((this.luminanciaTema(cor) + 0.05) / (fondo + 0.05) >= 6) return cor;
+    }
+    return '#FFFFFF';
+  }
+  valsTema() {
+    const tema = this.temaActual();
+    const escuro = tema === 'escuro';
+    const base = this.props.brand ?? (this.state && this.state.cor) ?? '#0B5CAD';
+    return {
+      tema,
+      escuro,
+      claro: !escuro,
+      rotuloTema: escuro ? 'Modo claro' : 'Modo escuro',
+      marca: escuro ? this.marcaEscura(base) : base,
+      sobreMarca: escuro ? '#11161C' : '#FFFFFF',
+      alternarTema: () => {
+        const novo = escuro ? 'claro' : 'escuro';
+        try { window.localStorage.setItem(NOME_PROXECTO + '-tema', novo); } catch (err) { /* sen almacenamento */ }
+        this.setState({ temaElixido: novo });
+      }
+    };
+  }
+  componentDidMount() {
+    this.oirTema = (e) => {
+      if (e.key === NOME_PROXECTO + '-tema' && (e.newValue === 'claro' || e.newValue === 'escuro')) {
+        this.setState({ temaElixido: e.newValue });
+      }
+    };
+    window.addEventListener('storage', this.oirTema);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('storage', this.oirTema);
+  }
+  renderVals() {
+    return { ...this.valsPantalla(), ...this.valsTema() };
+  }
+  constructor(props) {
+    super(props);
+    const descontosExemplo = () => [
+      { id: 'xove', nome: 'Carné xove', porcentaxe: 30, aplicacion: 'fixo', vixencia: 'Sen caducidade' },
+      { id: 'xubiladas', nome: 'Persoas xubiladas', porcentaxe: 50, aplicacion: 'fixo', vixencia: 'Sen caducidade' },
+      { id: 'inverno', nome: 'Campaña de inverno', porcentaxe: 20, aplicacion: 'temporal', vixencia: '1–30 de novembro de 2026' }
+    ];
+    const lista = [
+      { id: 1, deportes: 'Pádel', aviso: 'Pechada o xoves 12 desde as 16:00', pistas: 3, nome: 'Pistas de pádel do Campo da Feira', tipo: 'Pistas', aforo: 4, enderezo: 'Rúa da Feira, 12', accesible: true, activa: true, recursos: 'Pista 1, Pista 2 e Pista 3', prezoBase: 12, unidadeCobro: 'por hora', descontos: descontosExemplo() },
+      { id: 2, deportes: 'Fútbol sala, Baloncesto', aviso: 'Pecha ás 20:00 o venres 13', pistas: 1, nome: 'Pavillón Municipal', tipo: 'Pavillón', aforo: 200, enderezo: 'Avenida do Río, 4', accesible: true, activa: true, recursos: 'Pista central', prezoBase: 20, unidadeCobro: 'por hora', descontos: descontosExemplo() },
+      { id: 3, deportes: 'Natación', aviso: 'Pechada do 16 ao 18 de novembro', pistas: 6, nome: 'Piscina Municipal A Ribeira', tipo: 'Piscina', aforo: 60, enderezo: 'Paseo da Ribeira, s/n', accesible: true, activa: true, recursos: 'Rúas 1 a 6', prezoBase: 6, unidadeCobro: 'por entrada', descontos: descontosExemplo() },
+      { id: 4, deportes: 'Fútbol', aviso: '', pistas: 1, nome: 'Campo de fútbol de Santa Mariña', tipo: 'Campo', aforo: 30, enderezo: 'Lugar de Santa Mariña', accesible: false, activa: true, recursos: 'Campo completo', prezoBase: 18, unidadeCobro: 'por hora', descontos: descontosExemplo() },
+      { id: 5, deportes: 'Tenis', aviso: '', pistas: 2, nome: 'Pistas de tenis de Outeiro', tipo: 'Pistas', aforo: 4, enderezo: 'Camiño de Outeiro, 7', accesible: false, activa: true, recursos: 'Pista 1 e Pista 2', prezoBase: 8, unidadeCobro: 'por hora', descontos: descontosExemplo() },
+      { id: 6, deportes: 'Ioga', aviso: '', pistas: 1, nome: 'Sala Polivalente da Casa da Cultura', tipo: 'Sala', aforo: 20, enderezo: 'Praza Maior, 1', accesible: true, activa: true, recursos: 'Sala completa', prezoBase: 5, unidadeCobro: 'por entrada', descontos: descontosExemplo() }
+    ];
+    this.state = { lista, sel: 1, borrador: { ...lista[0] }, erro: false, mensaxe: '', confirmarBorrar: false };
+  }
+  borradorVacio() {
+    return { nome: '', tipo: 'Pistas', pistas: 1, aforo: 1, deportes: '', enderezo: '', accesible: false, activa: true, prezoBase: 0, unidadeCobro: 'por entrada', descontos: [] };
+  }
+  valsPantalla() {
+    const brand = this.props.brand ?? '#0B5CAD';
+    const { lista, sel, borrador, erro, mensaxe, confirmarBorrar } = this.state;
+    const campo = (k) => (e) => this.setState({ borrador: { ...this.state.borrador, [k]: e.target.value } });
+    const actual = lista.find((i) => i.id === sel);
+    return {
+      brand,
+      borrador,
+      mensaxe,
+      temMensaxe: !!mensaxe,
+      temErro: erro,
+      tituloForm: sel ? 'Editar: ' + (actual ? actual.nome : '') : 'Nova instalación',
+      podeDarDeBaixa: !!sel,
+      semInstalacions: lista.length === 0,
+      confirmarBorrar: !!sel && confirmarBorrar,
+      textoBorrar: 'Seguro que queres borrar «' + (actual ? actual.nome : '') + '»? Non se pode desfacer.',
+      pedirBorrar: () => this.setState({ confirmarBorrar: true, mensaxe: '' }),
+      manterInstalacion: () => this.setState({ confirmarBorrar: false }),
+      borrar: () => {
+        const resto = lista.filter((i) => i.id !== sel);
+        const seguinte = resto[0];
+        this.setState({
+          lista: resto,
+          sel: seguinte ? seguinte.id : null,
+          borrador: seguinte ? { ...seguinte } : this.borradorVacio(),
+          confirmarBorrar: false,
+          erro: false,
+          mensaxe: 'Instalación borrada.'
+        });
+      },
+      rotuloBaixa: actual && !actual.activa ? 'Reactivar' : 'Dar de baixa',
+      lista: lista.map((i) => ({
+        ...i,
+        estado: i.activa ? 'Activa' : 'De baixa',
+        pistasTexto: Number(i.pistas) === 1 ? '1 pista' : Number(i.pistas) + ' pistas',
+        prezoTexto: Number(i.prezoBase || 0).toLocaleString('gl-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' € ' + i.unidadeCobro,
+        fondo: i.id === sel ? 'var(--superficie)' : 'var(--fondo)',
+        aria: 'Editar ' + i.nome,
+        editar: () => this.setState({ sel: i.id, borrador: { ...i }, erro: false, mensaxe: '', confirmarBorrar: false })
+      })),
+      nova: () => this.setState({
+        sel: null,
+        erro: false,
+        mensaxe: '',
+        borrador: this.borradorVacio()
+      }),
+      cambiarNome: campo('nome'),
+      cambiarTipo: campo('tipo'),
+      cambiarAforo: campo('aforo'),
+      cambiarPistas: campo('pistas'),
+      cambiarPrezo: campo('prezoBase'),
+      cambiarUnidade: campo('unidadeCobro'),
+      cambiarDeportes: campo('deportes'),
+      descontos: (borrador.descontos || []).map((d, indice) => ({
+        ...d,
+        indice,
+        ariaBorrar: 'Quitar desconto ' + d.nome,
+        cambiarNome: (e) => this.cambiarDesconto(indice, 'nome', e.target.value),
+        cambiarPorcentaxe: (e) => this.cambiarDesconto(indice, 'porcentaxe', e.target.value),
+        cambiarAplicacion: (e) => this.cambiarDesconto(indice, 'aplicacion', e.target.value),
+        cambiarVixencia: (e) => this.cambiarDesconto(indice, 'vixencia', e.target.value),
+        borrar: () => this.setState({ borrador: { ...this.state.borrador, descontos: this.state.borrador.descontos.filter((x, i) => i !== indice) } })
+      })),
+      engadirDesconto: () => this.setState({ borrador: { ...this.state.borrador, descontos: (this.state.borrador.descontos || []).concat({ id: 'novo-' + Date.now(), nome: '', porcentaxe: 0, aplicacion: 'fixo', vixencia: '' }) } }),
+      recursosTexto: Number(borrador.pistas) > 1 ? 'Pista 1 a Pista ' + Number(borrador.pistas) : '1 pista',
+      cambiarEnderezo: campo('enderezo'),
+      alternarAccesible: () => this.setState({ borrador: { ...borrador, accesible: !borrador.accesible } }),
+      gardar: () => {
+        if (!borrador.nome.trim()) {
+          this.setState({ erro: true, mensaxe: '' });
+          return;
+        }
+        if (sel) {
+          this.setState({ lista: lista.map((i) => (i.id === sel ? { ...borrador } : i)), erro: false, mensaxe: 'Cambios gardados.' });
+        } else {
+          const id = (lista.length ? Math.max.apply(null, lista.map((i) => i.id)) : 0) + 1;
+          const nova = { ...borrador, id };
+          this.setState({ lista: lista.concat(nova), sel: id, borrador: nova, erro: false, mensaxe: 'Instalación dada de alta.' });
+        }
+      },
+      darDeBaixa: () => {
+        const activa = actual ? !actual.activa : true;
+        this.setState({
+          lista: lista.map((i) => (i.id === sel ? { ...i, activa } : i)),
+          borrador: { ...borrador, activa },
+          confirmarBorrar: false,
+          mensaxe: activa ? 'Instalación reactivada.' : 'Instalación dada de baixa. Xa non admite novas reservas.'
+        });
+      }
+    };
+  }
+  cambiarDesconto(indice, campo, valor) {
+    const descontos = this.state.borrador.descontos || [];
+    this.setState({ borrador: { ...this.state.borrador, descontos: descontos.map((d, i) => i === indice ? { ...d, [campo]: valor } : d) } });
+  }
+}
+</script>
+</body>
+</html>

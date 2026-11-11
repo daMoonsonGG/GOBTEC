@@ -1,0 +1,306 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: EUPL-1.2 -->
+<!-- SPDX-FileCopyrightText: 2026 [TITULAR] -->
+<html lang="gl">
+<head>
+<meta charset="utf-8">
+<title>Superadministración · Concellos e persoas xestoras</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+[data-tema="claro"]{color-scheme:light;--fondo:#FFFFFF;--superficie:#F3F5F8;--superficie2:#E6EAF0;--texto:#141A22;--texto2:#4A5462;--linea:#CBD2DB;--linea-forte:#6B7686;--forte:#141A22;--sobre-forte:#FFFFFF}
+[data-tema="escuro"]{color-scheme:dark;--fondo:#11161C;--superficie:#1A212A;--superficie2:#2A333F;--texto:#EEF1F5;--texto2:#B3BCC8;--linea:#3A4553;--linea-forte:#8894A3;--forte:#EEF1F5;--sobre-forte:#11161C}
+body{margin:0}
+body:has([data-tema="escuro"]){background:#11161C}
+a{color:var(--texto)}a:hover{color:var(--texto2)}
+:focus-visible{outline:3px solid var(--texto);outline-offset:2px}
+.saltar{position:absolute;left:-9999px}.saltar:focus{left:16px;top:8px;background:var(--fondo);color:var(--texto);padding:12px 16px;z-index:10}
+</style>
+</helmet>
+<div data-tema="{{tema}}" style="font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; color: var(--texto); background: var(--fondo); font-size: 17px; line-height: 1.5; position: relative">
+  <a class="saltar" href="#contido">Saltar ao contido</a>
+
+  <header style="background: #0B1016; color: #F5F7FA">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 12px clamp(16px, 4vw, 40px); min-height: 44px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; font-weight: 700; font-size: 19px"><span>Superadministración da plataforma</span><button type="button" onClick="{{alternarTema}}" style="min-height: 44px; padding: 0 12px; border-radius: 8px; border: 1px solid currentColor; background: transparent; color: inherit; font: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-weight: 400; font-size: 17px"><sc-if value="{{escuro}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></sc-if><sc-if value="{{claro}}" hint-placeholder-val="{{ true }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></sc-if>{{rotuloTema}}</button></div>
+  </header>
+
+  <main id="contido" style="max-width: 1280px; margin: 0 auto; padding: 32px clamp(16px, 4vw, 40px) 64px">
+    <h1 style="margin: 0 0 24px; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.12">Concellos e persoas xestoras</h1>
+
+    <sc-if value="{{temMensaxe}}" hint-placeholder-val="{{ false }}">
+      <p role="status" style="margin: 0 0 20px; padding: 12px 16px; border-radius: 8px; background: var(--superficie); font-weight: 700">{{mensaxe}}</p>
+    </sc-if>
+
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 32px">
+      <section aria-labelledby="concellos" style="flex: 999 1 480px; min-width: 0">
+        <h2 id="concellos" aria-live="polite" style="margin: 0 0 16px; font-size: 24px">{{contador}}</h2>
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px">
+          <sc-for list="{{concellos}}" as="c" hint-placeholder-count="3">
+            <li style="border: 1px solid var(--linea); border-radius: 12px; padding: 16px 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px">
+              <span aria-hidden="true" style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 8px; background: {{c.cor}}; color: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; font-weight: 700">{{c.inicial}}</span>
+              <span style="flex: 1 1 240px; min-width: 0">
+                <strong style="font-size: 19px">{{c.nome}}</strong><br>
+                <span style="color: var(--texto2)">/c/{{c.slug}} · {{c.estado}}</span><br>
+                <span style="color: var(--texto2); overflow-wrap: anywhere">Xestión: {{c.xestores}}</span>
+              </span>
+              <sc-if value="{{c.eActivo}}" hint-placeholder-val="{{ false }}"><strong>Concello activo</strong></sc-if>
+              <sc-if value="{{c.podeActivar}}" hint-placeholder-val="{{ false }}">
+                <button type="button" onClick="{{c.activar}}" style="min-height: 44px; padding: 0 16px; border-radius: 8px; border: 0; background: var(--forte); color: var(--sobre-forte); font: inherit; font-weight: 700; cursor: pointer">Xestionar este concello</button>
+              </sc-if>
+              <button type="button" onClick="{{c.alternar}}" style="min-height: 44px; padding: 0 16px; border-radius: 8px; border: 1px solid var(--texto); background: var(--fondo); color: var(--texto); font: inherit; cursor: pointer">{{c.rotuloBoton}}</button>
+            </li>
+          </sc-for>
+        </ul>
+
+        <form aria-labelledby="engadir" style="margin-top: 24px; border-top: 1px solid var(--linea); padding-top: 24px; display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px">
+          <h3 id="engadir" style="flex: 1 1 100%; margin: 0; font-size: 20px">Engadir unha persoa xestora</h3>
+          <fieldset style="flex: 1 1 100%; min-width: 0; border: 0; margin: 0; padding: 0">
+            <legend style="padding: 0; margin-bottom: 4px; font-weight: 700">Concello</legend>
+            <div style="display: flex; flex-wrap: wrap; gap: 0 20px">
+              <sc-for list="{{concellos}}" as="c" hint-placeholder-count="3">
+                <label style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; cursor: pointer">
+                  <input type="radio" name="destino" checked="{{c.eDestino}}" onChange="{{c.elixirDestino}}" style="width: 20px; height: 20px; margin: 0; accent-color: var(--texto)">
+                  {{c.nome}}
+                </label>
+              </sc-for>
+            </div>
+          </fieldset>
+          <div style="flex: 1 1 240px; min-width: 0">
+            <label for="xestor" style="display: block; font-weight: 700; margin-bottom: 4px">Correo</label>
+            <input id="xestor" type="email" value="{{xestor}}" onChange="{{cambiarXestor}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+          </div>
+          <div style="flex: 1 1 180px; min-width: 0">
+            <label for="xestor-tel" style="display: block; font-weight: 700; margin-bottom: 4px">Teléfono móbil</label>
+            <input id="xestor-tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="600 123 456" value="{{xestorTel}}" onChange="{{cambiarXestorTel}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+          </div>
+          <button type="button" onClick="{{engadirXestor}}" style="min-height: 44px; padding: 0 20px; border-radius: 8px; border: 1px solid var(--texto); background: var(--fondo); color: var(--texto); font: inherit; font-weight: 700; cursor: pointer">Engadir</button>
+        </form>
+      </section>
+
+      <form aria-labelledby="alta" style="flex: 1 1 340px; min-width: 0; border: 1px solid var(--texto); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+        <h2 id="alta" style="margin: 0; font-size: 22px">Dar de alta un concello</h2>
+
+        <sc-if value="{{temErros}}" hint-placeholder-val="{{ false }}">
+          <div role="alert" style="padding: 12px; border: 2px solid var(--texto); border-radius: 8px">
+            <strong>Revisa estes campos:</strong>
+            <ul style="margin: 4px 0 0; padding-left: 20px">
+              <sc-for list="{{erros}}" as="e" hint-placeholder-count="1">
+                <li>{{e.texto}}</li>
+              </sc-for>
+            </ul>
+          </div>
+        </sc-if>
+
+        <div>
+          <label for="nome" style="display: block; font-weight: 700; margin-bottom: 4px">Nome do concello</label>
+          <input id="nome" type="text" value="{{novo.nome}}" onChange="{{cambiarNome}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+          <p style="margin: 4px 0 0; font-size: 15px; color: var(--texto2)">Enderezo: /c/{{slugNovo}}</p>
+        </div>
+        <div>
+          <label for="cor" style="display: block; font-weight: 700; margin-bottom: 4px">Cor principal</label>
+          <div style="display: flex; align-items: center; gap: 12px">
+            <input id="cor" type="color" value="{{novo.cor}}" onChange="{{cambiarCor}}" style="flex: 0 0 auto; width: 64px; height: 44px; padding: 2px; border: 1px solid var(--texto); border-radius: 8px; background: var(--fondo); cursor: pointer">
+            <span style="font-size: 15px">{{textoContraste}}</span>
+          </div>
+        </div>
+        <div>
+          <label for="correo" style="display: block; font-weight: 700; margin-bottom: 4px">Correo da persoa xestora</label>
+          <input id="correo" type="email" value="{{novo.correo}}" onChange="{{cambiarCorreo}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+        </div>
+        <div>
+          <label for="telefono" style="display: block; font-weight: 700; margin-bottom: 4px">Teléfono móbil da persoa xestora</label>
+          <input id="telefono" type="tel" inputmode="tel" autocomplete="tel" placeholder="600 123 456" value="{{novo.telefono}}" onChange="{{cambiarTelefono}}" aria-describedby="telefono-axuda" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
+          <p id="telefono-axuda" style="margin: 4px 0 0; font-size: 15px; color: var(--texto2)">Opcional. Servirá para avisos por SMS ou WhatsApp máis adiante.</p>
+        </div>
+        <button type="button" onClick="{{crear}}" style="min-height: 48px; border: 0; border-radius: 8px; background: var(--forte); color: var(--sobre-forte); font: inherit; font-weight: 700; cursor: pointer">Crear o concello</button>
+        <p style="margin: 0; color: var(--texto2)">Cada concello ve só os seus datos. O resto configúrao a persoa xestora.</p>
+      </form>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"modo":{"editor":"enum","options":["Sistema","Claro","Escuro"],"default":"Sistema"},"$preview":{"width":1440,"height":1300}}'>
+class Component extends DCLogic {
+  temaActual() {
+    const e = this.state || {};
+    if (e.temaElixido) return e.temaElixido;
+    if (this.props.modo === 'Claro') return 'claro';
+    if (this.props.modo === 'Escuro') return 'escuro';
+    let gardado = null;
+    try { gardado = window.localStorage.getItem(NOME_PROXECTO + '-tema'); } catch (err) { gardado = null; }
+    if (gardado === 'claro' || gardado === 'escuro') return gardado;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'escuro' : 'claro';
+  }
+  luminanciaTema(hex) {
+    const canle = (i) => {
+      const v = parseInt(hex.substr(i, 2), 16) / 255;
+      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    };
+    return 0.2126 * canle(1) + 0.7152 * canle(3) + 0.0722 * canle(5);
+  }
+  marcaEscura(hex) {
+    const fondo = this.luminanciaTema('#11161C');
+    const mestura = (i, p) => Math.round(parseInt(hex.substr(i, 2), 16) * (1 - p) + 255 * p);
+    const pasar = (n) => (n < 16 ? '0' : '') + n.toString(16);
+    for (let p = 0; p <= 1; p += 0.05) {
+      const cor = '#' + pasar(mestura(1, p)) + pasar(mestura(3, p)) + pasar(mestura(5, p));
+      if ((this.luminanciaTema(cor) + 0.05) / (fondo + 0.05) >= 6) return cor;
+    }
+    return '#FFFFFF';
+  }
+  valsTema() {
+    const tema = this.temaActual();
+    const escuro = tema === 'escuro';
+    const base = this.props.brand ?? (this.state && this.state.cor) ?? '#0B5CAD';
+    return {
+      tema,
+      escuro,
+      claro: !escuro,
+      rotuloTema: escuro ? 'Modo claro' : 'Modo escuro',
+      marca: escuro ? this.marcaEscura(base) : base,
+      sobreMarca: escuro ? '#11161C' : '#FFFFFF',
+      alternarTema: () => {
+        const novo = escuro ? 'claro' : 'escuro';
+        try { window.localStorage.setItem(NOME_PROXECTO + '-tema', novo); } catch (err) { /* sen almacenamento */ }
+        this.setState({ temaElixido: novo });
+      }
+    };
+  }
+  componentDidMount() {
+    this.oirTema = (e) => {
+      if (e.key === NOME_PROXECTO + '-tema' && (e.newValue === 'claro' || e.newValue === 'escuro')) {
+        this.setState({ temaElixido: e.newValue });
+      }
+    };
+    window.addEventListener('storage', this.oirTema);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('storage', this.oirTema);
+  }
+  renderVals() {
+    return { ...this.valsPantalla(), ...this.valsTema() };
+  }
+  constructor(props) {
+    super(props);
+    this.state = {
+      concellos: [
+        { slug: 'ribadouro', nome: 'Concello de Ribadouro', cor: '#0b5cad', activo: true, xestores: [{ correo: 'deportes@ribadouro.example', telefono: '600 000 001' }] },
+        { slug: 'valdeira', nome: 'Concello de Valdeira', cor: '#6d28d9', activo: true, xestores: [{ correo: 'xestion@valdeira.example', telefono: '600 000 002' }] },
+        { slug: 'monteferro', nome: 'Concello de Monteferro', cor: '#a4372b', activo: true, xestores: [{ correo: 'deportes@monteferro.example', telefono: '' }] }
+      ],
+      novo: { nome: '', cor: '#0e7490', correo: '', telefono: '' },
+      erros: [],
+      mensaxe: '',
+      destino: 'ribadouro',
+      xestor: '',
+      xestorTel: ''
+    };
+  }
+  contraste(hex) {
+    const canle = (i) => {
+      const v = parseInt(hex.substr(i, 2), 16) / 255;
+      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    };
+    const l = 0.2126 * canle(1) + 0.7152 * canle(3) + 0.0722 * canle(5);
+    return 1.05 / (l + 0.05);
+  }
+  slug(nome) {
+    return nome
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[̀-ͯ]/g, '')
+      .replace(/^concello (de |da |do |das |dos |d')?/, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '');
+  }
+  valsPantalla() {
+    const { concellos, novo, erros, mensaxe, destino, xestor, xestorTel } = this.state;
+    const correoValido = (c) => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(c);
+    const telefonoValido = (v) => !v.trim() || /^(\+34\s?)?[67]\d{2}[\s-]?\d{3}[\s-]?\d{3}$/.test(v.trim());
+    const slugNovo = this.slug(novo.nome);
+    const ratio = this.contraste(novo.cor);
+    const campo = (k) => (e) => this.setState({ novo: { ...this.state.novo, [k]: e.target.value }, erros: [] });
+    return {
+      novo,
+      mensaxe,
+      destino,
+      xestor,
+      xestorTel,
+      slugNovo: slugNovo || 'nome-do-concello',
+      temMensaxe: !!mensaxe,
+      temErros: erros.length > 0,
+      erros: erros.map((texto) => ({ texto })),
+      contador: concellos.length + ' concellos',
+      textoContraste: ratio >= 4.5
+        ? 'Contraste ' + ratio.toFixed(1).replace('.', ',') + ':1. Cumpre AA.'
+        : 'Contraste ' + ratio.toFixed(1).replace('.', ',') + ':1. Non cumpre AA.',
+      concellos: concellos.map((c) => ({
+        ...c,
+        inicial: c.nome.replace(/^Concello (de |da |do )?/, '').charAt(0).toUpperCase(),
+        estado: c.activo ? 'Activo' : 'Desactivado',
+        xestores: c.xestores.map((x) => x.correo + (x.telefono ? ' · ' + x.telefono : '')).join(', '),
+        rotuloBoton: c.activo ? 'Desactivar' : 'Activar',
+        aria: (c.activo ? 'Desactivar ' : 'Activar ') + c.nome,
+        eActivo: c.slug === (window.__app ? window.__app.slug : 'ribadouro'),
+        podeActivar: c.activo && c.slug !== (window.__app ? window.__app.slug : 'ribadouro'),
+        ariaActivar: 'Xestionar este concello: ' + c.nome,
+        activar: () => {
+          if (window.__app && window.__app.cambiarConcello) window.__app.cambiarConcello(c.slug);
+          this.setState({ mensaxe: 'Agora xestionas ' + c.nome + '.' });
+        },
+        eDestino: c.slug === destino,
+        elixirDestino: () => this.setState({ destino: c.slug }),
+        alternar: () => (window.__app && c.activo && c.slug === window.__app.slug) ? this.setState({ mensaxe: 'Non podes desactivar o concello que estás a xestionar.' }) : this.setState({
+          concellos: this.state.concellos.map((x) => (x.slug === c.slug ? { ...x, activo: !x.activo } : x)),
+          mensaxe: c.nome + (c.activo ? ' desactivado.' : ' activado.')
+        })
+      })),
+      cambiarNome: campo('nome'),
+      cambiarCor: campo('cor'),
+      cambiarCorreo: campo('correo'),
+      cambiarTelefono: campo('telefono'),
+      cambiarXestor: (e) => this.setState({ xestor: e.target.value }),
+      cambiarXestorTel: (e) => this.setState({ xestorTel: e.target.value }),
+      engadirXestor: () => {
+        if (!correoValido(xestor)) {
+          this.setState({ mensaxe: 'Escribe un correo válido para engadir a persoa xestora.' });
+          return;
+        }
+        if (!telefonoValido(xestorTel)) {
+          this.setState({ mensaxe: 'Escribe un teléfono móbil válido, por exemplo 600 123 456.' });
+          return;
+        }
+        this.setState({
+          concellos: concellos.map((c) => (c.slug === destino ? { ...c, xestores: c.xestores.concat({ correo: xestor, telefono: xestorTel.trim() }) } : c)),
+          xestor: '',
+          xestorTel: '',
+          mensaxe: 'Persoa xestora engadida.'
+        });
+      },
+      crear: () => {
+        const lista = [];
+        if (!slugNovo) lista.push('Escribe o nome do concello.');
+        if (concellos.some((c) => c.slug === slugNovo)) lista.push('Xa existe un concello con ese enderezo.');
+        if (ratio < 4.5) lista.push('A cor non chega ao contraste mínimo de 4,5:1.');
+        if (!correoValido(novo.correo)) lista.push('Escribe un correo válido.');
+        if (!telefonoValido(novo.telefono)) lista.push('Escribe un teléfono móbil válido.');
+        if (lista.length) {
+          this.setState({ erros: lista, mensaxe: '' });
+          return;
+        }
+        this.setState({
+          concellos: concellos.concat({ slug: slugNovo, nome: novo.nome.trim(), cor: novo.cor, activo: true, xestores: [{ correo: novo.correo, telefono: novo.telefono.trim() }] }),
+          novo: { nome: '', cor: '#0e7490', correo: '', telefono: '' },
+          erros: [],
+          mensaxe: novo.nome.trim() + ' creado. Enviamos a invitación á persoa xestora.'
+        });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
