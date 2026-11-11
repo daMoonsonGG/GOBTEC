@@ -75,7 +75,7 @@ Despois de cambiar as fontes ou a lóxica:
 1. Volve construír co comando anterior e comproba que non hai erros.
 2. Percorre as 16 pantallas principais e as vistas auxiliares en escritorio e móbil.
 3. Comproba os textos en galego, castelán e inglés, así como os temas claro e escuro.
-4. Revisa o foco, o teclado, as etiquetas, os avisos e o reflow a 320 px. `herramientas/comprobar_accesibilidade.js`
+4. Revisa o foco, o teclado, as etiquetas, os avisos e o reflow a 320 px. `ferramentas/comprobar_accesibilidade.js`
   pode executar axe-core se se lle proporciona unha copia local de `axe.min.js`; non carga esa dependencia da web.
 
 Os scripts de captura e comprobación son ferramentas de desenvolvemento; non forman parte do produto publicado.
