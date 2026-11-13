@@ -217,15 +217,15 @@ class Component extends DCLogic {
       erro: '',
       nova: { recurso: '', hora: '18:00', persoa: '', canle: 'teléfono' },
       lista: [
-        { id: 1, hora: '09:00', dia: 'Hoxe', ord: new Date(2026, 10, 5, 9).getTime(), recurso: 'Piscina Municipal A Ribeira, Pista 2', persoa: 'Antía R.', canle: 'web', estado: 'Asistida' },
-        { id: 2, hora: '17:00', dia: 'Hoxe', ord: new Date(2026, 10, 5, 17).getTime(), recurso: 'Pistas de pádel do Campo da Feira, Pista 2', persoa: 'Brais L.', canle: 'web', estado: 'Confirmada' },
-        { id: 3, hora: '18:00', dia: 'Hoxe', ord: new Date(2026, 10, 5, 18).getTime(), recurso: 'Pavillón Municipal, Pista 1', persoa: 'Noa F.', canle: 'teléfono', estado: 'Confirmada' },
-        { id: 4, hora: '19:00', dia: 'Hoxe', ord: new Date(2026, 10, 5, 19).getTime(), recurso: 'Pistas de pádel do Campo da Feira, Pista 1', persoa: 'Uxía C.', canle: 'presencial', estado: 'Confirmada' },
-        { id: 5, hora: '20:00', dia: 'Hoxe', ord: new Date(2026, 10, 5, 20).getTime(), recurso: 'Pistas de pádel do Campo da Feira, Pista 2', persoa: 'Martiño P.', canle: 'web', estado: 'Confirmada' },
-        { id: 6, hora: '18:00', dia: 'Luns 9/11', ord: new Date(2026, 10, 9, 18).getTime(), recurso: 'Pistas de pádel do Campo da Feira, Pista 1', persoa: 'Iria M.', canle: 'presencial', estado: 'Confirmada' },
-        { id: 7, hora: '18:00', dia: 'Martes 10/11', ord: new Date(2026, 10, 10, 18).getTime(), recurso: 'Pistas de pádel do Campo da Feira, Pista 2', persoa: 'Brais L.', canle: 'web', estado: 'Confirmada' },
-        { id: 8, hora: '19:00', dia: 'Mércores 11/11', ord: new Date(2026, 10, 11, 19).getTime(), recurso: 'Pistas de pádel do Campo da Feira, Pista 1', persoa: 'Noa F.', canle: 'web', estado: 'Confirmada' },
-        { id: 9, hora: '10:00', dia: 'Sábado 14/11', ord: new Date(2026, 10, 14, 10).getTime(), recurso: 'Pistas de pádel do Campo da Feira, Pista 3', persoa: 'Uxía C.', canle: 'teléfono', estado: 'Confirmada' }
+        { id: 1, hora: '09:00', dia: 'Hoxe', ord: new Date(2026, 10, 5, 9).getTime(), recurso: 'Piscina municipal de Exemplo, Pista 2', persoa: 'Antía R.', canle: 'web', estado: 'Asistida' },
+        { id: 2, hora: '17:00', dia: 'Hoxe', ord: new Date(2026, 10, 5, 17).getTime(), recurso: 'Pistas de pádel de Exemplo, Pista 2', persoa: 'Brais L.', canle: 'web', estado: 'Confirmada' },
+        { id: 3, hora: '18:00', dia: 'Hoxe', ord: new Date(2026, 10, 5, 18).getTime(), recurso: 'Pavillón municipal de Exemplo, Pista 1', persoa: 'Noa F.', canle: 'teléfono', estado: 'Confirmada' },
+        { id: 4, hora: '19:00', dia: 'Hoxe', ord: new Date(2026, 10, 5, 19).getTime(), recurso: 'Pistas de pádel de Exemplo, Pista 1', persoa: 'Uxía C.', canle: 'presencial', estado: 'Confirmada' },
+        { id: 5, hora: '20:00', dia: 'Hoxe', ord: new Date(2026, 10, 5, 20).getTime(), recurso: 'Pistas de pádel de Exemplo, Pista 2', persoa: 'Martiño P.', canle: 'web', estado: 'Confirmada' },
+        { id: 6, hora: '18:00', dia: 'Luns 9/11', ord: new Date(2026, 10, 9, 18).getTime(), recurso: 'Pistas de pádel de Exemplo, Pista 1', persoa: 'Iria M.', canle: 'presencial', estado: 'Confirmada' },
+        { id: 7, hora: '18:00', dia: 'Martes 10/11', ord: new Date(2026, 10, 10, 18).getTime(), recurso: 'Pistas de pádel de Exemplo, Pista 2', persoa: 'Brais L.', canle: 'web', estado: 'Confirmada' },
+        { id: 8, hora: '19:00', dia: 'Mércores 11/11', ord: new Date(2026, 10, 11, 19).getTime(), recurso: 'Pistas de pádel de Exemplo, Pista 1', persoa: 'Noa F.', canle: 'web', estado: 'Confirmada' },
+        { id: 9, hora: '10:00', dia: 'Sábado 14/11', ord: new Date(2026, 10, 14, 10).getTime(), recurso: 'Pistas de pádel de Exemplo, Pista 3', persoa: 'Uxía C.', canle: 'teléfono', estado: 'Confirmada' }
       ]
     };
   }
@@ -233,7 +233,7 @@ class Component extends DCLogic {
     const brand = this.props.brand ?? '#0B5CAD';
     const { mensaxe, erro, nova, lista } = this.state;
     const A = window.__app;
-    const insts = A && A.publicas ? A.publicas() : [{ nome: 'Pistas de pádel do Campo da Feira', pistas: 3 }, { nome: 'Pavillón Municipal', pistas: 1 }, { nome: 'Piscina Municipal A Ribeira', pistas: 6 }];
+    const insts = A && A.publicas ? A.publicas() : [{ nome: 'Pistas de pádel de Exemplo', pistas: 3 }, { nome: 'Pavillón municipal de Exemplo', pistas: 1 }, { nome: 'Piscina municipal de Exemplo', pistas: 6 }];
     const opcsFiltro = [{ valor: 'Todas', texto: 'Todas' }].concat(insts.map((i) => ({ valor: i.nome, texto: i.nome })));
     const filtro = opcsFiltro.some((o) => o.valor === this.state.filtro) ? this.state.filtro : 'Todas';
     const opcsRecurso = [];

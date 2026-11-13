@@ -34,7 +34,7 @@ const ESTADOS = [
   E('concello', 'axenda-reserva-creada', 'Axenda · reserva para un veciño', 'axenda', "set('persoa', 'Ana P.'); await e(); await clic('Crear a reserva');"),
   E('concello', 'axenda-asistiu', 'Axenda · asistencia rexistrada', 'axenda', "await clic('Asistiu');"),
   E('concello', 'avisos-erro', 'Avisos · erro: falta o motivo', 'avisos', "await clic('Publicar aviso e notificar');"),
-  E('concello', 'avisos-publicado', 'Avisos · aviso publicado e notificado', 'avisos', "set('afectada', 'Piscina Municipal A Ribeira'); set('desde', '2026-11-20'); set('ata', '2026-11-22'); set('motivo', 'Avaría na depuradora'); set('mensaxe', 'Desculpade as molestias.'); await e(); const cb = [...document.querySelectorAll('#app fieldset input[type=checkbox]')]; cb[2].click(); await e(80); cb[3].click(); await e(80); await clic('Publicar aviso e notificar');"),
+  E('concello', 'avisos-publicado', 'Avisos · aviso publicado e notificado', 'avisos', "set('afectada', 'Piscina municipal de Exemplo'); set('desde', '2026-11-20'); set('ata', '2026-11-22'); set('motivo', 'Avaría na depuradora'); set('mensaxe', 'Desculpade as molestias.'); await e(); const cb = [...document.querySelectorAll('#app fieldset input[type=checkbox]')]; cb[2].click(); await e(80); cb[3].click(); await e(80); await clic('Publicar aviso e notificar');"),
   E('concello', 'marca-contraste', 'Marca · contraste insuficiente', 'marca', "set('cor', '#ffee00'); await e();"),
   E('concello', 'uso-taboa', 'Resumo de uso · vista en táboa', 'uso', "await clic('Táboa');"),
   E('concello', 'uso-agosto', 'Resumo de uso · agosto', 'uso', "set('periodo', 'ago'); await e();"),

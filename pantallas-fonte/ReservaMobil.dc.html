@@ -148,7 +148,7 @@ class Component extends DCLogic {
     const horasPrazo = res && A && A.normasDe ? A.normasDe(res.instalacion).cancelar : 24;
     const bloqueada = !!(res && res.inicio && (res.inicio - hoxe) / 36e5 < horasPrazo);
     const inst = res && A && A.publicas ? A.publicas().find((i) => i.nome === res.instalacion) : null;
-    const dadoReserva = res || { id: 1, instalacion: 'Pistas de pádel do Campo da Feira', recurso: 'Pista 1', cando: 'Mércores 11 de novembro, 19:00 a 20:00' };
+    const dadoReserva = res || { id: 1, instalacion: 'Pistas de pádel de Exemplo', recurso: 'Pista 1', cando: 'Mércores 11 de novembro, 19:00 a 20:00' };
     const n = 25;
     const semente = res ? res.id * 3 + 2 : 5;
     const buscador = (x, y) => {

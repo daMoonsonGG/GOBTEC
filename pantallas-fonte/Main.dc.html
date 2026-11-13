@@ -223,18 +223,18 @@ class Component extends DCLogic {
   valsPantalla() {
     const brand = this.props.brand ?? '#0B5CAD';
     const todas = [
-      { nome: 'Pistas de pádel do Campo da Feira', lista: ['Pádel'], detalle: '3 pistas cubertas', enderezo: 'Exemplo de rúa, 1', aforo: 4, accesible: true, aviso: 'Pechada o xoves 12 desde as 16:00' },
-      { nome: 'Pavillón Municipal', lista: ['Fútbol sala', 'Baloncesto'], detalle: '1 pista central', enderezo: 'Exemplo de avenida, 2', aforo: 200, accesible: true, aviso: 'Pecha ás 20:00 o venres 13' },
-      { nome: 'Piscina Municipal A Ribeira', lista: ['Natación'], detalle: '6 rúas', enderezo: 'Exemplo de paseo, s/n', aforo: 60, accesible: true, aviso: 'Pechada do 16 ao 18 de novembro' },
-      { nome: 'Campo de fútbol de Santa Mariña', lista: ['Fútbol'], detalle: '1 campo de herba artificial', enderezo: 'Exemplo de lugar', aforo: 30, accesible: false },
-      { nome: 'Pistas de tenis de Outeiro', lista: ['Tenis'], detalle: '2 pistas', enderezo: 'Exemplo de camiño, 3', aforo: 4, accesible: false },
-      { nome: 'Sala Polivalente da Casa da Cultura', lista: ['Ioga'], detalle: 'Aforo: 20 persoas', enderezo: 'Exemplo de praza, 4', aforo: 20, accesible: true }
+      { nome: 'Pistas de pádel de Exemplo', lista: ['Pádel'], detalle: '3 pistas cubertas', enderezo: 'Exemplo de rúa, 1', aforo: 4, accesible: true, aviso: 'Pechada o xoves 12 desde as 16:00' },
+      { nome: 'Pavillón municipal de Exemplo', lista: ['Fútbol sala', 'Baloncesto'], detalle: '1 pista central', enderezo: 'Exemplo de avenida, 2', aforo: 200, accesible: true, aviso: 'Pecha ás 20:00 o venres 13' },
+      { nome: 'Piscina municipal de Exemplo', lista: ['Natación'], detalle: '6 rúas', enderezo: 'Exemplo de paseo, s/n', aforo: 60, accesible: true, aviso: 'Pechada do 16 ao 18 de novembro' },
+      { nome: 'Campo de fútbol de Exemplo', lista: ['Fútbol'], detalle: '1 campo de herba artificial', enderezo: 'Exemplo de lugar', aforo: 30, accesible: false },
+      { nome: 'Pistas de tenis de Exemplo', lista: ['Tenis'], detalle: '2 pistas', enderezo: 'Exemplo de camiño, 3', aforo: 4, accesible: false },
+      { nome: 'Sala polivalente de Exemplo', lista: ['Ioga'], detalle: 'Aforo: 20 persoas', enderezo: 'Exemplo de praza, 4', aforo: 20, accesible: true }
     ];
     const extra = [];
     const avisos = extra.concat([
-      { peche: true, horario: false, titulo: 'Pechada: Pistas de pádel do Campo da Feira', detalle: 'Xoves 12 de novembro, desde as 16:00. Obras no pavimento.' },
-      { peche: true, horario: false, titulo: 'Pechada: Piscina Municipal A Ribeira', detalle: 'Do 16 ao 18 de novembro. Mantemento do vaso.' },
-      { peche: false, horario: true, titulo: 'Horario especial: Pavillón Municipal', detalle: 'Venres 13 de novembro, pecha ás 20:00 por un evento.' }
+      { peche: true, horario: false, titulo: 'Pechada: Pistas de pádel de Exemplo', detalle: 'Xoves 12 de novembro, desde as 16:00. Obras no pavimento.' },
+      { peche: true, horario: false, titulo: 'Pechada: Piscina municipal de Exemplo', detalle: 'Do 16 ao 18 de novembro. Mantemento do vaso.' },
+      { peche: false, horario: true, titulo: 'Horario especial: Pavillón municipal de Exemplo', detalle: 'Venres 13 de novembro, pecha ás 20:00 por un evento.' }
     ]);
     const { deporte, soAccesibles, data } = this.state;
     const instalacions = todas

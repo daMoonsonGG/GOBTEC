@@ -81,7 +81,7 @@ header>div{gap:4px 12px!important}
 </head>
 <body>
 <div class="barra" lang="es">
-  <strong>Versión de prueba</strong>
+  <strong>Versión de proba</strong>
   <label for="ir">Ir a <select id="ir"><optgroup label="Cidadanía"><option value="inicio">Inicio e instalacións</option><option value="ficha">Ficha e reserva</option><option value="reservas">As miñas reservas e avisos</option><option value="acceso">Acceso</option><option value="usuario">A miña conta</option><option value="accesibilidade">Declaración de accesibilidade</option><option value="privacidade">Política de privacidade</option></optgroup><optgroup label="Concello"><option value="panel">Panel de indicadores</option><option value="uso">Resumo de uso</option><option value="avisos">Avisos</option><option value="axenda">Axenda de reservas</option><option value="instalacions">Instalacións</option><option value="horarios">Horarios e peches</option><option value="normas">Normas de uso</option><option value="marca">Marca do concello</option></optgroup><optgroup label="Superadministración"><option value="superadmin">Concellos e persoas xestoras</option></optgroup></select></label>
   <div class="vista" role="group" aria-label="Vista"><button type="button" data-vista="escritorio" aria-pressed="true">Escritorio</button><button type="button" data-vista="movil" aria-pressed="false">Móvil</button></div>
 </div>
@@ -1678,9 +1678,9 @@ header>div{gap:4px 12px!important}
           <div style="flex: 1 1 320px; min-width: 0">
             <label for="instalacion" style="display: block; font-weight: 700; margin-bottom: 4px">Instalación</label>
             <select id="instalacion" value="{{instalacionSel}}" onChange="{{cambiarInstalacion}}" data-opcions="{{opcsInstalacion}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
-              <option>Pistas de pádel do Campo da Feira</option>
-              <option>Pavillón Municipal</option>
-              <option>Piscina Municipal A Ribeira</option>
+              <option>Pistas de pádel de Exemplo</option>
+              <option>Pavillón municipal de Exemplo</option>
+              <option>Piscina municipal de Exemplo</option>
             </select>
           </div>
           <div style="flex: 0 1 200px">
@@ -1839,8 +1839,8 @@ header>div{gap:4px 12px!important}
             <label for="ambito" style="display: block; font-weight: 700; margin-bottom: 4px">Aplicar a</label>
             <select id="ambito" value="{{ambitoSel}}" onChange="{{cambiarAmbito}}" data-opcions="{{opcsAmbito}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
               <option>Todo o concello</option>
-              <option>Pistas de pádel do Campo da Feira</option>
-              <option>Pavillón Municipal</option>
+              <option>Pistas de pádel de Exemplo</option>
+              <option>Pavillón municipal de Exemplo</option>
             </select>
             <p style="margin: 4px 0 0; font-size: 15px; color: var(--texto2)">A norma dunha instalación prevalece sobre a do concello.</p>
             <sc-if value="{{herdada}}" hint-placeholder-val="{{ false }}">
@@ -1984,7 +1984,7 @@ header>div{gap:4px 12px!important}
               <p style="margin: 0; font-size: 28px; font-weight: 700; line-height: 1.15">Reserva as instalacións deportivas</p>
             </div>
             <div style="padding: 20px; display: flex; flex-direction: column; gap: 12px">
-              <p style="margin: 0; font-weight: 700">Pistas de pádel do Campo da Feira</p>
+              <p style="margin: 0; font-weight: 700">Pistas de pádel de Exemplo</p>
               <span style="min-height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: {{marca}}; color: {{sobreMarca}}; font-weight: 700">Ver dispoñibilidade</span>
               <div style="display: flex; flex-wrap: wrap; gap: 8px">
                 <span style="padding: 8px 12px; border-radius: 6px; border: 1px solid var(--texto)">Libre</span>
@@ -2442,12 +2442,16 @@ const DIC_ES = {
   'Tenis': 'Tenis',
   'Ioga': 'Yoga',
 
-  // Instalacións (nomes descritivos; os topónimos non se traducen)
-  'Pistas de pádel do Campo da Feira': 'Pistas de pádel del Campo da Feira',
-  'Pavillón Municipal': 'Pabellón Municipal',
+  // Instalacións (nomes descritivos de exemplo)
+  'Pistas de pádel de Exemplo': 'Pistas de pádel de ejemplo',
+  'Pavillón municipal de Exemplo': 'Pabellón municipal de ejemplo',
   'Pavillón': 'Pabellón',
-  'Piscina Municipal A Ribeira': 'Piscina Municipal A Ribeira',
-  'Sala Polivalente da Casa da Cultura': 'Sala Polivalente de la Casa de la Cultura',
+  'Piscina municipal de Exemplo': 'Piscina municipal de ejemplo',
+  'Campo de fútbol de Exemplo': 'Campo de fútbol de ejemplo',
+  'Pistas de tenis de Exemplo': 'Pistas de tenis de ejemplo',
+  'Sala polivalente de Exemplo': 'Sala polivalente de ejemplo',
+  'Campo de Exemplo': 'Campo de ejemplo',
+  'Piscina de Exemplo': 'Piscina de ejemplo',
   'Pistas de pádel': 'Pistas de pádel',
   'Pistas de tenis': 'Pistas de tenis',
   '3 pistas cubertas': '3 pistas cubiertas',
@@ -2515,7 +2519,7 @@ const DIC_ES = {
   'Cambio do concello': 'Cambio del ayuntamiento',
   'As pistas de pádel pechan o xoves 12 de novembro desde as 16:00 por obras. A túa reserva non se ve afectada.': 'Las pistas de pádel cierran el jueves 12 de noviembre desde las 16:00 por obras. Tu reserva no se ve afectada.',
   'Recordatorio': 'Recordatorio',
-  'Mañá ás 08:00 tes reserva na Piscina Municipal A Ribeira.': 'Mañana a las 08:00 tienes reserva en la Piscina Municipal A Ribeira.',
+  'Mañá ás 08:00 tes reserva na Piscina municipal de Exemplo.': 'Mañana a las 08:00 tienes reserva en la Piscina municipal de ejemplo.',
   'Confirmación': 'Confirmación',
   'Historial': 'Historial',
   'Asistida': 'Asistida',
@@ -2541,7 +2545,7 @@ const DIC_ES = {
   'Política de privacidade do concello': 'Política de privacidad del ayuntamiento',
 
   // Reserva móbil
-  'Pistas de pádel do Campo da Feira, Pista 1': 'Pistas de pádel del Campo da Feira, Pista 1',
+  'Pistas de pádel de Exemplo, Pista 1': 'Pistas de pádel de ejemplo, Pista 1',
 
   // Panel
   'Panel de indicadores': 'Panel de indicadores',
@@ -2574,7 +2578,7 @@ const DIC_ES = {
   'Reservar para un veciño': 'Reservar para un vecino',
   'Datos por instalación': 'Datos por instalación',
   'Instalación': 'Instalación',
-  'Campo de Santa Mariña': 'Campo de Santa Mariña',
+  'Campo de Exemplo': 'Campo de Exemplo',
 
   // Instalacións (xestión)
   'Dar de alta unha instalación': 'Dar de alta una instalación',
@@ -2750,12 +2754,12 @@ const DIC_ES = {
 // Días, meses e pequenos fragmentos dentro de textos xerados.
 const MESES_ES = { novembro: 'noviembre', outubro: 'octubre', decembro: 'diciembre', setembro: 'septiembre', agosto: 'agosto' };
 const FRAGMENTOS_ES = [
-  [/Pistas de pádel do Campo da Feira/g, 'Pistas de pádel de Campo da Feira'],
-  [/Piscina Municipal A Ribeira/g, 'Piscina Municipal A Ribeira'],
-  [/Pavillón Municipal/g, 'Pabellón Municipal'],
-  [/Campo de fútbol de Santa Mariña/g, 'Campo de fútbol de Santa Mariña'],
-  [/Pistas de tenis de Outeiro/g, 'Pistas de tenis de Outeiro'],
-  [/Sala Polivalente da Casa da Cultura/g, 'Sala Polivalente de la Casa de la Cultura'],
+  [/Pistas de pádel de Exemplo/g, 'Pistas de pádel de ejemplo'],
+  [/Piscina municipal de Exemplo/g, 'Piscina municipal de ejemplo'],
+  [/Pavillón municipal de Exemplo/g, 'Pabellón municipal de ejemplo'],
+  [/Campo de fútbol de Exemplo/g, 'Campo de fútbol de ejemplo'],
+  [/Pistas de tenis de Exemplo/g, 'Pistas de tenis de ejemplo'],
+  [/Sala polivalente de Exemplo/g, 'Sala polivalente de ejemplo'],
   [/Todas as pistas de pádel/g, 'Todas las pistas de pádel'],
   [/\bPavillón, Pista central/g, 'Pabellón, Pista central'],
   [/\bPavillón, /g, 'Pabellón, '],
@@ -3042,18 +3046,18 @@ const DIC_EN = {
   'Ioga': 'Yoga',
 
   // Facilities
-  'Pistas de pádel do Campo da Feira': 'Campo da Feira padel courts',
-  'Pavillón Municipal': 'Municipal Sports Hall',
+  'Pistas de pádel de Exemplo': 'Example padel courts',
+  'Pavillón municipal de Exemplo': 'Example sports hall',
   'Pavillón': 'Sports hall',
-  'Piscina Municipal A Ribeira': 'A Ribeira Municipal Pool',
-  'Campo de fútbol de Santa Mariña': 'Santa Mariña football pitch',
-  'Pistas de tenis de Outeiro': 'Outeiro tennis courts',
-  'Sala Polivalente da Casa da Cultura': 'Casa da Cultura multipurpose room',
+  'Piscina municipal de Exemplo': 'Example municipal pool',
+  'Campo de fútbol de Exemplo': 'Example football pitch',
+  'Pistas de tenis de Exemplo': 'Example tennis courts',
+  'Sala polivalente de Exemplo': 'Example multipurpose room',
   'Sala Polivalente': 'Multipurpose room',
   'Pistas de pádel': 'Padel courts',
   'Pistas de tenis': 'Tennis courts',
-  'Campo de Santa Mariña': 'Santa Mariña pitch',
-  'Piscina A Ribeira': 'A Ribeira pool',
+  'Campo de Exemplo': 'Example field',
+  'Piscina de Exemplo': 'Example pool',
   '3 pistas cubertas': '3 covered courts',
   '1 pista central': '1 main court',
   '6 rúas': '6 lanes',
@@ -3127,7 +3131,7 @@ const DIC_EN = {
   'Política de privacidade do concello': 'The council privacy policy',
 
   // Mobile booking
-  'Pistas de pádel do Campo da Feira, Pista 1': 'Campo da Feira padel courts, Court 1',
+  'Pistas de pádel de Exemplo, Pista 1': 'Example padel courts, Court 1',
 
   // Dashboard
   'Panel de indicadores': 'Indicators dashboard',
@@ -3447,12 +3451,12 @@ const DIC_EN = {
 
 const MESES_EN = { novembro: 'November', outubro: 'October', decembro: 'December', setembro: 'September', agosto: 'August' };
 const FRAGMENTOS_EN = [
-  [/Pistas de pádel do Campo da Feira/g, 'Campo da Feira padel courts'],
-  [/Piscina Municipal A Ribeira/g, 'A Ribeira Municipal Pool'],
-  [/Pavillón Municipal/g, 'Municipal Sports Hall'],
-  [/Campo de fútbol de Santa Mariña/g, 'Santa Mariña football pitch'],
-  [/Pistas de tenis de Outeiro/g, 'Outeiro tennis courts'],
-  [/Sala Polivalente da Casa da Cultura/g, 'Casa da Cultura multipurpose room'],
+  [/Pistas de pádel de Exemplo/g, 'Example padel courts'],
+  [/Piscina municipal de Exemplo/g, 'Example municipal pool'],
+  [/Pavillón municipal de Exemplo/g, 'Example sports hall'],
+  [/Campo de fútbol de Exemplo/g, 'Example football pitch'],
+  [/Pistas de tenis de Exemplo/g, 'Example tennis courts'],
+  [/Sala polivalente de Exemplo/g, 'Example multipurpose room'],
   [/Todas as pistas de pádel/g, 'All padel courts'],
   [/\bPavillón, Pista central/g, 'Sports hall, Main court'],
   [/\bPavillón, /g, 'Sports hall, '],
@@ -3666,7 +3670,7 @@ REGRAS_EN.push([/^(Carné xove|Persoas xubiladas|Campaña de inverno) \(−(\d+)
 
 
 const RUTAS = [{"ruta":"inicio","archivo":"Main","grupo":"Cidadanía","nome":"Inicio e instalacións"},{"ruta":"ficha","archivo":"Ficha","grupo":"Cidadanía","nome":"Ficha e reserva"},{"ruta":"reservas","archivo":"Reservas","grupo":"Cidadanía","nome":"As miñas reservas e avisos"},{"ruta":"acceso","archivo":"Acceso","grupo":"Cidadanía","nome":"Acceso"},{"ruta":"panel","archivo":"Panel","grupo":"Concello","nome":"Panel de indicadores"},{"ruta":"usuario","archivo":"Usuario","grupo":"Cidadanía","nome":"A miña conta"},{"ruta":"accesibilidade","archivo":"Accesibilidade","grupo":"Cidadanía","nome":"Declaración de accesibilidade"},{"ruta":"privacidade","archivo":"Privacidade","grupo":"Cidadanía","nome":"Política de privacidade"},{"ruta":"uso","archivo":"Uso","grupo":"Concello","nome":"Resumo de uso"},{"ruta":"avisos","archivo":"Avisos","grupo":"Concello","nome":"Avisos"},{"ruta":"axenda","archivo":"Axenda","grupo":"Concello","nome":"Axenda de reservas"},{"ruta":"instalacions","archivo":"Instalacions","grupo":"Concello","nome":"Instalacións"},{"ruta":"horarios","archivo":"Horarios","grupo":"Concello","nome":"Horarios e peches"},{"ruta":"normas","archivo":"Normas","grupo":"Concello","nome":"Normas de uso"},{"ruta":"marca","archivo":"Marca","grupo":"Concello","nome":"Marca do concello"},{"ruta":"superadmin","archivo":"Superadmin","grupo":"Superadministración","nome":"Concellos e persoas xestoras"},{"ruta":"reserva-mobil","archivo":"ReservaMobil","grupo":"Cidadanía","nome":"Reserva con QR (móbil)"},{"ruta":"validar-qr","archivo":"ValidarQR","grupo":"Concello","nome":"Validar QR (móbil)"},{"ruta":"ficha-mobil","archivo":"FichaMobil","grupo":"Cidadanía","nome":"Ficha e reserva (móbil)"},{"ruta":"restrinxido","archivo":"Restrinxido","grupo":"Cidadanía","nome":"Acceso restrinxido"}];
-const TITULOS = {"Main":"Instalacións deportivas · Concello de Exemplo","Ficha":"Pistas de pádel do Campo da Feira · Reservar","Reservas":"Reservas · Concello de Exemplo","Acceso":"Acceso · Concello de Exemplo","Panel":"Panel de indicadores · Concello de Exemplo","Usuario":"A miña conta · Concello de Exemplo","Accesibilidade":"Declaración de accesibilidade · Concello de Exemplo","Privacidade":"Política de privacidade · Concello de Exemplo","Uso":"Resumo de uso · Xestión · Concello de Exemplo","Avisos":"Avisos · Xestión · Concello de Exemplo","Axenda":"Axenda de reservas · Xestión · Concello de Exemplo","Instalacions":"Instalacións · Xestión · Concello de Exemplo","Horarios":"Horarios e peches · Xestión · Concello de Exemplo","Normas":"Normas de uso · Xestión · Concello de Exemplo","Marca":"Marca do concello · Xestión · Concello de Exemplo","Superadmin":"Superadministración · Concellos e persoas xestoras","ReservaMobil":"Reserva con QR (móbil)","ValidarQR":"Validar QR (móbil)","FichaMobil":"Reservar pádel (móbil)","Restrinxido":"Acceso restrinxido · Concello de Exemplo"};
+const TITULOS = {"Main":"Instalacións deportivas · Concello de Exemplo","Ficha":"Pistas de pádel de Exemplo · Reservar","Reservas":"Reservas · Concello de Exemplo","Acceso":"Acceso · Concello de Exemplo","Panel":"Panel de indicadores · Concello de Exemplo","Usuario":"A miña conta · Concello de Exemplo","Accesibilidade":"Declaración de accesibilidade · Concello de Exemplo","Privacidade":"Política de privacidade · Concello de Exemplo","Uso":"Resumo de uso · Xestión · Concello de Exemplo","Avisos":"Avisos · Xestión · Concello de Exemplo","Axenda":"Axenda de reservas · Xestión · Concello de Exemplo","Instalacions":"Instalacións · Xestión · Concello de Exemplo","Horarios":"Horarios e peches · Xestión · Concello de Exemplo","Normas":"Normas de uso · Xestión · Concello de Exemplo","Marca":"Marca do concello · Xestión · Concello de Exemplo","Superadmin":"Superadministración · Concellos e persoas xestoras","ReservaMobil":"Reserva con QR (móbil)","ValidarQR":"Validar QR (móbil)","FichaMobil":"Reservar pádel (móbil)","Restrinxido":"Acceso restrinxido · Concello de Exemplo"};
 const Clases = {};
 class DCLogic {
   constructor(props) { this.props = props || {}; this.state = {}; }
@@ -3685,9 +3689,9 @@ const App = {
   convidado: false,
   destinoLogin: null,
   avisos: [
-    { id: 1, peche: true, horario: false, info: false, titulo: 'Pechada: Pistas de pádel do Campo da Feira', detalle: 'Xoves 12 de novembro, desde as 16:00. Obras no pavimento.', instalacion: 'Pistas de pádel do Campo da Feira', canles: ['Web'] },
-    { id: 2, peche: true, horario: false, info: false, titulo: 'Pechada: Piscina Municipal A Ribeira', detalle: 'Do 16 ao 18 de novembro. Mantemento do vaso.', instalacion: 'Piscina Municipal A Ribeira', canles: ['Web'] },
-    { id: 3, peche: false, horario: true, info: false, titulo: 'Horario especial: Pavillón Municipal', detalle: 'Venres 13 de novembro, pecha ás 20:00 por un evento.', instalacion: 'Pavillón Municipal', canles: ['Web'] }
+    { id: 1, peche: true, horario: false, info: false, titulo: 'Pechada: Pistas de pádel de Exemplo', detalle: 'Xoves 12 de novembro, desde as 16:00. Obras no pavimento.', instalacion: 'Pistas de pádel de Exemplo', canles: ['Web'] },
+    { id: 2, peche: true, horario: false, info: false, titulo: 'Pechada: Piscina municipal de Exemplo', detalle: 'Do 16 ao 18 de novembro. Mantemento do vaso.', instalacion: 'Piscina municipal de Exemplo', canles: ['Web'] },
+    { id: 3, peche: false, horario: true, info: false, titulo: 'Horario especial: Pavillón municipal de Exemplo', detalle: 'Venres 13 de novembro, pecha ás 20:00 por un evento.', instalacion: 'Pavillón municipal de Exemplo', canles: ['Web'] }
   ],
   instancias: {},
   actual: null,
@@ -4089,7 +4093,7 @@ const App = {
     return this.descargar(nome, 'application/json;charset=utf-8', JSON.stringify(dato, null, 2)) ? nome : '';
   },
   engadirReserva(recurso, cando, extra) {
-    this.reservas.push({ id: 100 + this.reservas.length, instalacion: (this.fichaInst() || { nome: 'Pistas de pádel do Campo da Feira' }).nome, recurso, cando: cando.charAt(0).toUpperCase() + cando.slice(1), prazo: true, inicio: extra && extra.inicio, fin: extra && extra.fin, importe: extra && extra.importe, desconto: extra && extra.desconto });
+    this.reservas.push({ id: 100 + this.reservas.length, instalacion: (this.fichaInst() || { nome: 'Pistas de pádel de Exemplo' }).nome, recurso, cando: cando.charAt(0).toUpperCase() + cando.slice(1), prazo: true, inicio: extra && extra.inicio, fin: extra && extra.fin, importe: extra && extra.importe, desconto: extra && extra.desconto });
   },
   instancia(archivo) {
     if (this.instancias[archivo]) return this.instancias[archivo];
@@ -4459,19 +4463,19 @@ class Component extends DCLogic {
     const brand = this.props.brand ?? '#0B5CAD';
     const todas = window.__app.publicas();
     const _estatico = [
-      { nome: 'Pistas de pádel do Campo da Feira', lista: ['Pádel'], detalle: '3 pistas cubertas', enderezo: 'Exemplo de rúa, 1', aforo: 4, accesible: true, aviso: 'Pechada o xoves 12 desde as 16:00' },
-      { nome: 'Pavillón Municipal', lista: ['Fútbol sala', 'Baloncesto'], detalle: '1 pista central', enderezo: 'Exemplo de avenida, 2', aforo: 200, accesible: true, aviso: 'Pecha ás 20:00 o venres 13' },
-      { nome: 'Piscina Municipal A Ribeira', lista: ['Natación'], detalle: '6 rúas', enderezo: 'Exemplo de paseo, s/n', aforo: 60, accesible: true, aviso: 'Pechada do 16 ao 18 de novembro' },
-      { nome: 'Campo de fútbol de Santa Mariña', lista: ['Fútbol'], detalle: '1 campo de herba artificial', enderezo: 'Exemplo de lugar', aforo: 30, accesible: false },
-      { nome: 'Pistas de tenis de Outeiro', lista: ['Tenis'], detalle: '2 pistas', enderezo: 'Exemplo de camiño, 3', aforo: 4, accesible: false },
-      { nome: 'Sala Polivalente da Casa da Cultura', lista: ['Ioga'], detalle: 'Aforo: 20 persoas', enderezo: 'Exemplo de praza, 4', aforo: 20, accesible: true }
+      { nome: 'Pistas de pádel de Exemplo', lista: ['Pádel'], detalle: '3 pistas cubertas', enderezo: 'Exemplo de rúa, 1', aforo: 4, accesible: true, aviso: 'Pechada o xoves 12 desde as 16:00' },
+      { nome: 'Pavillón municipal de Exemplo', lista: ['Fútbol sala', 'Baloncesto'], detalle: '1 pista central', enderezo: 'Exemplo de avenida, 2', aforo: 200, accesible: true, aviso: 'Pecha ás 20:00 o venres 13' },
+      { nome: 'Piscina municipal de Exemplo', lista: ['Natación'], detalle: '6 rúas', enderezo: 'Exemplo de paseo, s/n', aforo: 60, accesible: true, aviso: 'Pechada do 16 ao 18 de novembro' },
+      { nome: 'Campo de fútbol de Exemplo', lista: ['Fútbol'], detalle: '1 campo de herba artificial', enderezo: 'Exemplo de lugar', aforo: 30, accesible: false },
+      { nome: 'Pistas de tenis de Exemplo', lista: ['Tenis'], detalle: '2 pistas', enderezo: 'Exemplo de camiño, 3', aforo: 4, accesible: false },
+      { nome: 'Sala polivalente de Exemplo', lista: ['Ioga'], detalle: 'Aforo: 20 persoas', enderezo: 'Exemplo de praza, 4', aforo: 20, accesible: true }
     ];
     const extra = window.__app.avisos;
     const avisos = extra;
     const _estaticos = ([
-      { peche: true, horario: false, titulo: 'Pechada: Pistas de pádel do Campo da Feira', detalle: 'Xoves 12 de novembro, desde as 16:00. Obras no pavimento.' },
-      { peche: true, horario: false, titulo: 'Pechada: Piscina Municipal A Ribeira', detalle: 'Do 16 ao 18 de novembro. Mantemento do vaso.' },
-      { peche: false, horario: true, titulo: 'Horario especial: Pavillón Municipal', detalle: 'Venres 13 de novembro, pecha ás 20:00 por un evento.' }
+      { peche: true, horario: false, titulo: 'Pechada: Pistas de pádel de Exemplo', detalle: 'Xoves 12 de novembro, desde as 16:00. Obras no pavimento.' },
+      { peche: true, horario: false, titulo: 'Pechada: Piscina municipal de Exemplo', detalle: 'Do 16 ao 18 de novembro. Mantemento do vaso.' },
+      { peche: false, horario: true, titulo: 'Horario especial: Pavillón municipal de Exemplo', detalle: 'Venres 13 de novembro, pecha ás 20:00 por un evento.' }
     ]);
     const { deporte, soAccesibles, data } = this.state;
     const instalacions = todas
@@ -4644,7 +4648,7 @@ class Component extends DCLogic {
     const brand = this.props.brand ?? '#0B5CAD';
     const instInfo = (window.__app && window.__app.fichaInst
       ? window.__app.fichaInst()
-      : { nome: 'Pistas de pádel do Campo da Feira', enderezo: 'Exemplo de rúa, 1', pistas: 3, accesible: true })
+      : { nome: 'Pistas de pádel de Exemplo', enderezo: 'Exemplo de rúa, 1', pistas: 3, accesible: true })
       || { nome: 'Aínda non hai instalacións', enderezo: '', pistas: 1, accesible: true };
     const npistas = Math.max(1, Number(instInfo.pistas) || 1);
     const pista = Math.min(this.state.pista, npistas);
@@ -4914,8 +4918,8 @@ class Component extends DCLogic {
     const { qr, canceladas, modificadas, preguntando } = this.state;
     const semSesion = !!(window.__app && (!window.__app.usuario || window.__app.usuario.rol !== 'cidadan'));
     const base = [
-      { id: 1, instalacion: 'Pistas de pádel do Campo da Feira', recurso: 'Pista 1', cando: 'Mércores 11 de novembro, 19:00 a 20:00', prazo: true, inicio: new Date(2026, 10, 11, 19, 0).getTime() },
-      { id: 2, instalacion: 'Piscina Municipal A Ribeira', recurso: 'Rúa 2', cando: 'Venres 6 de novembro, 08:00 a 09:00', prazo: false, inicio: new Date(2026, 10, 6, 8, 0).getTime() }
+      { id: 1, instalacion: 'Pistas de pádel de Exemplo', recurso: 'Pista 1', cando: 'Mércores 11 de novembro, 19:00 a 20:00', prazo: true, inicio: new Date(2026, 10, 11, 19, 0).getTime() },
+      { id: 2, instalacion: 'Piscina municipal de Exemplo', recurso: 'Rúa 2', cando: 'Venres 6 de novembro, 08:00 a 09:00', prazo: false, inicio: new Date(2026, 10, 6, 8, 0).getTime() }
     ];
     const A = window.__app;
     const hoxe = A && A.hoxe ? A.hoxe : new Date(2026, 10, 5, 10, 0);
@@ -5171,14 +5175,14 @@ class Component extends DCLogic {
   }
   semente() {
     return {
-      out: [['Pistas de pádel do Campo da Feira', 312, 78], ['Piscina Municipal A Ribeira', 214, 59], ['Pavillón Municipal', 186, 64], ['Campo de fútbol de Santa Mariña', 52, 41], ['Pistas de tenis de Outeiro', 48, 37], ['Sala Polivalente da Casa da Cultura', 30, 52]],
-      set: [['Pistas de pádel do Campo da Feira', 280, 72], ['Piscina Municipal A Ribeira', 238, 66], ['Pavillón Municipal', 164, 57], ['Campo de fútbol de Santa Mariña', 61, 45], ['Pistas de tenis de Outeiro', 55, 41], ['Sala Polivalente da Casa da Cultura', 22, 38]],
-      ago: [['Piscina Municipal A Ribeira', 402, 91], ['Pistas de pádel do Campo da Feira', 241, 63], ['Pavillón Municipal', 90, 31], ['Campo de fútbol de Santa Mariña', 70, 49], ['Pistas de tenis de Outeiro', 33, 28], ['Sala Polivalente da Casa da Cultura', 18, 30]]
+      out: [['Pistas de pádel de Exemplo', 312, 78], ['Piscina municipal de Exemplo', 214, 59], ['Pavillón municipal de Exemplo', 186, 64], ['Campo de fútbol de Exemplo', 52, 41], ['Pistas de tenis de Exemplo', 48, 37], ['Sala polivalente de Exemplo', 30, 52]],
+      set: [['Pistas de pádel de Exemplo', 280, 72], ['Piscina municipal de Exemplo', 238, 66], ['Pavillón municipal de Exemplo', 164, 57], ['Campo de fútbol de Exemplo', 61, 45], ['Pistas de tenis de Exemplo', 55, 41], ['Sala polivalente de Exemplo', 22, 38]],
+      ago: [['Piscina municipal de Exemplo', 402, 91], ['Pistas de pádel de Exemplo', 241, 63], ['Pavillón municipal de Exemplo', 90, 31], ['Campo de fútbol de Exemplo', 70, 49], ['Pistas de tenis de Exemplo', 33, 28], ['Sala polivalente de Exemplo', 18, 30]]
     };
   }
   nomesActivos() {
     const A = window.__app;
-    return A && A.nomesActivos ? A.nomesActivos() : ['Pistas de pádel do Campo da Feira', 'Piscina Municipal A Ribeira', 'Pavillón Municipal', 'Campo de fútbol de Santa Mariña', 'Pistas de tenis de Outeiro', 'Sala Polivalente da Casa da Cultura'];
+    return A && A.nomesActivos ? A.nomesActivos() : ['Pistas de pádel de Exemplo', 'Piscina municipal de Exemplo', 'Pavillón municipal de Exemplo', 'Campo de fútbol de Exemplo', 'Pistas de tenis de Exemplo', 'Sala polivalente de Exemplo'];
   }
   agenda() {
     const A = window.__app;
@@ -5189,7 +5193,7 @@ class Component extends DCLogic {
     if (!A || !A.reservas) return [];
     let canceladas = [];
     try { canceladas = A.instancia('Reservas').state.canceladas || []; } catch (e) { canceladas = []; }
-    const sementes = [{ id: 1, instalacion: 'Pistas de pádel do Campo da Feira' }, { id: 2, instalacion: 'Piscina Municipal A Ribeira' }];
+    const sementes = [{ id: 1, instalacion: 'Pistas de pádel de Exemplo' }, { id: 2, instalacion: 'Piscina municipal de Exemplo' }];
     return sementes.concat(A.reservas).map((x) => ({ instalacion: x.instalacion, cancelada: canceladas.indexOf(x.id) !== -1 }));
   }
   // A que instalación pertence un recurso da axenda («Pádel, Pista 1»).
@@ -5681,9 +5685,9 @@ class Component extends DCLogic {
     const brand = this.props.brand ?? '#0B5CAD';
     const { periodo, vista } = this.state;
     const periodos = {
-      out: [['Pistas de pádel do Campo da Feira', 312, 78], ['Piscina Municipal A Ribeira', 214, 59], ['Pavillón Municipal', 186, 64], ['Campo de fútbol de Santa Mariña', 52, 41], ['Pistas de tenis de Outeiro', 48, 37], ['Sala Polivalente da Casa da Cultura', 30, 52]],
-      set: [['Pistas de pádel do Campo da Feira', 280, 72], ['Piscina Municipal A Ribeira', 238, 66], ['Pavillón Municipal', 164, 57], ['Campo de fútbol de Santa Mariña', 61, 45], ['Pistas de tenis de Outeiro', 55, 41], ['Sala Polivalente da Casa da Cultura', 22, 38]],
-      ago: [['Piscina Municipal A Ribeira', 402, 91], ['Pistas de pádel do Campo da Feira', 241, 63], ['Pavillón Municipal', 90, 31], ['Campo de fútbol de Santa Mariña', 70, 49], ['Pistas de tenis de Outeiro', 63, 43], ['Sala Polivalente da Casa da Cultura', 12, 18]]
+      out: [['Pistas de pádel de Exemplo', 312, 78], ['Piscina municipal de Exemplo', 214, 59], ['Pavillón municipal de Exemplo', 186, 64], ['Campo de fútbol de Exemplo', 52, 41], ['Pistas de tenis de Exemplo', 48, 37], ['Sala polivalente de Exemplo', 30, 52]],
+      set: [['Pistas de pádel de Exemplo', 280, 72], ['Piscina municipal de Exemplo', 238, 66], ['Pavillón municipal de Exemplo', 164, 57], ['Campo de fútbol de Exemplo', 61, 45], ['Pistas de tenis de Exemplo', 55, 41], ['Sala polivalente de Exemplo', 22, 38]],
+      ago: [['Piscina municipal de Exemplo', 402, 91], ['Pistas de pádel de Exemplo', 241, 63], ['Pavillón municipal de Exemplo', 90, 31], ['Campo de fútbol de Exemplo', 70, 49], ['Pistas de tenis de Exemplo', 63, 43], ['Sala polivalente de Exemplo', 12, 18]]
     };
     const datos = periodos[periodo].filter((d) => window.__app.nomesActivos().indexOf(d[0]) !== -1).concat(window.__app.nomesActivos().filter((n) => !periodos[periodo].some((d) => d[0] === n)).map((n) => [n, 0, 0])).sort((a, b) => b[1] - a[1]);
     const total = datos.reduce((s, d) => s + d[1], 0);
@@ -5801,8 +5805,8 @@ class Component extends DCLogic {
       ok: '',
       envios: [],
       local: [
-        { id: 1, peche: true, horario: false, info: false, titulo: 'Pechada: Pistas de pádel do Campo da Feira', detalle: 'Xoves 12 de novembro, desde as 16:00. Obras no pavimento.', instalacion: 'Pistas de pádel do Campo da Feira', canles: ['Web'] },
-        { id: 2, peche: true, horario: false, info: false, titulo: 'Pechada: Piscina Municipal A Ribeira', detalle: 'Do 16 ao 18 de novembro. Mantemento do vaso.', instalacion: 'Piscina Municipal A Ribeira', canles: ['Web'] }
+        { id: 1, peche: true, horario: false, info: false, titulo: 'Pechada: Pistas de pádel de Exemplo', detalle: 'Xoves 12 de novembro, desde as 16:00. Obras no pavimento.', instalacion: 'Pistas de pádel de Exemplo', canles: ['Web'] },
+        { id: 2, peche: true, horario: false, info: false, titulo: 'Pechada: Piscina municipal de Exemplo', detalle: 'Do 16 ao 18 de novembro. Mantemento do vaso.', instalacion: 'Piscina municipal de Exemplo', canles: ['Web'] }
       ]
     };
   }
@@ -5823,7 +5827,7 @@ class Component extends DCLogic {
     const { afectada, tipo, desde, ata, motivo, mensaxe, correo, sms, whatsapp, erro, ok, envios } = this.state;
     const instalacions = window.__app && window.__app.publicas
       ? window.__app.publicas().map((i) => i.nome)
-      : ['Pistas de pádel do Campo da Feira', 'Pavillón Municipal', 'Piscina Municipal A Ribeira'];
+      : ['Pistas de pádel de Exemplo', 'Pavillón municipal de Exemplo', 'Piscina municipal de Exemplo'];
     const afectadaSel = instalacions.indexOf(afectada) !== -1 ? afectada : '';
     const prefixos = { peche: 'Pechada', horario: 'Horario especial', info: 'Información' };
     const fmt = (v) => { const p = v.split('-'); return Number(p[2]) + '/' + Number(p[1]) + '/' + p[0]; };
@@ -5973,15 +5977,15 @@ class Component extends DCLogic {
       erro: '',
       nova: { recurso: '', hora: '18:00', persoa: '', canle: 'teléfono' },
       lista: [
-        { id: 1, hora: '09:00', dia: 'Hoxe', ord: new Date(2026, 10, 5, 9).getTime(), recurso: 'Piscina Municipal A Ribeira, Pista 2', persoa: 'Antía R.', canle: 'web', estado: 'Asistida' },
-        { id: 2, hora: '17:00', dia: 'Hoxe', ord: new Date(2026, 10, 5, 17).getTime(), recurso: 'Pistas de pádel do Campo da Feira, Pista 2', persoa: 'Brais L.', canle: 'web', estado: 'Confirmada' },
-        { id: 3, hora: '18:00', dia: 'Hoxe', ord: new Date(2026, 10, 5, 18).getTime(), recurso: 'Pavillón Municipal, Pista 1', persoa: 'Noa F.', canle: 'teléfono', estado: 'Confirmada' },
-        { id: 4, hora: '19:00', dia: 'Hoxe', ord: new Date(2026, 10, 5, 19).getTime(), recurso: 'Pistas de pádel do Campo da Feira, Pista 1', persoa: 'Uxía C.', canle: 'presencial', estado: 'Confirmada' },
-        { id: 5, hora: '20:00', dia: 'Hoxe', ord: new Date(2026, 10, 5, 20).getTime(), recurso: 'Pistas de pádel do Campo da Feira, Pista 2', persoa: 'Martiño P.', canle: 'web', estado: 'Confirmada' },
-        { id: 6, hora: '18:00', dia: 'Luns 9/11', ord: new Date(2026, 10, 9, 18).getTime(), recurso: 'Pistas de pádel do Campo da Feira, Pista 1', persoa: 'Iria M.', canle: 'presencial', estado: 'Confirmada' },
-        { id: 7, hora: '18:00', dia: 'Martes 10/11', ord: new Date(2026, 10, 10, 18).getTime(), recurso: 'Pistas de pádel do Campo da Feira, Pista 2', persoa: 'Brais L.', canle: 'web', estado: 'Confirmada' },
-        { id: 8, hora: '19:00', dia: 'Mércores 11/11', ord: new Date(2026, 10, 11, 19).getTime(), recurso: 'Pistas de pádel do Campo da Feira, Pista 1', persoa: 'Noa F.', canle: 'web', estado: 'Confirmada' },
-        { id: 9, hora: '10:00', dia: 'Sábado 14/11', ord: new Date(2026, 10, 14, 10).getTime(), recurso: 'Pistas de pádel do Campo da Feira, Pista 3', persoa: 'Uxía C.', canle: 'teléfono', estado: 'Confirmada' }
+        { id: 1, hora: '09:00', dia: 'Hoxe', ord: new Date(2026, 10, 5, 9).getTime(), recurso: 'Piscina municipal de Exemplo, Pista 2', persoa: 'Antía R.', canle: 'web', estado: 'Asistida' },
+        { id: 2, hora: '17:00', dia: 'Hoxe', ord: new Date(2026, 10, 5, 17).getTime(), recurso: 'Pistas de pádel de Exemplo, Pista 2', persoa: 'Brais L.', canle: 'web', estado: 'Confirmada' },
+        { id: 3, hora: '18:00', dia: 'Hoxe', ord: new Date(2026, 10, 5, 18).getTime(), recurso: 'Pavillón municipal de Exemplo, Pista 1', persoa: 'Noa F.', canle: 'teléfono', estado: 'Confirmada' },
+        { id: 4, hora: '19:00', dia: 'Hoxe', ord: new Date(2026, 10, 5, 19).getTime(), recurso: 'Pistas de pádel de Exemplo, Pista 1', persoa: 'Uxía C.', canle: 'presencial', estado: 'Confirmada' },
+        { id: 5, hora: '20:00', dia: 'Hoxe', ord: new Date(2026, 10, 5, 20).getTime(), recurso: 'Pistas de pádel de Exemplo, Pista 2', persoa: 'Martiño P.', canle: 'web', estado: 'Confirmada' },
+        { id: 6, hora: '18:00', dia: 'Luns 9/11', ord: new Date(2026, 10, 9, 18).getTime(), recurso: 'Pistas de pádel de Exemplo, Pista 1', persoa: 'Iria M.', canle: 'presencial', estado: 'Confirmada' },
+        { id: 7, hora: '18:00', dia: 'Martes 10/11', ord: new Date(2026, 10, 10, 18).getTime(), recurso: 'Pistas de pádel de Exemplo, Pista 2', persoa: 'Brais L.', canle: 'web', estado: 'Confirmada' },
+        { id: 8, hora: '19:00', dia: 'Mércores 11/11', ord: new Date(2026, 10, 11, 19).getTime(), recurso: 'Pistas de pádel de Exemplo, Pista 1', persoa: 'Noa F.', canle: 'web', estado: 'Confirmada' },
+        { id: 9, hora: '10:00', dia: 'Sábado 14/11', ord: new Date(2026, 10, 14, 10).getTime(), recurso: 'Pistas de pádel de Exemplo, Pista 3', persoa: 'Uxía C.', canle: 'teléfono', estado: 'Confirmada' }
       ]
     };
   }
@@ -5989,7 +5993,7 @@ class Component extends DCLogic {
     const brand = this.props.brand ?? '#0B5CAD';
     const { mensaxe, erro, nova, lista } = this.state;
     const A = window.__app;
-    const insts = A && A.publicas ? A.publicas() : [{ nome: 'Pistas de pádel do Campo da Feira', pistas: 3 }, { nome: 'Pavillón Municipal', pistas: 1 }, { nome: 'Piscina Municipal A Ribeira', pistas: 6 }];
+    const insts = A && A.publicas ? A.publicas() : [{ nome: 'Pistas de pádel de Exemplo', pistas: 3 }, { nome: 'Pavillón municipal de Exemplo', pistas: 1 }, { nome: 'Piscina municipal de Exemplo', pistas: 6 }];
     const opcsFiltro = [{ valor: 'Todas', texto: 'Todas' }].concat(insts.map((i) => ({ valor: i.nome, texto: i.nome })));
     const filtro = opcsFiltro.some((o) => o.valor === this.state.filtro) ? this.state.filtro : 'Todas';
     const opcsRecurso = [];
@@ -6150,12 +6154,12 @@ class Component extends DCLogic {
       { id: 'inverno', nome: 'Campaña de inverno', porcentaxe: 20, aplicacion: 'temporal', vixencia: '1–30 de novembro de 2026' }
     ];
     const lista = [
-      { id: 1, deportes: 'Pádel', aviso: 'Pechada o xoves 12 desde as 16:00', pistas: 3, nome: 'Pistas de pádel do Campo da Feira', tipo: 'Pistas', aforo: 4, enderezo: 'Exemplo de rúa, 1', accesible: true, activa: true, recursos: 'Pista 1, Pista 2 e Pista 3', prezoBase: 12, unidadeCobro: 'por hora', descontos: descontosExemplo() },
-      { id: 2, deportes: 'Fútbol sala, Baloncesto', aviso: 'Pecha ás 20:00 o venres 13', pistas: 1, nome: 'Pavillón Municipal', tipo: 'Pavillón', aforo: 200, enderezo: 'Exemplo de avenida, 2', accesible: true, activa: true, recursos: 'Pista central', prezoBase: 20, unidadeCobro: 'por hora', descontos: descontosExemplo() },
-      { id: 3, deportes: 'Natación', aviso: 'Pechada do 16 ao 18 de novembro', pistas: 6, nome: 'Piscina Municipal A Ribeira', tipo: 'Piscina', aforo: 60, enderezo: 'Exemplo de paseo, s/n', accesible: true, activa: true, recursos: 'Rúas 1 a 6', prezoBase: 6, unidadeCobro: 'por entrada', descontos: descontosExemplo() },
-      { id: 4, deportes: 'Fútbol', aviso: '', pistas: 1, nome: 'Campo de fútbol de Santa Mariña', tipo: 'Campo', aforo: 30, enderezo: 'Exemplo de lugar', accesible: false, activa: true, recursos: 'Campo completo', prezoBase: 18, unidadeCobro: 'por hora', descontos: descontosExemplo() },
-      { id: 5, deportes: 'Tenis', aviso: '', pistas: 2, nome: 'Pistas de tenis de Outeiro', tipo: 'Pistas', aforo: 4, enderezo: 'Exemplo de camiño, 3', accesible: false, activa: true, recursos: 'Pista 1 e Pista 2', prezoBase: 8, unidadeCobro: 'por hora', descontos: descontosExemplo() },
-      { id: 6, deportes: 'Ioga', aviso: '', pistas: 1, nome: 'Sala Polivalente da Casa da Cultura', tipo: 'Sala', aforo: 20, enderezo: 'Exemplo de praza, 4', accesible: true, activa: true, recursos: 'Sala completa', prezoBase: 5, unidadeCobro: 'por entrada', descontos: descontosExemplo() }
+      { id: 1, deportes: 'Pádel', aviso: 'Pechada o xoves 12 desde as 16:00', pistas: 3, nome: 'Pistas de pádel de Exemplo', tipo: 'Pistas', aforo: 4, enderezo: 'Exemplo de rúa, 1', accesible: true, activa: true, recursos: 'Pista 1, Pista 2 e Pista 3', prezoBase: 12, unidadeCobro: 'por hora', descontos: descontosExemplo() },
+      { id: 2, deportes: 'Fútbol sala, Baloncesto', aviso: 'Pecha ás 20:00 o venres 13', pistas: 1, nome: 'Pavillón municipal de Exemplo', tipo: 'Pavillón', aforo: 200, enderezo: 'Exemplo de avenida, 2', accesible: true, activa: true, recursos: 'Pista central', prezoBase: 20, unidadeCobro: 'por hora', descontos: descontosExemplo() },
+      { id: 3, deportes: 'Natación', aviso: 'Pechada do 16 ao 18 de novembro', pistas: 6, nome: 'Piscina municipal de Exemplo', tipo: 'Piscina', aforo: 60, enderezo: 'Exemplo de paseo, s/n', accesible: true, activa: true, recursos: 'Rúas 1 a 6', prezoBase: 6, unidadeCobro: 'por entrada', descontos: descontosExemplo() },
+      { id: 4, deportes: 'Fútbol', aviso: '', pistas: 1, nome: 'Campo de fútbol de Exemplo', tipo: 'Campo', aforo: 30, enderezo: 'Exemplo de lugar', accesible: false, activa: true, recursos: 'Campo completo', prezoBase: 18, unidadeCobro: 'por hora', descontos: descontosExemplo() },
+      { id: 5, deportes: 'Tenis', aviso: '', pistas: 2, nome: 'Pistas de tenis de Exemplo', tipo: 'Pistas', aforo: 4, enderezo: 'Exemplo de camiño, 3', accesible: false, activa: true, recursos: 'Pista 1 e Pista 2', prezoBase: 8, unidadeCobro: 'por hora', descontos: descontosExemplo() },
+      { id: 6, deportes: 'Ioga', aviso: '', pistas: 1, nome: 'Sala polivalente de Exemplo', tipo: 'Sala', aforo: 20, enderezo: 'Exemplo de praza, 4', accesible: true, activa: true, recursos: 'Sala completa', prezoBase: 5, unidadeCobro: 'por entrada', descontos: descontosExemplo() }
     ];
     this.state = { lista, sel: 1, borrador: { ...lista[0] }, erro: false, mensaxe: '', confirmarBorrar: false };
   }
@@ -6334,9 +6338,9 @@ class Component extends DCLogic {
       duracions: {},
       horarioGardado: false,
       peches: [
-        { id: 1, cando: '25 de decembro de 2026, todo o día', onde: 'Todas as pistas de pádel', motivo: 'Festivo', desde: '2026-12-25T00:00', ata: '2026-12-25T23:59', ambito: 'Pistas de pádel do Campo da Feira' },
-        { id: 2, cando: '12/11/2026, 16:00 a 12/11/2026, 22:00', onde: 'Pistas de pádel do Campo da Feira', motivo: 'Obras no pavimento', desde: '2026-11-12T16:00', ata: '2026-11-12T22:00', ambito: 'Pistas de pádel do Campo da Feira' },
-        { id: 3, cando: '16/11/2026 a 18/11/2026, todo o día', onde: 'Piscina Municipal A Ribeira', motivo: 'Mantemento do vaso', desde: '2026-11-16T00:00', ata: '2026-11-18T23:59', ambito: 'Piscina Municipal A Ribeira' }
+        { id: 1, cando: '25 de decembro de 2026, todo o día', onde: 'Todas as pistas de pádel', motivo: 'Festivo', desde: '2026-12-25T00:00', ata: '2026-12-25T23:59', ambito: 'Pistas de pádel de Exemplo' },
+        { id: 2, cando: '12/11/2026, 16:00 a 12/11/2026, 22:00', onde: 'Pistas de pádel de Exemplo', motivo: 'Obras no pavimento', desde: '2026-11-12T16:00', ata: '2026-11-12T22:00', ambito: 'Pistas de pádel de Exemplo' },
+        { id: 3, cando: '16/11/2026 a 18/11/2026, todo o día', onde: 'Piscina municipal de Exemplo', motivo: 'Mantemento do vaso', desde: '2026-11-16T00:00', ata: '2026-11-18T23:59', ambito: 'Piscina municipal de Exemplo' }
       ],
       instalacion: '',
       novo: { onde: '', desde: '2026-11-12T16:00', ata: '2026-11-12T22:00', motivo: 'Obras no pavimento', todoDia: false },
@@ -6355,7 +6359,7 @@ class Component extends DCLogic {
     const { horarioGardado, peches, novo, erroDatas, aviso } = this.state;
     const todas = window.__app && window.__app.publicas
       ? window.__app.publicas()
-      : [{ nome: 'Pistas de pádel do Campo da Feira', pistas: 3 }, { nome: 'Pavillón Municipal', pistas: 1 }, { nome: 'Piscina Municipal A Ribeira', pistas: 6 }];
+      : [{ nome: 'Pistas de pádel de Exemplo', pistas: 3 }, { nome: 'Pavillón municipal de Exemplo', pistas: 1 }, { nome: 'Piscina municipal de Exemplo', pistas: 6 }];
     const nomeSel = todas.some((i) => i.nome === this.state.instalacion) ? this.state.instalacion : (todas[0] ? todas[0].nome : '');
     const instSel = todas.find((i) => i.nome === nomeSel);
     const npistas = instSel ? Math.max(1, Number(instSel.pistas) || 1) : 0;
@@ -6523,7 +6527,7 @@ class Component extends DCLogic {
     const brand = this.props.brand ?? '#0B5CAD';
     const { maxima, minima, activas, cancelar, empadronados, erro, gardado, gardados } = this.state;
     const CONCELLO = 'Todo o concello';
-    const nomes = window.__app && window.__app.nomesActivos ? window.__app.nomesActivos() : ['Pistas de pádel do Campo da Feira', 'Pavillón Municipal'];
+    const nomes = window.__app && window.__app.nomesActivos ? window.__app.nomesActivos() : ['Pistas de pádel de Exemplo', 'Pavillón municipal de Exemplo'];
     const ambito = this.state.ambito === CONCELLO || nomes.indexOf(this.state.ambito) >= 0 ? this.state.ambito : CONCELLO;
     const opcsAmbito = [{ valor: CONCELLO, texto: CONCELLO }].concat(nomes.map((n) => ({ valor: n, texto: n })));
     const cambiarAmbitoValor = (e) => {
@@ -6934,7 +6938,7 @@ class Component extends DCLogic {
     const horasPrazo = res && A && A.normasDe ? A.normasDe(res.instalacion).cancelar : 24;
     const bloqueada = !!(res && res.inicio && (res.inicio - hoxe) / 36e5 < horasPrazo);
     const inst = res && A && A.publicas ? A.publicas().find((i) => i.nome === res.instalacion) : null;
-    const dadoReserva = res || { id: 1, instalacion: 'Pistas de pádel do Campo da Feira', recurso: 'Pista 1', cando: 'Mércores 11 de novembro, 19:00 a 20:00' };
+    const dadoReserva = res || { id: 1, instalacion: 'Pistas de pádel de Exemplo', recurso: 'Pista 1', cando: 'Mércores 11 de novembro, 19:00 a 20:00' };
     const n = 25;
     const semente = res ? res.id * 3 + 2 : 5;
     const buscador = (x, y) => {
@@ -7213,7 +7217,7 @@ class Component extends DCLogic {
     const A = window.__app;
     const instInfo = (window.__app && window.__app.fichaInst
       ? window.__app.fichaInst()
-      : { nome: 'Pistas de pádel do Campo da Feira', enderezo: 'Exemplo de rúa, 1', pistas: 3, accesible: true })
+      : { nome: 'Pistas de pádel de Exemplo', enderezo: 'Exemplo de rúa, 1', pistas: 3, accesible: true })
       || { nome: 'Aínda non hai instalacións', enderezo: '', pistas: 1, accesible: true };
     const npistas = Math.max(1, Number(instInfo.pistas) || 1);
     const pista = Math.min(this.state.pista, npistas);

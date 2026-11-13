@@ -44,6 +44,7 @@ for (const [, f] of TODAS) {
   titulos[f] = t.match(/<title>([\s\S]*?)<\/title>/)[1];
   let tpl = t.match(/<\/helmet>([\s\S]*?)<\/x-dc>/)[1];
   let js = t.match(/<script type="text\/x-dc"[^>]*>([\s\S]*?)<\/script>/)[1];
+  js = js.replace(/\r\n/g, '\n');
 
   // As pantallas móbiles dentro dunha app real non teñen tamaño fixo.
   tpl = tpl.replace(/width: 375px; height: \d+px;/, 'width: 100%; max-width: 480px; margin: 0 auto;');
@@ -236,9 +237,9 @@ const App = {
   convidado: false,
   destinoLogin: null,
   avisos: [
-    { id: 1, peche: true, horario: false, info: false, titulo: 'Pechada: Pistas de pádel do Campo da Feira', detalle: 'Xoves 12 de novembro, desde as 16:00. Obras no pavimento.', instalacion: 'Pistas de pádel do Campo da Feira', canles: ['Web'] },
-    { id: 2, peche: true, horario: false, info: false, titulo: 'Pechada: Piscina Municipal A Ribeira', detalle: 'Do 16 ao 18 de novembro. Mantemento do vaso.', instalacion: 'Piscina Municipal A Ribeira', canles: ['Web'] },
-    { id: 3, peche: false, horario: true, info: false, titulo: 'Horario especial: Pavillón Municipal', detalle: 'Venres 13 de novembro, pecha ás 20:00 por un evento.', instalacion: 'Pavillón Municipal', canles: ['Web'] }
+    { id: 1, peche: true, horario: false, info: false, titulo: 'Pechada: Pistas de pádel de Exemplo', detalle: 'Xoves 12 de novembro, desde as 16:00. Obras no pavimento.', instalacion: 'Pistas de pádel de Exemplo', canles: ['Web'] },
+    { id: 2, peche: true, horario: false, info: false, titulo: 'Pechada: Piscina municipal de Exemplo', detalle: 'Do 16 ao 18 de novembro. Mantemento do vaso.', instalacion: 'Piscina municipal de Exemplo', canles: ['Web'] },
+    { id: 3, peche: false, horario: true, info: false, titulo: 'Horario especial: Pavillón municipal de Exemplo', detalle: 'Venres 13 de novembro, pecha ás 20:00 por un evento.', instalacion: 'Pavillón municipal de Exemplo', canles: ['Web'] }
   ],
   instancias: {},
   actual: null,
@@ -640,7 +641,7 @@ const App = {
     return this.descargar(nome, 'application/json;charset=utf-8', JSON.stringify(dato, null, 2)) ? nome : '';
   },
   engadirReserva(recurso, cando, extra) {
-    this.reservas.push({ id: 100 + this.reservas.length, instalacion: (this.fichaInst() || { nome: 'Pistas de pádel do Campo da Feira' }).nome, recurso, cando: cando.charAt(0).toUpperCase() + cando.slice(1), prazo: true, inicio: extra && extra.inicio, fin: extra && extra.fin, importe: extra && extra.importe, desconto: extra && extra.desconto });
+    this.reservas.push({ id: 100 + this.reservas.length, instalacion: (this.fichaInst() || { nome: 'Pistas de pádel de Exemplo' }).nome, recurso, cando: cando.charAt(0).toUpperCase() + cando.slice(1), prazo: true, inicio: extra && extra.inicio, fin: extra && extra.fin, importe: extra && extra.importe, desconto: extra && extra.desconto });
   },
   instancia(archivo) {
     if (this.instancias[archivo]) return this.instancias[archivo];
@@ -938,7 +939,7 @@ const topo = `<title>DeporteAberto · Reservas deportivas municipais</title>
 <style>${fontFaces}${css}</style>`;
 
 const corpo = `<div class="barra" lang="es">
-  <strong>Versión de prueba</strong>
+  <strong>Versión de proba</strong>
   <label for="ir">Ir a <select id="ir">${opcions}</select></label>
   <div class="vista" role="group" aria-label="Vista"><button type="button" data-vista="escritorio" aria-pressed="true">Escritorio</button><button type="button" data-vista="movil" aria-pressed="false">Móvil</button></div>
 </div>
