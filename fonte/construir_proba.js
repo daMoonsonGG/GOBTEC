@@ -52,7 +52,7 @@ for (const [, f] of TODAS) {
   tpl = tpl.replace(/(<div style="[^"]*">)Concello de exemplo con datos ficticios<\/div>/, (m, a) => a.replace('<div style="', '<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 24px; ') + '<span>Concello de exemplo con datos ficticios</span><a href="Accesibilidade.dc.html" style="min-height: 44px; display: inline-flex; align-items: center">Declaración de accesibilidade</a><a href="Privacidade.dc.html" style="min-height: 44px; display: inline-flex; align-items: center">Privacidade</a></div>');
 
   // Nome e inicial do concello activo (cambian desde Superadministración e Marca).
-  tpl = tpl.split('Concello de Ribadouro').join('{{nomeConcello}}');
+  tpl = tpl.split('Concello de Exemplo').join('{{nomeConcello}}');
   tpl = tpl.replace(/(background: \{\{marca\}\}[^>]*>)R(<\/span>)/g, '$1{{inicialConcello}}$2');
 
   // Selector de idioma.
@@ -285,13 +285,13 @@ const App = {
       o.textContent = tr(o.dataset.gl);
     });
   },
-  slug: 'ribadouro',
+  slug: 'concello-de-exemplo',
   marcas: {},
   listaConcellos() {
     try { return this.instancia('Superadmin').state.concellos; } catch (e) { return []; }
   },
   concelloActivo() {
-    const c = this.listaConcellos().find((x) => x.slug === this.slug) || { slug: this.slug, nome: 'Concello de Ribadouro', cor: '#0b5cad', xestores: [] };
+    const c = this.listaConcellos().find((x) => x.slug === this.slug) || { slug: this.slug, nome: 'Concello de Exemplo', cor: '#0b5cad', xestores: [] };
     const m = this.marcas[this.slug] || {};
     return { slug: c.slug, nome: m.nome || c.nome, cor: m.cor || c.cor, es: m.es !== false, en: m.en !== false, correo: m.correo || (c.xestores && c.xestores[0] ? c.xestores[0].correo : '') };
   },
@@ -670,7 +670,7 @@ const App = {
     fillos(document.getElementById('t-' + archivo).content, vals, novos);
     parchear(this.raiz, novos);
     this.archivoPintado = archivo;
-    document.title = tr(TITULOS[archivo] || '${NOME_PROXECTO}').replace(/Ribadouro/g, this.concelloActivo().nome.replace(/^Concello (de |da |do |das |dos |d')?/i, ''));
+    document.title = tr(TITULOS[archivo] || '${NOME_PROXECTO}').replace(/Concello de Exemplo/g, this.concelloActivo().nome);
     const cb = document.getElementById('convidado');
     const xestion = !!(this.usuario && this.usuario.rol && this.usuario.rol !== 'cidadan');
     cb.hidden = !((this.convidado && !this.usuario) || xestion);

@@ -17,8 +17,7 @@ const DIC_ES = {
   'Modo escuro': 'Modo oscuro',
   'Ver o sitio público': 'Ver el sitio público',
   'Volver ás instalacións': 'Volver a las instalaciones',
-  'Ribadouro': 'Ribadouro',
-  'Concello de Ribadouro': 'Ayuntamiento de Ribadouro',
+  'Concello de Exemplo': 'Concello de Exemplo',
   'Concello de Valdeira': 'Ayuntamiento de Valdeira',
   'Concello de Monteferro': 'Ayuntamiento de Monteferro',
   'Concello de exemplo con datos ficticios': 'Ayuntamiento de ejemplo con datos ficticios',
@@ -46,7 +45,7 @@ const DIC_ES = {
   'Aínda non dispoñible nesta versión de proba.': 'Aún no disponible en esta versión de prueba.',
 
   // Inicio
-  'Reserva as instalacións deportivas de Ribadouro': 'Reserva las instalaciones deportivas de Ribadouro',
+  'Reserva as instalacións deportivas do Concello de Exemplo': 'Reserva las instalaciones deportivas del Concello de Exemplo',
   'Reserva as instalacións deportivas': 'Reserva las instalaciones deportivas',
   'Consulta a dispoñibilidade real sen iniciar sesión. Só tes que identificarte para reservar.': 'Consulta la disponibilidad real sin iniciar sesión. Solo tienes que identificarte para reservar.',
   'Filtrar instalacións': 'Filtrar instalaciones',
@@ -129,7 +128,7 @@ const DIC_ES = {
   'A instalación está pechada nesa franxa.': 'La instalación está cerrada en esa franja.',
   '[Mapa de OpenStreetMap]': '[Mapa de OpenStreetMap]',
   'Como chegar': 'Cómo llegar',
-  'Rúa da Feira, 12. Acceso sen chanzos e aseo adaptado.': 'Rúa da Feira, 12. Acceso sin escalones y aseo adaptado.',
+  'Exemplo de rúa, 1. Acceso sen chanzos e aseo adaptado.': 'Ejemplo de calle, 1. Acceso sin escalones y aseo adaptado.',
 
   // As miñas reservas
   'Próximas': 'Próximas',
@@ -322,7 +321,7 @@ const DIC_ES = {
   'Castelán': 'Castellano',
   'Correo de contacto': 'Correo de contacto',
   'Enderezo web': 'Dirección web',
-  '/c/ribadouro · O cambia a superadministración.': '/c/ribadouro · Lo cambia la superadministración.',
+  '/c/concello-de-exemplo · O cambia a superadministración.': '/c/concello-de-exemplo · Lo cambia la superadministración.',
   'Gardar a marca': 'Guardar la marca',
   'Marca gardada. Xa se aplica a todas as pantallas.': 'Marca guardada. Ya se aplica a todas las pantallas.',
   'Non se pode gardar: a cor non cumpre o contraste mínimo.': 'No se puede guardar: el color no cumple el contraste mínimo.',

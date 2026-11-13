@@ -44,7 +44,7 @@ const ESTADOS = [
   // Superadmin
   E('superadmin', 'superadmin-erro-alta', 'Superadministración · erros no alta', 'superadmin', "await clic('Crear o concello');"),
   E('superadmin', 'superadmin-concello-creado', 'Superadministración · concello creado', 'superadmin', "set('nome', 'Concello de Proba'); set('correo', 'xestion@proba.example'); set('telefono', '655 444 333'); await e(); await clic('Crear o concello');"),
-  E('superadmin', 'superadmin-xestor-engadido', 'Superadministración · persoa xestora engadida', 'superadmin', "set('xestor', 'nova@ribadouro.example'); set('xestor-tel', '611 222 333'); await e(); await clic('Engadir');"),
+  E('superadmin', 'superadmin-xestor-engadido', 'Superadministración · persoa xestora engadida', 'superadmin', "set('xestor', 'nova@concello-de-exemplo.example'); set('xestor-tel', '611 222 333'); await e(); await clic('Engadir');"),
   E('superadmin', 'superadmin-desactivado', 'Superadministración · concello desactivado', 'superadmin', "await clic('Desactivar');"),
   // Cidadanía
   E('cidadania', 'inicio-filtro-padel', 'Inicio · filtro por pádel', 'inicio', "await clic('Pádel');"),

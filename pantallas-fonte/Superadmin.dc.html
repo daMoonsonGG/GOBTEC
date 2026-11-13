@@ -187,14 +187,14 @@ class Component extends DCLogic {
     super(props);
     this.state = {
       concellos: [
-        { slug: 'ribadouro', nome: 'Concello de Ribadouro', cor: '#0b5cad', activo: true, xestores: [{ correo: 'deportes@ribadouro.example', telefono: '600 000 001' }] },
+        { slug: 'concello-de-exemplo', nome: 'Concello de Exemplo', cor: '#0b5cad', activo: true, xestores: [{ correo: 'deportes@concello-de-exemplo.example', telefono: '600 000 001' }] },
         { slug: 'valdeira', nome: 'Concello de Valdeira', cor: '#6d28d9', activo: true, xestores: [{ correo: 'xestion@valdeira.example', telefono: '600 000 002' }] },
         { slug: 'monteferro', nome: 'Concello de Monteferro', cor: '#a4372b', activo: true, xestores: [{ correo: 'deportes@monteferro.example', telefono: '' }] }
       ],
       novo: { nome: '', cor: '#0e7490', correo: '', telefono: '' },
       erros: [],
       mensaxe: '',
-      destino: 'ribadouro',
+      destino: 'concello-de-exemplo',
       xestor: '',
       xestorTel: ''
     };
@@ -244,8 +244,8 @@ class Component extends DCLogic {
         xestores: c.xestores.map((x) => x.correo + (x.telefono ? ' · ' + x.telefono : '')).join(', '),
         rotuloBoton: c.activo ? 'Desactivar' : 'Activar',
         aria: (c.activo ? 'Desactivar ' : 'Activar ') + c.nome,
-        eActivo: c.slug === (window.__app ? window.__app.slug : 'ribadouro'),
-        podeActivar: c.activo && c.slug !== (window.__app ? window.__app.slug : 'ribadouro'),
+        eActivo: c.slug === (window.__app ? window.__app.slug : 'concello-de-exemplo'),
+        podeActivar: c.activo && c.slug !== (window.__app ? window.__app.slug : 'concello-de-exemplo'),
         ariaActivar: 'Xestionar este concello: ' + c.nome,
         activar: () => {
           if (window.__app && window.__app.cambiarConcello) window.__app.cambiarConcello(c.slug);

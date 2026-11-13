@@ -4,7 +4,7 @@
 <html lang="gl">
 <head>
 <meta charset="utf-8">
-<title>Marca do concello · Xestión · Concello de Ribadouro</title>
+<title>Marca do concello · Xestión · Concello de Exemplo</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -184,7 +184,7 @@ class Component extends DCLogic {
   constructor(props) {
     super(props);
     const c = window.__app && window.__app.concelloActivo ? window.__app.concelloActivo() : null;
-    this.state = { nome: c ? c.nome : 'Concello de Ribadouro', cor: c ? c.cor : '#0b5cad', castelan: c ? c.es : true, ingles: c ? c.en : true, correo: c && c.correo ? c.correo : 'deportes@ribadouro.example', slug: c ? c.slug : 'ribadouro', mensaxe: '' };
+    this.state = { nome: c ? c.nome : 'Concello de Exemplo', cor: c ? c.cor : '#0b5cad', castelan: c ? c.es : true, ingles: c ? c.en : true, correo: c && c.correo ? c.correo : 'deportes@concello-de-exemplo.example', slug: c ? c.slug : 'concello-de-exemplo', mensaxe: '' };
   }
   contraste(hex) {
     const canle = (i) => {

@@ -27,7 +27,7 @@ a{color:var(--texto)}a:hover{color:var(--texto2)}
     <div style="max-width: 1280px; margin: 0 auto; padding: 12px clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 32px">
       <a href="Main.dc.html" style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; text-decoration: none; font-weight: 700; font-size: 19px">
         <span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 8px; background: {{marca}}; color: {{sobreMarca}}; display: inline-flex; align-items: center; justify-content: center">R</span>
-        Concello de Ribadouro
+        Concello de Exemplo
       </a>
       <nav aria-label="Principal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 24px">
         <a href="Main.dc.html" aria-current="page" style="min-height: 44px; display: inline-flex; align-items: center; font-weight: 700">Instalacións</a>
@@ -364,7 +364,7 @@ class Component extends DCLogic {
     const brand = this.props.brand ?? '#0B5CAD';
     const instInfo = (window.__app && window.__app.fichaInst
       ? window.__app.fichaInst()
-      : { nome: 'Pistas de pádel do Campo da Feira', enderezo: 'Rúa da Feira, 12', pistas: 3, accesible: true })
+      : { nome: 'Pistas de pádel do Campo da Feira', enderezo: 'Exemplo de rúa, 1', pistas: 3, accesible: true })
       || { nome: 'Aínda non hai instalacións', enderezo: '', pistas: 1, accesible: true };
     const npistas = Math.max(1, Number(instInfo.pistas) || 1);
     const pista = Math.min(this.state.pista, npistas);
