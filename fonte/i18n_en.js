@@ -69,18 +69,18 @@ const DIC_EN = {
   'Ioga': 'Yoga',
 
   // Facilities
-  'Pistas de pádel do Campo da Feira': 'Campo da Feira padel courts',
-  'Pavillón Municipal': 'Municipal Sports Hall',
+  'Pistas de pádel de Exemplo': 'Example padel courts',
+  'Pavillón municipal de Exemplo': 'Example sports hall',
   'Pavillón': 'Sports hall',
-  'Piscina Municipal A Ribeira': 'A Ribeira Municipal Pool',
-  'Campo de fútbol de Santa Mariña': 'Santa Mariña football pitch',
-  'Pistas de tenis de Outeiro': 'Outeiro tennis courts',
-  'Sala Polivalente da Casa da Cultura': 'Casa da Cultura multipurpose room',
+  'Piscina municipal de Exemplo': 'Example municipal pool',
+  'Campo de fútbol de Exemplo': 'Example football pitch',
+  'Pistas de tenis de Exemplo': 'Example tennis courts',
+  'Sala polivalente de Exemplo': 'Example multipurpose room',
   'Sala Polivalente': 'Multipurpose room',
   'Pistas de pádel': 'Padel courts',
   'Pistas de tenis': 'Tennis courts',
-  'Campo de Santa Mariña': 'Santa Mariña pitch',
-  'Piscina A Ribeira': 'A Ribeira pool',
+  'Campo de Exemplo': 'Example field',
+  'Piscina de Exemplo': 'Example pool',
   '3 pistas cubertas': '3 covered courts',
   '1 pista central': '1 main court',
   '6 rúas': '6 lanes',
@@ -154,7 +154,7 @@ const DIC_EN = {
   'Política de privacidade do concello': 'The council privacy policy',
 
   // Mobile booking
-  'Pistas de pádel do Campo da Feira, Pista 1': 'Campo da Feira padel courts, Court 1',
+  'Pistas de pádel de Exemplo, Pista 1': 'Example padel courts, Court 1',
 
   // Dashboard
   'Panel de indicadores': 'Indicators dashboard',
@@ -474,12 +474,12 @@ const DIC_EN = {
 
 const MESES_EN = { novembro: 'November', outubro: 'October', decembro: 'December', setembro: 'September', agosto: 'August' };
 const FRAGMENTOS_EN = [
-  [/Pistas de pádel do Campo da Feira/g, 'Campo da Feira padel courts'],
-  [/Piscina Municipal A Ribeira/g, 'A Ribeira Municipal Pool'],
-  [/Pavillón Municipal/g, 'Municipal Sports Hall'],
-  [/Campo de fútbol de Santa Mariña/g, 'Santa Mariña football pitch'],
-  [/Pistas de tenis de Outeiro/g, 'Outeiro tennis courts'],
-  [/Sala Polivalente da Casa da Cultura/g, 'Casa da Cultura multipurpose room'],
+  [/Pistas de pádel de Exemplo/g, 'Example padel courts'],
+  [/Piscina municipal de Exemplo/g, 'Example municipal pool'],
+  [/Pavillón municipal de Exemplo/g, 'Example sports hall'],
+  [/Campo de fútbol de Exemplo/g, 'Example football pitch'],
+  [/Pistas de tenis de Exemplo/g, 'Example tennis courts'],
+  [/Sala polivalente de Exemplo/g, 'Example multipurpose room'],
   [/Todas as pistas de pádel/g, 'All padel courts'],
   [/\bPavillón, Pista central/g, 'Sports hall, Main court'],
   [/\bPavillón, /g, 'Sports hall, '],

@@ -218,9 +218,9 @@ class Component extends DCLogic {
     const brand = this.props.brand ?? '#0B5CAD';
     const { periodo, vista } = this.state;
     const periodos = {
-      out: [['Pistas de pádel do Campo da Feira', 312, 78], ['Piscina Municipal A Ribeira', 214, 59], ['Pavillón Municipal', 186, 64], ['Campo de fútbol de Santa Mariña', 52, 41], ['Pistas de tenis de Outeiro', 48, 37], ['Sala Polivalente da Casa da Cultura', 30, 52]],
-      set: [['Pistas de pádel do Campo da Feira', 280, 72], ['Piscina Municipal A Ribeira', 238, 66], ['Pavillón Municipal', 164, 57], ['Campo de fútbol de Santa Mariña', 61, 45], ['Pistas de tenis de Outeiro', 55, 41], ['Sala Polivalente da Casa da Cultura', 22, 38]],
-      ago: [['Piscina Municipal A Ribeira', 402, 91], ['Pistas de pádel do Campo da Feira', 241, 63], ['Pavillón Municipal', 90, 31], ['Campo de fútbol de Santa Mariña', 70, 49], ['Pistas de tenis de Outeiro', 63, 43], ['Sala Polivalente da Casa da Cultura', 12, 18]]
+      out: [['Pistas de pádel de Exemplo', 312, 78], ['Piscina municipal de Exemplo', 214, 59], ['Pavillón municipal de Exemplo', 186, 64], ['Campo de fútbol de Exemplo', 52, 41], ['Pistas de tenis de Exemplo', 48, 37], ['Sala polivalente de Exemplo', 30, 52]],
+      set: [['Pistas de pádel de Exemplo', 280, 72], ['Piscina municipal de Exemplo', 238, 66], ['Pavillón municipal de Exemplo', 164, 57], ['Campo de fútbol de Exemplo', 61, 45], ['Pistas de tenis de Exemplo', 55, 41], ['Sala polivalente de Exemplo', 22, 38]],
+      ago: [['Piscina municipal de Exemplo', 402, 91], ['Pistas de pádel de Exemplo', 241, 63], ['Pavillón municipal de Exemplo', 90, 31], ['Campo de fútbol de Exemplo', 70, 49], ['Pistas de tenis de Exemplo', 63, 43], ['Sala polivalente de Exemplo', 12, 18]]
     };
     const datos = periodos[periodo].slice().sort((a, b) => b[1] - a[1]);
     const total = datos.reduce((s, d) => s + d[1], 0);

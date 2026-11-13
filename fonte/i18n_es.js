@@ -70,12 +70,16 @@ const DIC_ES = {
   'Tenis': 'Tenis',
   'Ioga': 'Yoga',
 
-  // Instalacións (nomes descritivos; os topónimos non se traducen)
-  'Pistas de pádel do Campo da Feira': 'Pistas de pádel del Campo da Feira',
-  'Pavillón Municipal': 'Pabellón Municipal',
+  // Instalacións (nomes descritivos de exemplo)
+  'Pistas de pádel de Exemplo': 'Pistas de pádel de ejemplo',
+  'Pavillón municipal de Exemplo': 'Pabellón municipal de ejemplo',
   'Pavillón': 'Pabellón',
-  'Piscina Municipal A Ribeira': 'Piscina Municipal A Ribeira',
-  'Sala Polivalente da Casa da Cultura': 'Sala Polivalente de la Casa de la Cultura',
+  'Piscina municipal de Exemplo': 'Piscina municipal de ejemplo',
+  'Campo de fútbol de Exemplo': 'Campo de fútbol de ejemplo',
+  'Pistas de tenis de Exemplo': 'Pistas de tenis de ejemplo',
+  'Sala polivalente de Exemplo': 'Sala polivalente de ejemplo',
+  'Campo de Exemplo': 'Campo de ejemplo',
+  'Piscina de Exemplo': 'Piscina de ejemplo',
   'Pistas de pádel': 'Pistas de pádel',
   'Pistas de tenis': 'Pistas de tenis',
   '3 pistas cubertas': '3 pistas cubiertas',
@@ -143,7 +147,7 @@ const DIC_ES = {
   'Cambio do concello': 'Cambio del ayuntamiento',
   'As pistas de pádel pechan o xoves 12 de novembro desde as 16:00 por obras. A túa reserva non se ve afectada.': 'Las pistas de pádel cierran el jueves 12 de noviembre desde las 16:00 por obras. Tu reserva no se ve afectada.',
   'Recordatorio': 'Recordatorio',
-  'Mañá ás 08:00 tes reserva na Piscina Municipal A Ribeira.': 'Mañana a las 08:00 tienes reserva en la Piscina Municipal A Ribeira.',
+  'Mañá ás 08:00 tes reserva na Piscina municipal de Exemplo.': 'Mañana a las 08:00 tienes reserva en la Piscina municipal de ejemplo.',
   'Confirmación': 'Confirmación',
   'Historial': 'Historial',
   'Asistida': 'Asistida',
@@ -169,7 +173,7 @@ const DIC_ES = {
   'Política de privacidade do concello': 'Política de privacidad del ayuntamiento',
 
   // Reserva móbil
-  'Pistas de pádel do Campo da Feira, Pista 1': 'Pistas de pádel del Campo da Feira, Pista 1',
+  'Pistas de pádel de Exemplo, Pista 1': 'Pistas de pádel de ejemplo, Pista 1',
 
   // Panel
   'Panel de indicadores': 'Panel de indicadores',
@@ -202,7 +206,7 @@ const DIC_ES = {
   'Reservar para un veciño': 'Reservar para un vecino',
   'Datos por instalación': 'Datos por instalación',
   'Instalación': 'Instalación',
-  'Campo de Santa Mariña': 'Campo de Santa Mariña',
+  'Campo de Exemplo': 'Campo de Exemplo',
 
   // Instalacións (xestión)
   'Dar de alta unha instalación': 'Dar de alta una instalación',
@@ -378,12 +382,12 @@ const DIC_ES = {
 // Días, meses e pequenos fragmentos dentro de textos xerados.
 const MESES_ES = { novembro: 'noviembre', outubro: 'octubre', decembro: 'diciembre', setembro: 'septiembre', agosto: 'agosto' };
 const FRAGMENTOS_ES = [
-  [/Pistas de pádel do Campo da Feira/g, 'Pistas de pádel de Campo da Feira'],
-  [/Piscina Municipal A Ribeira/g, 'Piscina Municipal A Ribeira'],
-  [/Pavillón Municipal/g, 'Pabellón Municipal'],
-  [/Campo de fútbol de Santa Mariña/g, 'Campo de fútbol de Santa Mariña'],
-  [/Pistas de tenis de Outeiro/g, 'Pistas de tenis de Outeiro'],
-  [/Sala Polivalente da Casa da Cultura/g, 'Sala Polivalente de la Casa de la Cultura'],
+  [/Pistas de pádel de Exemplo/g, 'Pistas de pádel de ejemplo'],
+  [/Piscina municipal de Exemplo/g, 'Piscina municipal de ejemplo'],
+  [/Pavillón municipal de Exemplo/g, 'Pabellón municipal de ejemplo'],
+  [/Campo de fútbol de Exemplo/g, 'Campo de fútbol de ejemplo'],
+  [/Pistas de tenis de Exemplo/g, 'Pistas de tenis de ejemplo'],
+  [/Sala polivalente de Exemplo/g, 'Sala polivalente de ejemplo'],
   [/Todas as pistas de pádel/g, 'Todas las pistas de pádel'],
   [/\bPavillón, Pista central/g, 'Pabellón, Pista central'],
   [/\bPavillón, /g, 'Pabellón, '],

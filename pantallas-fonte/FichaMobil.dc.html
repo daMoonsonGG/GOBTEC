@@ -281,7 +281,7 @@ class Component extends DCLogic {
     const A = window.__app;
     const instInfo = (window.__app && window.__app.fichaInst
       ? window.__app.fichaInst()
-      : { nome: 'Pistas de pádel do Campo da Feira', enderezo: 'Exemplo de rúa, 1', pistas: 3, accesible: true })
+      : { nome: 'Pistas de pádel de Exemplo', enderezo: 'Exemplo de rúa, 1', pistas: 3, accesible: true })
       || { nome: 'Aínda non hai instalacións', enderezo: '', pistas: 1, accesible: true };
     const npistas = Math.max(1, Number(instInfo.pistas) || 1);
     const pista = Math.min(this.state.pista, npistas);

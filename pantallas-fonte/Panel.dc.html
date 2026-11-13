@@ -218,14 +218,14 @@ class Component extends DCLogic {
   }
   semente() {
     return {
-      out: [['Pistas de pádel do Campo da Feira', 312, 78], ['Piscina Municipal A Ribeira', 214, 59], ['Pavillón Municipal', 186, 64], ['Campo de fútbol de Santa Mariña', 52, 41], ['Pistas de tenis de Outeiro', 48, 37], ['Sala Polivalente da Casa da Cultura', 30, 52]],
-      set: [['Pistas de pádel do Campo da Feira', 280, 72], ['Piscina Municipal A Ribeira', 238, 66], ['Pavillón Municipal', 164, 57], ['Campo de fútbol de Santa Mariña', 61, 45], ['Pistas de tenis de Outeiro', 55, 41], ['Sala Polivalente da Casa da Cultura', 22, 38]],
-      ago: [['Piscina Municipal A Ribeira', 402, 91], ['Pistas de pádel do Campo da Feira', 241, 63], ['Pavillón Municipal', 90, 31], ['Campo de fútbol de Santa Mariña', 70, 49], ['Pistas de tenis de Outeiro', 33, 28], ['Sala Polivalente da Casa da Cultura', 18, 30]]
+      out: [['Pistas de pádel de Exemplo', 312, 78], ['Piscina municipal de Exemplo', 214, 59], ['Pavillón municipal de Exemplo', 186, 64], ['Campo de fútbol de Exemplo', 52, 41], ['Pistas de tenis de Exemplo', 48, 37], ['Sala polivalente de Exemplo', 30, 52]],
+      set: [['Pistas de pádel de Exemplo', 280, 72], ['Piscina municipal de Exemplo', 238, 66], ['Pavillón municipal de Exemplo', 164, 57], ['Campo de fútbol de Exemplo', 61, 45], ['Pistas de tenis de Exemplo', 55, 41], ['Sala polivalente de Exemplo', 22, 38]],
+      ago: [['Piscina municipal de Exemplo', 402, 91], ['Pistas de pádel de Exemplo', 241, 63], ['Pavillón municipal de Exemplo', 90, 31], ['Campo de fútbol de Exemplo', 70, 49], ['Pistas de tenis de Exemplo', 33, 28], ['Sala polivalente de Exemplo', 18, 30]]
     };
   }
   nomesActivos() {
     const A = window.__app;
-    return A && A.nomesActivos ? A.nomesActivos() : ['Pistas de pádel do Campo da Feira', 'Piscina Municipal A Ribeira', 'Pavillón Municipal', 'Campo de fútbol de Santa Mariña', 'Pistas de tenis de Outeiro', 'Sala Polivalente da Casa da Cultura'];
+    return A && A.nomesActivos ? A.nomesActivos() : ['Pistas de pádel de Exemplo', 'Piscina municipal de Exemplo', 'Pavillón municipal de Exemplo', 'Campo de fútbol de Exemplo', 'Pistas de tenis de Exemplo', 'Sala polivalente de Exemplo'];
   }
   agenda() {
     const A = window.__app;
@@ -236,7 +236,7 @@ class Component extends DCLogic {
     if (!A || !A.reservas) return [];
     let canceladas = [];
     try { canceladas = A.instancia('Reservas').state.canceladas || []; } catch (e) { canceladas = []; }
-    const sementes = [{ id: 1, instalacion: 'Pistas de pádel do Campo da Feira' }, { id: 2, instalacion: 'Piscina Municipal A Ribeira' }];
+    const sementes = [{ id: 1, instalacion: 'Pistas de pádel de Exemplo' }, { id: 2, instalacion: 'Piscina municipal de Exemplo' }];
     return sementes.concat(A.reservas).map((x) => ({ instalacion: x.instalacion, cancelada: canceladas.indexOf(x.id) !== -1 }));
   }
   // A que instalación pertence un recurso da axenda («Pádel, Pista 1»).

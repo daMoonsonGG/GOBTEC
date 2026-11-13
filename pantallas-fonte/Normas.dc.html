@@ -65,8 +65,8 @@ a{color:var(--texto)}a:hover{color:var(--texto2)}
             <label for="ambito" style="display: block; font-weight: 700; margin-bottom: 4px">Aplicar a</label>
             <select id="ambito" value="{{ambitoSel}}" onChange="{{cambiarAmbito}}" data-opcions="{{opcsAmbito}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
               <option>Todo o concello</option>
-              <option>Pistas de pádel do Campo da Feira</option>
-              <option>Pavillón Municipal</option>
+              <option>Pistas de pádel de Exemplo</option>
+              <option>Pavillón municipal de Exemplo</option>
             </select>
             <p style="margin: 4px 0 0; font-size: 15px; color: var(--texto2)">A norma dunha instalación prevalece sobre a do concello.</p>
             <sc-if value="{{herdada}}" hint-placeholder-val="{{ false }}">
@@ -192,7 +192,7 @@ class Component extends DCLogic {
     const brand = this.props.brand ?? '#0B5CAD';
     const { maxima, minima, activas, cancelar, empadronados, erro, gardado, gardados } = this.state;
     const CONCELLO = 'Todo o concello';
-    const nomes = window.__app && window.__app.nomesActivos ? window.__app.nomesActivos() : ['Pistas de pádel do Campo da Feira', 'Pavillón Municipal'];
+    const nomes = window.__app && window.__app.nomesActivos ? window.__app.nomesActivos() : ['Pistas de pádel de Exemplo', 'Pavillón municipal de Exemplo'];
     const ambito = this.state.ambito === CONCELLO || nomes.indexOf(this.state.ambito) >= 0 ? this.state.ambito : CONCELLO;
     const opcsAmbito = [{ valor: CONCELLO, texto: CONCELLO }].concat(nomes.map((n) => ({ valor: n, texto: n })));
     const cambiarAmbitoValor = (e) => {
