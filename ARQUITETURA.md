@@ -31,7 +31,7 @@ node fonte/construir_proba.js pantallas-fonte index.html fragmento.html
 código fonte esperado.
 
 O nome do proxecto configúrase unha soa vez en `fonte/config_proxecto.js`: `NOME_PROXECTO` vale
-`reservas-deportivas`. O construtor úsao nas claves das preferencias de `localStorage`, no `PRODID` e nos
+`DeporteAberto`. O construtor úsao nas claves das preferencias de `localStorage`, no `PRODID` e nos
 identificadores do calendario iCalendar, así como no título alternativo do documento.
 
 ## Motor de modelos
@@ -88,4 +88,4 @@ Os scripts de captura e comprobación son ferramentas de desenvolvemento; non fo
 - Hai comprobacións automatizadas de accesibilidade, pero aínda cómpre facer probas manuais con lectores de pantalla e
   dispositivos reais.
 - As iconas SVG teñen un estilo visual semellante ao de Lucide; aínda cómpre confirmar a súa procedencia e se coinciden
-  con iconas desa colección. Consulta [AVISOS_TERCEROS.md](./AVISOS_TERCEROS.md).
+  con iconas desa colección. Consulta [AVISOS_TERCEIROS.md](./AVISOS_TERCEIROS.md).

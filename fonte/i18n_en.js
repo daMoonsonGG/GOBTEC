@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: EUPL-1.2
-// SPDX-FileCopyrightText: 2026 [TITULAR]
+// SPDX-FileCopyrightText: 2026 DeporteAberto contributors
 const REGRAS_EN = [];
 const DIC_EN = {
   // Navigation and headers
@@ -16,8 +16,7 @@ const DIC_EN = {
   'Modo escuro': 'Dark mode',
   'Ver o sitio público': 'View public site',
   'Volver ás instalacións': 'Back to facilities',
-  'Ribadouro': 'Ribadouro',
-  'Concello de Ribadouro': 'Ribadouro Council',
+  'Concello de Exemplo': 'Concello de Exemplo',
   'Concello de Valdeira': 'Valdeira Council',
   'Concello de Monteferro': 'Monteferro Council',
   'Concello de exemplo con datos ficticios': 'Sample council with fictional data',
@@ -45,7 +44,7 @@ const DIC_EN = {
   'Aínda non dispoñible nesta versión de proba.': 'Not available yet in this test version.',
 
   // Home
-  'Reserva as instalacións deportivas de Ribadouro': 'Book the sports facilities of Ribadouro',
+  'Reserva as instalacións deportivas do Concello de Exemplo': 'Book the sports facilities of Concello de Exemplo',
   'Reserva as instalacións deportivas': 'Book the sports facilities',
   'Consulta a dispoñibilidade real sen iniciar sesión. Só tes que identificarte para reservar.': 'Check real availability without signing in. You only need to identify yourself to book.',
   'Filtrar instalacións': 'Filter facilities',
@@ -89,7 +88,7 @@ const DIC_EN = {
   '2 pistas': '2 courts',
   'Aforo: 20 persoas': 'Capacity: 20 people',
   'Franxas de 1 hora': '1-hour slots',
-  'Rúa da Feira, 12': 'Rúa da Feira, 12',
+  'Exemplo de rúa, 1': 'Example street, 1',
 
   // Facility page
   'Dispoñibilidade': 'Availability',
@@ -124,7 +123,7 @@ const DIC_EN = {
   'A instalación está pechada nesa franxa.': 'The facility is closed in that slot.',
   '[Mapa de OpenStreetMap]': '[OpenStreetMap map]',
   'Como chegar': 'How to get there',
-  'Rúa da Feira, 12. Acceso sen chanzos e aseo adaptado.': 'Rúa da Feira, 12. Step-free access and adapted restroom.',
+  'Exemplo de rúa, 1. Acceso sen chanzos e aseo adaptado.': 'Example street, 1. Step-free access and adapted restroom.',
 
   // Bookings
   'Próximas': 'Upcoming',
@@ -416,7 +415,7 @@ const DIC_EN = {
   'Castelán': 'Spanish',
   'Correo de contacto': 'Contact email',
   'Enderezo web': 'Web address',
-  '/c/ribadouro · O cambia a superadministración.': '/c/ribadouro · Changed by the super administration.',
+  '/c/concello-de-exemplo · O cambia a superadministración.': '/c/concello-de-exemplo · Changed by the super administration.',
   'Gardar a marca': 'Save branding',
   'Marca gardada. Xa se aplica a todas as pantallas.': 'Branding saved. It now applies to all screens.',
   'Marca gardada.': 'Branding saved.',

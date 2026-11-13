@@ -1,10 +1,10 @@
 <!doctype html>
 <!-- SPDX-License-Identifier: EUPL-1.2 -->
-<!-- SPDX-FileCopyrightText: 2026 [TITULAR] -->
+<!-- SPDX-FileCopyrightText: 2026 DeporteAberto contributors -->
 <html lang="gl">
 <head>
 <meta charset="utf-8">
-<title>Instalacións deportivas · Concello de Ribadouro</title>
+<title>Instalacións deportivas · Concello de Exemplo</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -27,7 +27,7 @@ a{color:var(--texto)}a:hover{color:var(--texto2)}
     <div style="max-width: 1280px; margin: 0 auto; padding: 12px clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 32px">
       <a href="Main.dc.html" style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; text-decoration: none; font-weight: 700; font-size: 19px">
         <span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 8px; background: {{marca}}; color: {{sobreMarca}}; display: inline-flex; align-items: center; justify-content: center">R</span>
-        Concello de Ribadouro
+        Concello de Exemplo
       </a>
       <nav aria-label="Principal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 24px">
         <a href="Main.dc.html" aria-current="page" style="min-height: 44px; display: inline-flex; align-items: center; font-weight: 700">Instalacións</a>
@@ -42,7 +42,7 @@ a{color:var(--texto)}a:hover{color:var(--texto2)}
   <main id="contido">
     <section style="background: var(--superficie); border-bottom: 1px solid var(--linea)">
       <div style="max-width: 1280px; margin: 0 auto; padding: clamp(32px, 5vw, 56px) clamp(16px, 4vw, 40px)">
-        <h1 style="margin: 0; font-size: clamp(32px, 4.2vw, 52px); line-height: 1.1; max-width: 18em">Reserva as instalacións deportivas de Ribadouro</h1>
+        <h1 style="margin: 0; font-size: clamp(32px, 4.2vw, 52px); line-height: 1.1; max-width: 18em">Reserva as instalacións deportivas do Concello de Exemplo</h1>
         <p style="margin: 16px 0 0; font-size: 20px; color: var(--texto2); max-width: 36em">Consulta a dispoñibilidade real sen iniciar sesión. Só tes que identificarte para reservar.</p>
       </div>
     </section>
@@ -223,12 +223,12 @@ class Component extends DCLogic {
   valsPantalla() {
     const brand = this.props.brand ?? '#0B5CAD';
     const todas = [
-      { nome: 'Pistas de pádel do Campo da Feira', lista: ['Pádel'], detalle: '3 pistas cubertas', enderezo: 'Rúa da Feira, 12', aforo: 4, accesible: true, aviso: 'Pechada o xoves 12 desde as 16:00' },
-      { nome: 'Pavillón Municipal', lista: ['Fútbol sala', 'Baloncesto'], detalle: '1 pista central', enderezo: 'Avenida do Río, 4', aforo: 200, accesible: true, aviso: 'Pecha ás 20:00 o venres 13' },
-      { nome: 'Piscina Municipal A Ribeira', lista: ['Natación'], detalle: '6 rúas', enderezo: 'Paseo da Ribeira, s/n', aforo: 60, accesible: true, aviso: 'Pechada do 16 ao 18 de novembro' },
-      { nome: 'Campo de fútbol de Santa Mariña', lista: ['Fútbol'], detalle: '1 campo de herba artificial', enderezo: 'Lugar de Santa Mariña', aforo: 30, accesible: false },
-      { nome: 'Pistas de tenis de Outeiro', lista: ['Tenis'], detalle: '2 pistas', enderezo: 'Camiño de Outeiro, 7', aforo: 4, accesible: false },
-      { nome: 'Sala Polivalente da Casa da Cultura', lista: ['Ioga'], detalle: 'Aforo: 20 persoas', enderezo: 'Praza Maior, 1', aforo: 20, accesible: true }
+      { nome: 'Pistas de pádel do Campo da Feira', lista: ['Pádel'], detalle: '3 pistas cubertas', enderezo: 'Exemplo de rúa, 1', aforo: 4, accesible: true, aviso: 'Pechada o xoves 12 desde as 16:00' },
+      { nome: 'Pavillón Municipal', lista: ['Fútbol sala', 'Baloncesto'], detalle: '1 pista central', enderezo: 'Exemplo de avenida, 2', aforo: 200, accesible: true, aviso: 'Pecha ás 20:00 o venres 13' },
+      { nome: 'Piscina Municipal A Ribeira', lista: ['Natación'], detalle: '6 rúas', enderezo: 'Exemplo de paseo, s/n', aforo: 60, accesible: true, aviso: 'Pechada do 16 ao 18 de novembro' },
+      { nome: 'Campo de fútbol de Santa Mariña', lista: ['Fútbol'], detalle: '1 campo de herba artificial', enderezo: 'Exemplo de lugar', aforo: 30, accesible: false },
+      { nome: 'Pistas de tenis de Outeiro', lista: ['Tenis'], detalle: '2 pistas', enderezo: 'Exemplo de camiño, 3', aforo: 4, accesible: false },
+      { nome: 'Sala Polivalente da Casa da Cultura', lista: ['Ioga'], detalle: 'Aforo: 20 persoas', enderezo: 'Exemplo de praza, 4', aforo: 20, accesible: true }
     ];
     const extra = [];
     const avisos = extra.concat([

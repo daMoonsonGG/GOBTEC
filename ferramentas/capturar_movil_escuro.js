@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: EUPL-1.2
-// SPDX-FileCopyrightText: 2026 [TITULAR]
+// SPDX-FileCopyrightText: 2026 DeporteAberto contributors
 // Captura todas as pantallas (altura completa) con Edge en modo headless, vía CDP.
 const { spawn } = require('child_process');
 const fs = require('fs');

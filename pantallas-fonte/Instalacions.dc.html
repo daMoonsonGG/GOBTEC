@@ -1,10 +1,10 @@
 <!doctype html>
 <!-- SPDX-License-Identifier: EUPL-1.2 -->
-<!-- SPDX-FileCopyrightText: 2026 [TITULAR] -->
+<!-- SPDX-FileCopyrightText: 2026 DeporteAberto contributors -->
 <html lang="gl">
 <head>
 <meta charset="utf-8">
-<title>Instalacións · Xestión · Concello de Ribadouro</title>
+<title>Instalacións · Xestión · Concello de Exemplo</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -27,7 +27,7 @@ a{color:var(--texto)}a:hover{color:var(--texto2)}
     <div style="padding: 12px clamp(16px, 3vw, 32px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 32px">
       <span style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; font-weight: 700; font-size: 19px">
         <span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 8px; background: {{marca}}; color: {{sobreMarca}}; display: inline-flex; align-items: center; justify-content: center">R</span>
-        Concello de Ribadouro · Xestión
+        Concello de Exemplo · Xestión
       </span>
       <span style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 24px"><button type="button" onClick="{{alternarTema}}" style="min-height: 44px; padding: 0 12px; border-radius: 8px; border: 1px solid currentColor; background: transparent; color: inherit; font: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 8px"><sc-if value="{{escuro}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></sc-if><sc-if value="{{claro}}" hint-placeholder-val="{{ true }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></sc-if>{{rotuloTema}}</button><a href="Main.dc.html" style="min-height: 44px; display: inline-flex; align-items: center">Ver o sitio público</a></span>
     </div>
@@ -275,12 +275,12 @@ class Component extends DCLogic {
       { id: 'inverno', nome: 'Campaña de inverno', porcentaxe: 20, aplicacion: 'temporal', vixencia: '1–30 de novembro de 2026' }
     ];
     const lista = [
-      { id: 1, deportes: 'Pádel', aviso: 'Pechada o xoves 12 desde as 16:00', pistas: 3, nome: 'Pistas de pádel do Campo da Feira', tipo: 'Pistas', aforo: 4, enderezo: 'Rúa da Feira, 12', accesible: true, activa: true, recursos: 'Pista 1, Pista 2 e Pista 3', prezoBase: 12, unidadeCobro: 'por hora', descontos: descontosExemplo() },
-      { id: 2, deportes: 'Fútbol sala, Baloncesto', aviso: 'Pecha ás 20:00 o venres 13', pistas: 1, nome: 'Pavillón Municipal', tipo: 'Pavillón', aforo: 200, enderezo: 'Avenida do Río, 4', accesible: true, activa: true, recursos: 'Pista central', prezoBase: 20, unidadeCobro: 'por hora', descontos: descontosExemplo() },
-      { id: 3, deportes: 'Natación', aviso: 'Pechada do 16 ao 18 de novembro', pistas: 6, nome: 'Piscina Municipal A Ribeira', tipo: 'Piscina', aforo: 60, enderezo: 'Paseo da Ribeira, s/n', accesible: true, activa: true, recursos: 'Rúas 1 a 6', prezoBase: 6, unidadeCobro: 'por entrada', descontos: descontosExemplo() },
-      { id: 4, deportes: 'Fútbol', aviso: '', pistas: 1, nome: 'Campo de fútbol de Santa Mariña', tipo: 'Campo', aforo: 30, enderezo: 'Lugar de Santa Mariña', accesible: false, activa: true, recursos: 'Campo completo', prezoBase: 18, unidadeCobro: 'por hora', descontos: descontosExemplo() },
-      { id: 5, deportes: 'Tenis', aviso: '', pistas: 2, nome: 'Pistas de tenis de Outeiro', tipo: 'Pistas', aforo: 4, enderezo: 'Camiño de Outeiro, 7', accesible: false, activa: true, recursos: 'Pista 1 e Pista 2', prezoBase: 8, unidadeCobro: 'por hora', descontos: descontosExemplo() },
-      { id: 6, deportes: 'Ioga', aviso: '', pistas: 1, nome: 'Sala Polivalente da Casa da Cultura', tipo: 'Sala', aforo: 20, enderezo: 'Praza Maior, 1', accesible: true, activa: true, recursos: 'Sala completa', prezoBase: 5, unidadeCobro: 'por entrada', descontos: descontosExemplo() }
+      { id: 1, deportes: 'Pádel', aviso: 'Pechada o xoves 12 desde as 16:00', pistas: 3, nome: 'Pistas de pádel do Campo da Feira', tipo: 'Pistas', aforo: 4, enderezo: 'Exemplo de rúa, 1', accesible: true, activa: true, recursos: 'Pista 1, Pista 2 e Pista 3', prezoBase: 12, unidadeCobro: 'por hora', descontos: descontosExemplo() },
+      { id: 2, deportes: 'Fútbol sala, Baloncesto', aviso: 'Pecha ás 20:00 o venres 13', pistas: 1, nome: 'Pavillón Municipal', tipo: 'Pavillón', aforo: 200, enderezo: 'Exemplo de avenida, 2', accesible: true, activa: true, recursos: 'Pista central', prezoBase: 20, unidadeCobro: 'por hora', descontos: descontosExemplo() },
+      { id: 3, deportes: 'Natación', aviso: 'Pechada do 16 ao 18 de novembro', pistas: 6, nome: 'Piscina Municipal A Ribeira', tipo: 'Piscina', aforo: 60, enderezo: 'Exemplo de paseo, s/n', accesible: true, activa: true, recursos: 'Rúas 1 a 6', prezoBase: 6, unidadeCobro: 'por entrada', descontos: descontosExemplo() },
+      { id: 4, deportes: 'Fútbol', aviso: '', pistas: 1, nome: 'Campo de fútbol de Santa Mariña', tipo: 'Campo', aforo: 30, enderezo: 'Exemplo de lugar', accesible: false, activa: true, recursos: 'Campo completo', prezoBase: 18, unidadeCobro: 'por hora', descontos: descontosExemplo() },
+      { id: 5, deportes: 'Tenis', aviso: '', pistas: 2, nome: 'Pistas de tenis de Outeiro', tipo: 'Pistas', aforo: 4, enderezo: 'Exemplo de camiño, 3', accesible: false, activa: true, recursos: 'Pista 1 e Pista 2', prezoBase: 8, unidadeCobro: 'por hora', descontos: descontosExemplo() },
+      { id: 6, deportes: 'Ioga', aviso: '', pistas: 1, nome: 'Sala Polivalente da Casa da Cultura', tipo: 'Sala', aforo: 20, enderezo: 'Exemplo de praza, 4', accesible: true, activa: true, recursos: 'Sala completa', prezoBase: 5, unidadeCobro: 'por entrada', descontos: descontosExemplo() }
     ];
     this.state = { lista, sel: 1, borrador: { ...lista[0] }, erro: false, mensaxe: '', confirmarBorrar: false };
   }
