@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: EUPL-1.2
-// SPDX-FileCopyrightText: 2026 [TITULAR]
+// SPDX-FileCopyrightText: 2026 DeporteAberto contributors
 // Xera os tokens de deseño (formato DTCG) a partir dos valores reais da web.
 const fs = require('fs');
 const path = require('path');

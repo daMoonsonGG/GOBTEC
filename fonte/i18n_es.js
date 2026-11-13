@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: EUPL-1.2
-// SPDX-FileCopyrightText: 2026 [TITULAR]
+// SPDX-FileCopyrightText: 2026 DeporteAberto contributors
 const REGRAS_ES = [];
 const DIC_ES = {
   // Navegación e cabeceiras

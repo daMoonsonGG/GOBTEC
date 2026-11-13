@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: EUPL-1.2
-// SPDX-FileCopyrightText: 2026 [TITULAR]
+// SPDX-FileCopyrightText: 2026 DeporteAberto contributors
 // Pasa axe-core (reglas WCAG 2.1 A e AA) por todas as rutas de index.html con Edge headless e comproba o reflow.
 // Uso: npm install axe-core (nunha carpeta calquera) e despois
 //   node comprobar_accesibilidade.js <index.html> <ruta a axe.min.js> [ancho=320] [idioma=gl] [tema=claro]

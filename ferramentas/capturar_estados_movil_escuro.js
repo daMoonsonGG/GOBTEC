@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: EUPL-1.2
-// SPDX-FileCopyrightText: 2026 [TITULAR]
+// SPDX-FileCopyrightText: 2026 DeporteAberto contributors
 // Captura estados (formularios, erros, confirmacións) de cada pantalla con Edge headless.
 const { spawn } = require('child_process');
 const fs = require('fs');

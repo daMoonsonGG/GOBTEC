@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: EUPL-1.2
-// SPDX-FileCopyrightText: 2026 [TITULAR]
+// SPDX-FileCopyrightText: 2026 DeporteAberto contributors
 // Serve SOLO as capturas PNG en localhost, con CORS, para cargalas en Penpot.
 const http = require('http');
 const fs = require('fs');

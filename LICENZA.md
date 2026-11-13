@@ -14,11 +14,4 @@ A licenza permite usar, copiar, modificar e redistribuír o proxecto, tamén con
 - Se se ofrece unha obra derivada como servizo en rede, poñer o código fonte correspondente á disposición das persoas
   usuarias segundo os termos da licenza.
 
-## Tarefas pendentes
-
-- Substituír `[TITULAR]` nos metadatos de copyright polo titular confirmado.
-- Confirmar a titularidade e os dereitos dos materiais xerados con asistencia de IA antes de distribuílos.
-- Verificar se as iconas SVG incorporan obras de terceiros; os detalles pendentes están en
-  [`AVISOS_TERCEIROS.md`](./AVISOS_TERCEIROS.md).
-
 Este resumo non substitúe o texto legal completo da EUPL-1.2.

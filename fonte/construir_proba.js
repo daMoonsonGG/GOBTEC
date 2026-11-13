@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: EUPL-1.2
-// SPDX-FileCopyrightText: 2026 [TITULAR]
+// SPDX-FileCopyrightText: 2026 DeporteAberto contributors
 // Une as pantallas .dc.html nun só HTML funcional (só front-end).
 // Uso: node construir_proba.js <carpeta project> <saída completa .html> <saída fragmento .html>
 const fs = require('fs');
@@ -960,7 +960,7 @@ fs.mkdirSync(path.dirname(saidaCompleta), { recursive: true });
 fs.mkdirSync(path.dirname(saidaFragmento), { recursive: true });
 fs.writeFileSync(saidaCompleta, `<!doctype html>
 <!-- SPDX-License-Identifier: EUPL-1.2 -->
-<!-- SPDX-FileCopyrightText: 2026 [TITULAR] -->
+<!-- SPDX-FileCopyrightText: 2026 DeporteAberto contributors -->
 <html lang="gl" translate="no">
 <head>
 <meta charset="utf-8">
@@ -973,7 +973,7 @@ ${corpo}
 </body>
 </html>
 `, 'utf8');
-fs.writeFileSync(saidaFragmento, '<!-- SPDX-License-Identifier: EUPL-1.2 -->\n<!-- SPDX-FileCopyrightText: 2026 [TITULAR] -->\n' + topo + '\n' + corpo + '\n', 'utf8');
+fs.writeFileSync(saidaFragmento, '<!-- SPDX-License-Identifier: EUPL-1.2 -->\n<!-- SPDX-FileCopyrightText: 2026 DeporteAberto contributors -->\n' + topo + '\n' + corpo + '\n', 'utf8');
 
 // Comprobación de sintaxe do script final.
 new Function(corpo.match(/<script>([\s\S]*)<\/script>/)[1]);
