@@ -247,8 +247,8 @@ class Component extends DCLogic {
     const { qr, canceladas, modificadas, preguntando } = this.state;
     const semSesion = !!(window.__app && (!window.__app.usuario || window.__app.usuario.rol !== 'cidadan'));
     const base = [
-      { id: 1, instalacion: 'Pistas de pádel do Campo da Feira', recurso: 'Pista 1', cando: 'Mércores 11 de novembro, 19:00 a 20:00', prazo: true, inicio: new Date(2026, 10, 11, 19, 0).getTime() },
-      { id: 2, instalacion: 'Piscina Municipal A Ribeira', recurso: 'Rúa 2', cando: 'Venres 6 de novembro, 08:00 a 09:00', prazo: false, inicio: new Date(2026, 10, 6, 8, 0).getTime() }
+      { id: 1, instalacion: 'Pistas de pádel de Exemplo', recurso: 'Pista 1', cando: 'Mércores 11 de novembro, 19:00 a 20:00', prazo: true, inicio: new Date(2026, 10, 11, 19, 0).getTime() },
+      { id: 2, instalacion: 'Piscina municipal de Exemplo', recurso: 'Rúa 2', cando: 'Venres 6 de novembro, 08:00 a 09:00', prazo: false, inicio: new Date(2026, 10, 6, 8, 0).getTime() }
     ];
     const A = window.__app;
     const hoxe = A && A.hoxe ? A.hoxe : new Date(2026, 10, 5, 10, 0);

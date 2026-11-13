@@ -247,8 +247,8 @@ class Component extends DCLogic {
       ok: '',
       envios: [],
       local: [
-        { id: 1, peche: true, horario: false, info: false, titulo: 'Pechada: Pistas de pádel do Campo da Feira', detalle: 'Xoves 12 de novembro, desde as 16:00. Obras no pavimento.', instalacion: 'Pistas de pádel do Campo da Feira', canles: ['Web'] },
-        { id: 2, peche: true, horario: false, info: false, titulo: 'Pechada: Piscina Municipal A Ribeira', detalle: 'Do 16 ao 18 de novembro. Mantemento do vaso.', instalacion: 'Piscina Municipal A Ribeira', canles: ['Web'] }
+        { id: 1, peche: true, horario: false, info: false, titulo: 'Pechada: Pistas de pádel de Exemplo', detalle: 'Xoves 12 de novembro, desde as 16:00. Obras no pavimento.', instalacion: 'Pistas de pádel de Exemplo', canles: ['Web'] },
+        { id: 2, peche: true, horario: false, info: false, titulo: 'Pechada: Piscina municipal de Exemplo', detalle: 'Do 16 ao 18 de novembro. Mantemento do vaso.', instalacion: 'Piscina municipal de Exemplo', canles: ['Web'] }
       ]
     };
   }
@@ -269,7 +269,7 @@ class Component extends DCLogic {
     const { afectada, tipo, desde, ata, motivo, mensaxe, correo, sms, whatsapp, erro, ok, envios } = this.state;
     const instalacions = window.__app && window.__app.publicas
       ? window.__app.publicas().map((i) => i.nome)
-      : ['Pistas de pádel do Campo da Feira', 'Pavillón Municipal', 'Piscina Municipal A Ribeira'];
+      : ['Pistas de pádel de Exemplo', 'Pavillón municipal de Exemplo', 'Piscina municipal de Exemplo'];
     const afectadaSel = instalacions.indexOf(afectada) !== -1 ? afectada : '';
     const prefixos = { peche: 'Pechada', horario: 'Horario especial', info: 'Información' };
     const fmt = (v) => { const p = v.split('-'); return Number(p[2]) + '/' + Number(p[1]) + '/' + p[0]; };

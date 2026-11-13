@@ -53,9 +53,9 @@ a{color:var(--texto)}a:hover{color:var(--texto2)}
           <div style="flex: 1 1 320px; min-width: 0">
             <label for="instalacion" style="display: block; font-weight: 700; margin-bottom: 4px">Instalación</label>
             <select id="instalacion" value="{{instalacionSel}}" onChange="{{cambiarInstalacion}}" data-opcions="{{opcsInstalacion}}" style="box-sizing: border-box; width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid var(--texto); border-radius: 8px; font: inherit; color: var(--texto); background: var(--fondo)">
-              <option>Pistas de pádel do Campo da Feira</option>
-              <option>Pavillón Municipal</option>
-              <option>Piscina Municipal A Ribeira</option>
+              <option>Pistas de pádel de Exemplo</option>
+              <option>Pavillón municipal de Exemplo</option>
+              <option>Piscina municipal de Exemplo</option>
             </select>
           </div>
           <div style="flex: 0 1 200px">
@@ -240,9 +240,9 @@ class Component extends DCLogic {
       duracions: {},
       horarioGardado: false,
       peches: [
-        { id: 1, cando: '25 de decembro de 2026, todo o día', onde: 'Todas as pistas de pádel', motivo: 'Festivo', desde: '2026-12-25T00:00', ata: '2026-12-25T23:59', ambito: 'Pistas de pádel do Campo da Feira' },
-        { id: 2, cando: '12/11/2026, 16:00 a 12/11/2026, 22:00', onde: 'Pistas de pádel do Campo da Feira', motivo: 'Obras no pavimento', desde: '2026-11-12T16:00', ata: '2026-11-12T22:00', ambito: 'Pistas de pádel do Campo da Feira' },
-        { id: 3, cando: '16/11/2026 a 18/11/2026, todo o día', onde: 'Piscina Municipal A Ribeira', motivo: 'Mantemento do vaso', desde: '2026-11-16T00:00', ata: '2026-11-18T23:59', ambito: 'Piscina Municipal A Ribeira' }
+        { id: 1, cando: '25 de decembro de 2026, todo o día', onde: 'Todas as pistas de pádel', motivo: 'Festivo', desde: '2026-12-25T00:00', ata: '2026-12-25T23:59', ambito: 'Pistas de pádel de Exemplo' },
+        { id: 2, cando: '12/11/2026, 16:00 a 12/11/2026, 22:00', onde: 'Pistas de pádel de Exemplo', motivo: 'Obras no pavimento', desde: '2026-11-12T16:00', ata: '2026-11-12T22:00', ambito: 'Pistas de pádel de Exemplo' },
+        { id: 3, cando: '16/11/2026 a 18/11/2026, todo o día', onde: 'Piscina municipal de Exemplo', motivo: 'Mantemento do vaso', desde: '2026-11-16T00:00', ata: '2026-11-18T23:59', ambito: 'Piscina municipal de Exemplo' }
       ],
       instalacion: '',
       novo: { onde: '', desde: '2026-11-12T16:00', ata: '2026-11-12T22:00', motivo: 'Obras no pavimento', todoDia: false },
@@ -261,7 +261,7 @@ class Component extends DCLogic {
     const { horarioGardado, peches, novo, erroDatas, aviso } = this.state;
     const todas = window.__app && window.__app.publicas
       ? window.__app.publicas()
-      : [{ nome: 'Pistas de pádel do Campo da Feira', pistas: 3 }, { nome: 'Pavillón Municipal', pistas: 1 }, { nome: 'Piscina Municipal A Ribeira', pistas: 6 }];
+      : [{ nome: 'Pistas de pádel de Exemplo', pistas: 3 }, { nome: 'Pavillón municipal de Exemplo', pistas: 1 }, { nome: 'Piscina municipal de Exemplo', pistas: 6 }];
     const nomeSel = todas.some((i) => i.nome === this.state.instalacion) ? this.state.instalacion : (todas[0] ? todas[0].nome : '');
     const instSel = todas.find((i) => i.nome === nomeSel);
     const npistas = instSel ? Math.max(1, Number(instSel.pistas) || 1) : 0;
