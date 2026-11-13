@@ -934,7 +934,7 @@ function arrancar() {
 `;
 
 const fontFaces = [400, 700].map((p) => '@font-face{font-family:"Atkinson Hyperlegible";font-style:normal;font-weight:' + p + ';font-display:swap;src:url(data:font/woff2;base64,' + fs.readFileSync(path.join(__dirname, 'tipografia', 'atkinson-hyperlegible-' + p + '.woff2')).toString('base64') + ') format("woff2")}').join('');
-const topo = `<title>Reservas deportivas municipais</title>
+const topo = `<title>DeporteAberto · Reservas deportivas municipais</title>
 <style>${fontFaces}${css}</style>`;
 
 const corpo = `<div class="barra" lang="es">

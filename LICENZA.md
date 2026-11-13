@@ -19,6 +19,6 @@ A licenza permite usar, copiar, modificar e redistribuír o proxecto, tamén con
 - Substituír `[TITULAR]` nos metadatos de copyright polo titular confirmado.
 - Confirmar a titularidade e os dereitos dos materiais xerados con asistencia de IA antes de distribuílos.
 - Verificar se as iconas SVG incorporan obras de terceiros; os detalles pendentes están en
-  [`AVISOS_TERCEROS.md`](./AVISOS_TERCEROS.md).
+  [`AVISOS_TERCEIROS.md`](./AVISOS_TERCEIROS.md).
 
 Este resumo non substitúe o texto legal completo da EUPL-1.2.
