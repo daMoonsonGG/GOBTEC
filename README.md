@@ -1,4 +1,4 @@
-# reservas-deportivas
+# DeporteAberto
 
 Prototipo **só de interface** para xestionar e reservar instalacións deportivas municipais. A aplicación non ten
 servidor nin base de datos; usa datos ficticios e o estado de proba pérdese ao recargar a páxina. Inclúe galego,
@@ -43,16 +43,10 @@ O construtor xera `index.html` e `fragmento.html` e comproba a sintaxe do JavaSc
 `pantallas-fonte/` e `fonte/`, e volve construír despois de cada cambio. Consulta [ARQUITETURA.md](./ARQUITETURA.md) para
 coñecer as limitacións do motor e as comprobacións recomendadas.
 
-## Licenza e tarefas previas á publicación
+## Licenza
 
-O proxecto distribúese baixo a EUPL-1.2. Consulta [LICENSE](./LICENSE), [LICENCIA.md](./LICENCIA.md) e
-[AVISOS_TERCEROS.md](./AVISOS_TERCEROS.md).
-
-Antes de publicar:
-
-- Substituír literalmente `[TITULAR]` nas cabeceiras SPDX e confirmar a titularidade dos dereitos.
-- Revisar e confirmar a autoría e os dereitos dos materiais xerados con asistencia de IA.
-- Confirmar se as iconas SVG coinciden con iconas de Lucide e, de ser así, engadir os avisos e a licenza correspondentes.
+O proxecto distribúese baixo a EUPL-1.2. Consulta [LICENSE](./LICENSE), [LICENZA.md](./LICENZA.md) e
+[AVISOS_TERCEIROS.md](./AVISOS_TERCEIROS.md).
 
 O prototipo simula o inicio de sesión, as notificacións e as reservas; non procesa datos reais nin substitúe unha
 auditoría de accesibilidade ou unha revisión legal.

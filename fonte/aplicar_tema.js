@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: EUPL-1.2
-// SPDX-FileCopyrightText: 2026 [TITULAR]
+// SPDX-FileCopyrightText: 2026 DeporteAberto contributors
 // Aplica os tokens de cor claro/escuro e o botón de modo ás pantallas.
 const fs = require('fs');
 const path = require('path');

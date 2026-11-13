@@ -1,13 +1,13 @@
 version = 1
 
 [[annotations]]
-path = [".gitignore", "README.md", "ARQUITECTURA.md", "LICENCIA.md", "AVISOS_TERCEROS.md", "fonte/tipografia/LEEME.md", "REUSE.toml"]
-SPDX-FileCopyrightText = "2026 [TITULAR]"
+path = [".gitignore", "README.md", "ARQUITETURA.md", "LICENZA.md", "AVISOS_TERCEIROS.md", "fonte/tipografia/README.md", "REUSE.toml"]
+SPDX-FileCopyrightText = "2026 DeporteAberto contributors"
 SPDX-License-Identifier = "EUPL-1.2"
 
 [[annotations]]
 path = ["pantallas-fonte/canvas.json"]
-SPDX-FileCopyrightText = "2026 [TITULAR]"
+SPDX-FileCopyrightText = "2026 DeporteAberto contributors"
 SPDX-License-Identifier = "EUPL-1.2"
 
 [[annotations]]
